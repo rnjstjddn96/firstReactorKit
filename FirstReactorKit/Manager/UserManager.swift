@@ -8,12 +8,11 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxCocoa
 
 class UserManager {
     static let current = UserManager()
-    var user: User?
-    
-    private init() {
-        user = nil
-    }
+    var user = BehaviorRelay<User?>(value: nil)
+
+    private init() { }
 }

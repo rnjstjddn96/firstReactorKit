@@ -23,13 +23,15 @@ class SplashViewController: UIViewController, APIService {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         didEnterSplashView.onNext(true)
     }
     
-    private func setDestinaion(with user: User) -> UIViewController {
+    private func routeToMain(with user: User) {
         let destination = ViewController()
         destination.user = user
-        return destination
+        ViewRouter.route(from: self, to: destination,
+                         withNavigation: true)
     }
     
     private func showAlert(title: String, message: String) {
@@ -61,7 +63,16 @@ extension SplashViewController: View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-            
+        UserManager.current.user
+            .skip(1)
+            .distinctUntilChanged()
+            .observe(on:MainScheduler.asyncInstance)
+            .delay(.milliseconds(300), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] user in
+                guard let self = self else { return }
+                self.routeToMain(with: user!)
+            })
+            .disposed(by: disposeBag)
         
         //MARK: Reactor의 State값 변화를 구독
         reactor.state
@@ -92,22 +103,25 @@ extension SplashViewController: View {
             .disposed(by: disposeBag)
         
 
-        reactor.state
-            .asObservable()
-            .map { $0.destination }
-            .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { destination in
-                ViewRouter.route(from: self, to: destination, withNavigation: true)
-            })
-            .disposed(by: disposeBag)
+//        reactor.state
+//            .asObservable()
+//            .skip(1)
+//            .map { $0.destination }
+//            .distinctUntilChanged()
+//            .observe(on: MainScheduler.instance)
+//            .subscribe(onNext: { destination in
+//                ViewRouter.route(from: self, to: destination, withNavigation: true)
+//            })
+//            .disposed(by: disposeBag)
         
         
         reactor.state
             .map { $0.user }
             .asObservable()
+            .distinctUntilChanged()
             .filter { $0 != nil }
             .subscribe(onNext: {
-                UserManager.current.user = $0
+                UserManager.current.user.accept($0)
             })
             .disposed(by: disposeBag)
         

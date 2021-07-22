@@ -28,7 +28,7 @@ class SplashReactor: Reactor, APIService {
         case viewWillAppear
         case errorOccered(type: SplashErrorType)
         case getUser
-        case route(to: UIViewController)
+//        case route(to: UIViewController)
     }
     
     enum Mutation {
@@ -36,8 +36,8 @@ class SplashReactor: Reactor, APIService {
         case setLogo(Bool)
         case setUser(user: User)
         case setAPIFailure(fail: APIFailure?, error: APIError?)
-        case setDestination(to: UIViewController)
         case setAlert(message: String)
+//        case setDestination(to: UIViewController)
     }
     
     struct State {
@@ -47,7 +47,7 @@ class SplashReactor: Reactor, APIService {
         var failure: APIFailure?
         var error: APIError?
         var message: String?
-        var destination: UIViewController?
+//        var destination: UIViewController?
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -56,7 +56,7 @@ class SplashReactor: Reactor, APIService {
             return Observable.concat([
                 Observable.just(Mutation.setLogo(true)),
                 Observable.just(Mutation.setLogo(false))
-                    .delay(.seconds(2), scheduler: MainScheduler.instance)
+                    .delay(.milliseconds(2100), scheduler: MainScheduler.instance)
             ])
         case .errorOccered(let type):
             return Observable.just(Mutation.setAlert(message: type.desc))
@@ -73,8 +73,8 @@ class SplashReactor: Reactor, APIService {
                 },
                 Observable.just(Mutation.setLoading(false))
             ])
-        case .route(let view):
-            return Observable.just(Mutation.setDestination(to: view))
+//        case .route(let view):
+//            return Observable.just(Mutation.setDestination(to: view))
         }
     }
     
@@ -93,8 +93,8 @@ class SplashReactor: Reactor, APIService {
             newState.error = error
         case .setLogo(let logoshown):
             newState.logoShown = logoshown
-        case .setDestination(to: let view):
-            newState.destination = view
+//        case .setDestination(to: let view):
+//            newState.destination = view
         }
         
         return newState

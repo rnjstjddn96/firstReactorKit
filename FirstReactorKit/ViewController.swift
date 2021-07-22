@@ -39,13 +39,6 @@ class ViewController: UIViewController, View {
         return button
     }()
     
-    let loadingIndicator: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        view.alpha = 0.5
-        return view
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -70,19 +63,13 @@ class ViewController: UIViewController, View {
             .map { "\($0)"}
             .bind(to: label.rx.text)
             .disposed(by: disposeBag)
-        
-        reactor.state
-            .map { !$0.isLoading }
-            .distinctUntilChanged()
-            .bind(to: loadingIndicator.rx.isHidden)
-            .disposed(by: disposeBag)
     }
 
     private func addSubViews() {
         self.view.addSubview(label)
         self.view.addSubview(btnInc)
         self.view.addSubview(btnDec)
-        self.view.addSubview(loadingIndicator)
+//        self.view.addSubview(loadingIndicator)
         
         label.snp.makeConstraints { create in
             create.center.equalToSuperview()
@@ -99,10 +86,10 @@ class ViewController: UIViewController, View {
             create.centerY.equalToSuperview()
         }
         
-        loadingIndicator.snp.makeConstraints { create in
-            create.center.equalToSuperview()
-            create.width.equalToSuperview().multipliedBy(0.5)
-            create.height.equalTo(loadingIndicator.snp.width)
-        }
+//        loadingIndicator.snp.makeConstraints { create in
+//            create.center.equalToSuperview()
+//            create.width.equalToSuperview().multipliedBy(0.5)
+//            create.height.equalTo(loadingIndicator.snp.width)
+//        }
     }
 }
