@@ -8,7 +8,7 @@
 import Foundation
 import ReactorKit
 
-class ViewReactor: Reactor {
+class MainReactor: Reactor {
     enum Action {
         case increase
         case decrease
@@ -21,6 +21,7 @@ class ViewReactor: Reactor {
     }
     
     struct State {
+        var user: User?
         var value: Int = 0
         var isLoading: Bool = false
     }

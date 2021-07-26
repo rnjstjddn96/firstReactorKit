@@ -10,8 +10,7 @@ import ReactorKit
 import RxCocoa
 import SnapKit
 
-class ViewController: UIViewController, View {
-    var user: User?
+class MainViewController: UIViewController, View {
     var disposeBag: DisposeBag = DisposeBag()
     
     let label: UILabel = {
@@ -46,7 +45,7 @@ class ViewController: UIViewController, View {
         addSubViews()
     }
     
-    func bind(reactor: ViewReactor) {
+    func bind(reactor: MainReactor) {
         btnInc.rx.tap
             .map { Reactor.Action.increase }
             .bind(to: reactor.action)

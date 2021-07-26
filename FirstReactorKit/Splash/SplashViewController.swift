@@ -27,13 +27,6 @@ class SplashViewController: UIViewController, APIService {
         didEnterSplashView.onNext(true)
     }
     
-    private func routeToMain(with user: User) {
-        let destination = ViewController()
-        destination.user = user
-        ViewRouter.route(from: self, to: destination,
-                         withNavigation: true)
-    }
-    
     private func showAlert(title: String, message: String) {
         AlertUtils.displayBasicAlert(controller: self,
                                      title: title, message: message,
@@ -68,10 +61,11 @@ extension SplashViewController: View {
             .distinctUntilChanged()
             .observe(on:MainScheduler.asyncInstance)
             .delay(.milliseconds(300), scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] user in
-                guard let self = self else { return }
-                self.routeToMain(with: user!)
-            })
+            .map { _ in
+                let destination = MainViewController()
+                return Reactor.Action.route(to: destination)
+            }
+            .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
         //MARK: Reactor의 State값 변화를 구독
@@ -103,16 +97,17 @@ extension SplashViewController: View {
             .disposed(by: disposeBag)
         
 
-//        reactor.state
-//            .asObservable()
-//            .skip(1)
-//            .map { $0.destination }
-//            .distinctUntilChanged()
-//            .observe(on: MainScheduler.instance)
-//            .subscribe(onNext: { destination in
-//                ViewRouter.route(from: self, to: destination, withNavigation: true)
-//            })
-//            .disposed(by: disposeBag)
+        reactor.state
+            .asObservable()
+            .skip(1)
+            .map { $0.destination }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { destination in
+                ViewRouter.route(from: self, to: destination,
+                                 withNavigation: true)
+            })
+            .disposed(by: disposeBag)
         
         
         reactor.state
