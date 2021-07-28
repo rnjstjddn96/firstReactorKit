@@ -10,7 +10,7 @@ import UIKit
 import ReactorKit
 import RxCocoa
 
-class SplashViewController: UIViewController, APIService {
+class SplashViewController: UIViewController {
     
     var session = NetworkService()
     var disposeBag = DisposeBag()

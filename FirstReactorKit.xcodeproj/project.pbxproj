@@ -67,6 +67,7 @@
 		EA03A23626A646E9005B37D2 /* ButtonBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBuilder.swift; sourceTree = "<group>"; };
 		EA03A23726A646E9005B37D2 /* LabelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelBuilder.swift; sourceTree = "<group>"; };
 		EA03A23926A646E9005B37D2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		EA49C46226B11547001F9221 /* ReactorPractice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ReactorPractice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EA6F713D26A9191C0004FB02 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		EA6F713F26A9345D0004FB02 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashLogoView.swift; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 		EA03A1E526A55449005B37D2 = {
 			isa = PBXGroup;
 			children = (
+				EA49C46226B11547001F9221 /* ReactorPractice.playground */,
 				EA03A1F026A55449005B37D2 /* FirstReactorKit */,
 				EA03A1EF26A55449005B37D2 /* Products */,
 				C266FCC0EA25938B9727176B /* Pods */,
