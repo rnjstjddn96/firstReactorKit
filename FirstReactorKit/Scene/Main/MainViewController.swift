@@ -13,6 +13,8 @@ import SnapKit
 class MainViewController: UIViewController, View {
     var disposeBag: DisposeBag = DisposeBag()
     
+    lazy var loadingIndicator = LoadingIndicator(view: self.view)
+    
     let label: UILabel = {
         let label = UILabel()
         label.text = "0"
@@ -62,13 +64,23 @@ class MainViewController: UIViewController, View {
             .map { "\($0)"}
             .bind(to: label.rx.text)
             .disposed(by: disposeBag)
+        
+        reactor.state
+            .map { $0.isLoading }
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] in
+                print("isLoading: \($0)")
+                guard let self = self else { return }
+                self.loadingIndicator.showIndicator(on: $0)
+            })
+            .disposed(by: disposeBag)
+            
     }
 
     private func addSubViews() {
         self.view.addSubview(label)
         self.view.addSubview(btnInc)
         self.view.addSubview(btnDec)
-//        self.view.addSubview(loadingIndicator)
         
         label.snp.makeConstraints { create in
             create.center.equalToSuperview()
@@ -84,11 +96,5 @@ class MainViewController: UIViewController, View {
             create.right.equalTo(label.snp.left).offset(-30)
             create.centerY.equalToSuperview()
         }
-        
-//        loadingIndicator.snp.makeConstraints { create in
-//            create.center.equalToSuperview()
-//            create.width.equalToSuperview().multipliedBy(0.5)
-//            create.height.equalTo(loadingIndicator.snp.width)
-//        }
     }
 }

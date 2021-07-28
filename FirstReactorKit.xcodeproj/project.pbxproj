@@ -133,11 +133,9 @@
 				EA6F713C26A919150004FB02 /* View */,
 				EA03A22926A646E8005B37D2 /* Utils */,
 				EA03A22426A57992005B37D2 /* Model */,
-				EA03A21B26A578CD005B37D2 /* Splash */,
+				EADF2EE126B1201500572B99 /* Scene */,
 				EA03A1F126A55449005B37D2 /* AppDelegate.swift */,
 				EA03A1F326A55449005B37D2 /* SceneDelegate.swift */,
-				EA03A1F526A55449005B37D2 /* MainViewController.swift */,
-				EA03A21826A5777D005B37D2 /* MainReactor.swift */,
 				EA03A1FA26A5544A005B37D2 /* Assets.xcassets */,
 				EA03A1FC26A5544A005B37D2 /* LaunchScreen.storyboard */,
 				EA03A1FF26A5544A005B37D2 /* Info.plist */,
@@ -248,6 +246,24 @@
 				EA6F714826A94C560004FB02 /* UserManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		EADF2EE026B1200D00572B99 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EA03A1F526A55449005B37D2 /* MainViewController.swift */,
+				EA03A21826A5777D005B37D2 /* MainReactor.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EADF2EE126B1201500572B99 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				EA03A21B26A578CD005B37D2 /* Splash */,
+				EADF2EE026B1200D00572B99 /* Main */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		EAFB0CA026A8F04600BF3576 /* Router */ = {

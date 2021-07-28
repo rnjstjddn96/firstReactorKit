@@ -21,7 +21,6 @@ class MainReactor: Reactor {
     }
     
     struct State {
-        var user: User?
         var value: Int = 0
         var isLoading: Bool = false
     }
