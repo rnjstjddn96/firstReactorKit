@@ -66,7 +66,9 @@ class SplashReactor: Reactor, APIService {
         case .getUser:
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
-                self.getProfile().map { result in
+                self.getProfile()
+                    .delay(.seconds(3), scheduler: MainScheduler.instance)
+                    .map { result in
                     if let user = result.value {
                         return Mutation.setUser(user: user)
                     } else {

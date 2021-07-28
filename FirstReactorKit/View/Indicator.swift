@@ -16,11 +16,9 @@ class LoadingIndicator: NSObject {
     let progressSize: CGFloat = SIZE.width * 0.4
     
     init(view:UIView) {
-        
         self.view = view
         super.init()
         self.addProgressView()
-        
     }
     
     init(view:UIView, title:String){
@@ -28,7 +26,6 @@ class LoadingIndicator: NSObject {
         self.title = title
         super.init()
         self.addProgressView()
-        
     }
     
     private func addProgressView() {
@@ -49,6 +46,7 @@ class LoadingIndicator: NSObject {
                 self.progress.alpha = 1.0
             })
         } else {
+            self.progress.stop()
             UIView.animate(withDuration: 0.3, animations: {
                 self.progress.alpha = 0.0
             }) { (_) in

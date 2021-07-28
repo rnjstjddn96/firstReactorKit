@@ -69,7 +69,6 @@ class MainViewController: UIViewController, View {
             .map { $0.isLoading }
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] in
-                print("isLoading: \($0)")
                 guard let self = self else { return }
                 self.loadingIndicator.showIndicator(on: $0)
             })
