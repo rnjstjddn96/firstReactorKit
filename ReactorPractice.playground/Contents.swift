@@ -131,14 +131,14 @@ let mpay = App(memory: .init(value: 100))
 let inch = App(memory: .init(value: 900))
 
 var appSubject: PublishSubject<App> = .init()
-appSubject
-    .flatMap { app in
-        app.memory
-    }
-    .subscribe(onNext: {
-        print($0)
-    })
-    .disposed(by: disposeBag)
+//appSubject
+//    .flatMap { app in
+//        app.memory
+//    }
+//    .subscribe(onNext: {
+//        print($0)
+//    })
+//    .disposed(by: disposeBag)
     
 //appSubject.on(.next(mpay))
 //appSubject.on(.next(inch))
@@ -146,6 +146,41 @@ appSubject
 //mpay.memory.on(.next(200))
 
 //각각의 스트림이 살아있고, 각 스트림에서 발생한 이벤트 또한 구독가능한 상태
+
+/*
+ - flatMapLatest -
+ ------1---2---3----------------------- Original Sequence: Observable<T>
+ 
+ --------------------------------------
+ -------flatMap { String($0) } --------
+ --------------------------------------
+ 
+ -----"1"---------------------------- Element 1으로 생성한 Sequence
+ ---------"2"---"4"------"5"--------- Element 2으로 생성한 Sequence
+ --------------------"3"------"6"---- Element 3으로 생성한 Sequence
+ 
+ -----"1"-"2"---"4"--"3"------"6"--------- 최종 Sequence
+ */
+
+//MARK: flatMapLatest
+appSubject
+    .flatMapLatest { app in
+        app.memory
+    }
+    .subscribe(onNext: {
+        print($0)
+    })
+    .disposed(by: disposeBag)
+
+appSubject.on(.next(mpay))
+mpay.memory.on(.next(350))
+appSubject.on(.next(inch))
+
+//가장 최근 스트림의 이벤트값만 구독하므로 출력 X
+mpay.memory.on(.next(330))
+
+inch.memory.on(.next(500))
+
 
 /*
  Observable의 합성
@@ -278,4 +313,16 @@ bSub.on(.next("B2"))
 //        print($0)
 //    })
 //    .disposed(by: disposeBag)
+
+/*
+ 기타 Operators
+ */
+
+//scan
+//debounce vs delay vs throttle
+//MARK: delay: 모든 입력을 주어진 timestamp 이후 모두 처리
+
+//MARK: debounce: 입력 -> 대기 -> 일정 시간 후 입력
+
+//MARK: throttle:
 
