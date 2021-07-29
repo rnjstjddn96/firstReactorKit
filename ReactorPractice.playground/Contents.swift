@@ -70,16 +70,16 @@ let inteval = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.ins
 //    .disposed(by: disposeBag)
 
 //MARK: map vs flatMap
-
-inteval
-    //map은 이벤트를 바꾼다. E Type이벤트를 R Type이벤트로 바꾼다
-//    .map { numstr -> Observable<String> in
+inteval                                                                         //Observable<Int>
+//    map은 이벤트를 바꾼다. E Type이벤트를 R Type이벤트로 바꾼다
+//    .map { numstr -> Observable<String> in                                    //Observable<Observable<String>>
 //        return Observable<String>.create { observer in
 //            observer.on(.next(String(numstr) + "a"))
 //            observer.on(.next(String(numstr) + "b"))
 //            return Disposables.create()
 //        }
 //    }
+    //flatMap은 각 element를 Observable Sequence를 생성하고 이 Sequence들을 하나의 Sequence로 합친다
     .flatMap { numstr -> Observable<String> in
         return Observable<String>.create { observer in
             observer.on(.next(String(numstr) + "a"))
@@ -88,9 +88,64 @@ inteval
             return Disposables.create()
         }
     }
+    .subscribe(onNext: { _ in
+//        print($0)
+    })
+    .disposed(by: disposeBag)
+
+/*
+ - map -
+ 
+ ------1---2---3---4------------------- Original Sequence: Observable<T>
+ 
+ --------------------------------------
+ ---------.map { String($0) }---------- T: Int --> String
+ --------------------------------------
+ 
+ -----"1"-"2"-"3"-"4"------------------ 최종 Sequence
+ 
+ 
+ 
+ 
+ - flatMap -
+ ------1---2---3----------------------- Original Sequence: Observable<T>
+ 
+ --------------------------------------
+ -------flatMap { String($0) } --------
+ --------------------------------------
+ 
+ -----"1"-----------"4"---------------- Element 1으로 생성한 Sequence
+ ---------"2"--------------"5"--------- Element 2으로 생성한 Sequence
+ -------------"3"---------------------- Element 3으로 생성한 Sequence
+ 
+ -----"1"-"2"-"3"---"4"----"5"--------- 최종 Sequence
+ */
+
+
+//MARK: flatMap
+struct App {
+    var memory: BehaviorSubject<Int> = .init(value: 100)
+}
+
+let mpay = App(memory: .init(value: 100))
+let inch = App(memory: .init(value: 900))
+
+var appSubject: PublishSubject<App> = .init()
+appSubject
+    .flatMap { app in
+        app.memory
+    }
     .subscribe(onNext: {
         print($0)
     })
+    .disposed(by: disposeBag)
+    
+//appSubject.on(.next(mpay))
+//appSubject.on(.next(inch))
+//
+//mpay.memory.on(.next(200))
+
+//각각의 스트림이 살아있고, 각 스트림에서 발생한 이벤트 또한 구독가능한 상태
 
 /*
  Observable의 합성
@@ -192,6 +247,13 @@ bSub.on(.next("B2"))
  발행 순서에 따라 합성하여 반환
  스트림이 각 2개 3개인 경우 2개의 합성된 이벤트만 반환한다.
  */
+
+/*
+ ------A---------B-------------C-
+ ----------a---------b-----------
+ 
+ ----------Aa---------Bb-----------
+ */
 //Observable.zip(boys.delay(.seconds(1), scheduler: MainScheduler.instance),
 //               girls)
 //    .subscribe(onNext: {
@@ -203,6 +265,13 @@ bSub.on(.next("B2"))
 /*
  스트림이 들어온 순서를 보장
  선행된 스트림이 완료된 이후 다음 스트림을 실행한다.
+ */
+
+/*
+ -------a---b---c----------------
+ ---d----e---f-------------------
+ 
+ -------a---b---c----d--e--f-----
  */
 //Observable.concat(boys, girls)
 //    .subscribe(onNext: {
