@@ -200,9 +200,9 @@ let girls = Observable.from(["A","B"])
 //    Observable.combineLatest(boys, girls) { boy, girl in
 //        return boy + girl
 //    }
-//    .subscribe { event in
+//    .subscribe (onNext:{ event in
 //        print(event)
-//    }
+//    })
 //    .disposed(by: disposeBag)
 
 
