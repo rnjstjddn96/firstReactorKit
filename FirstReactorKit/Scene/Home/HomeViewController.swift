@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  FirstReactorKit
 //
 //  Created by imform-mm-2101 on 2021/07/19.
@@ -10,7 +10,7 @@ import ReactorKit
 import RxCocoa
 import SnapKit
 
-class MainViewController: UIViewController, View {
+class HomeViewController: UIViewController, View {
     var disposeBag: DisposeBag = DisposeBag()
     
     lazy var loadingIndicator = LoadingIndicator(view: self.view)
@@ -40,6 +40,14 @@ class MainViewController: UIViewController, View {
         return button
     }()
     
+    let btnToTable =
+        UIButton.Builder()
+        .withText("RxTables", for: .normal)
+        .withTextColor(.white, for: .normal)
+        .withBackground(color: .black)
+        .withCornerRadius(radius: 10)
+        .build()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,7 +55,7 @@ class MainViewController: UIViewController, View {
         addSubViews()
     }
     
-    func bind(reactor: MainReactor) {
+    func bind(reactor: HomeReactor) {
         btnInc.rx.tap
             .map { Reactor.Action.increase }
             .bind(to: reactor.action)
@@ -55,6 +63,11 @@ class MainViewController: UIViewController, View {
         
         btnDec.rx.tap
             .map { Reactor.Action.decrease }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        btnToTable.rx.tap
+            .map { Reactor.Action.route(to: TableViewController()) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -74,12 +87,22 @@ class MainViewController: UIViewController, View {
             })
             .disposed(by: disposeBag)
             
+        reactor.state
+            .map { $0.destination }
+            .distinctUntilChanged()
+            .subscribe(onNext: {
+                ViewRouter.route(from: self, to: $0, withNavigation: true)
+            })
+            .disposed(by: disposeBag)
     }
 
     private func addSubViews() {
         self.view.addSubview(label)
         self.view.addSubview(btnInc)
         self.view.addSubview(btnDec)
+        self.view.addSubview(btnToTable)
+        
+        self.view.backgroundColor = .orange
         
         label.snp.makeConstraints { create in
             create.center.equalToSuperview()
@@ -94,6 +117,13 @@ class MainViewController: UIViewController, View {
         btnDec.snp.makeConstraints { create in
             create.right.equalTo(label.snp.left).offset(-30)
             create.centerY.equalToSuperview()
+        }
+        
+        btnToTable.snp.makeConstraints { create in
+            create.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(30)
+            create.centerX.equalToSuperview()
+            create.width.equalTo(80)
+            create.height.equalTo(50)
         }
     }
 }

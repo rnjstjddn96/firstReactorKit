@@ -8,11 +8,18 @@
 import Foundation
 import UIKit
 import RxSwift
-import RxCocoa
 
 class UserManager {
     static let current = UserManager()
-    var user = BehaviorRelay<User?>(value: nil)
+    var user = BehaviorSubject<User?>(value: nil)
 
     private init() { }
+    
+    func updateUser(user: User) {
+        self.user.onNext(user)
+    }
+    
+    func deleteUser() {
+        self.user.onNext(nil)
+    }
 }

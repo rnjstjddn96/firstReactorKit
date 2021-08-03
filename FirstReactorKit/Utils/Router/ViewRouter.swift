@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import ReactorKit
 
 final class ViewRouter {
     class func route<T: UIViewController>(

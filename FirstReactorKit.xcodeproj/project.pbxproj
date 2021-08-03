@@ -10,10 +10,10 @@
 		B5D92B349578544B7A5582E9 /* Pods_FirstReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FEC6067F16A9E93D93864E /* Pods_FirstReactorKit.framework */; };
 		EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A1F126A55449005B37D2 /* AppDelegate.swift */; };
 		EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A1F326A55449005B37D2 /* SceneDelegate.swift */; };
-		EA03A1F626A55449005B37D2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A1F526A55449005B37D2 /* MainViewController.swift */; };
+		EA03A1F626A55449005B37D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A1F526A55449005B37D2 /* HomeViewController.swift */; };
 		EA03A1FB26A5544A005B37D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA03A1FA26A5544A005B37D2 /* Assets.xcassets */; };
 		EA03A1FE26A5544A005B37D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA03A1FC26A5544A005B37D2 /* LaunchScreen.storyboard */; };
-		EA03A21926A5777D005B37D2 /* MainReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A21826A5777D005B37D2 /* MainReactor.swift */; };
+		EA03A21926A5777D005B37D2 /* HomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A21826A5777D005B37D2 /* HomeReactor.swift */; };
 		EA03A21D26A578D5005B37D2 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A21C26A578D5005B37D2 /* SplashViewController.swift */; };
 		EA03A22226A578EE005B37D2 /* SplashReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A22126A578EE005B37D2 /* SplashReactor.swift */; };
 		EA03A22626A57997005B37D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A22526A57997005B37D2 /* User.swift */; };
@@ -36,6 +36,10 @@
 		EA6F714626A93B360004FB02 /* ImageViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F714526A93B360004FB02 /* ImageViewBuilder.swift */; };
 		EA6F714926A94C560004FB02 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F714826A94C560004FB02 /* UserManager.swift */; };
 		EABB572226A807A4004323AE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB572126A807A4004323AE /* Todo.swift */; };
+		EAE6B1AE26B985070074C7A7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AD26B985070074C7A7 /* TableViewController.swift */; };
+		EAE6B1B026B987A10074C7A7 /* BottomMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AF26B987A10074C7A7 /* BottomMenuViewController.swift */; };
+		EAE6B1B326B988070074C7A7 /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B226B988070074C7A7 /* MainContainerViewController.swift */; };
+		EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B526B996560074C7A7 /* MainReactor.swift */; };
 		EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB0CA126A8F05000BF3576 /* ViewRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,11 +50,11 @@
 		EA03A1EE26A55449005B37D2 /* FirstReactorKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstReactorKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA03A1F126A55449005B37D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA03A1F326A55449005B37D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EA03A1F526A55449005B37D2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EA03A1F526A55449005B37D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA03A1FA26A5544A005B37D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA03A1FD26A5544A005B37D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA03A1FF26A5544A005B37D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA03A21826A5777D005B37D2 /* MainReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReactor.swift; sourceTree = "<group>"; };
+		EA03A21826A5777D005B37D2 /* HomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReactor.swift; sourceTree = "<group>"; };
 		EA03A21C26A578D5005B37D2 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		EA03A22126A578EE005B37D2 /* SplashReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashReactor.swift; sourceTree = "<group>"; };
 		EA03A22526A57997005B37D2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -74,6 +78,10 @@
 		EA6F714526A93B360004FB02 /* ImageViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewBuilder.swift; sourceTree = "<group>"; };
 		EA6F714826A94C560004FB02 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		EABB572126A807A4004323AE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		EAE6B1AD26B985070074C7A7 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		EAE6B1AF26B987A10074C7A7 /* BottomMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuViewController.swift; sourceTree = "<group>"; };
+		EAE6B1B226B988070074C7A7 /* MainContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
+		EAE6B1B526B996560074C7A7 /* MainReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReactor.swift; sourceTree = "<group>"; };
 		EAFB0CA126A8F05000BF3576 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,22 +256,50 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		EADF2EE026B1200D00572B99 /* Main */ = {
+		EADF2EE026B1200D00572B99 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				EA03A1F526A55449005B37D2 /* MainViewController.swift */,
-				EA03A21826A5777D005B37D2 /* MainReactor.swift */,
+				EA03A1F526A55449005B37D2 /* HomeViewController.swift */,
+				EA03A21826A5777D005B37D2 /* HomeReactor.swift */,
 			);
-			path = Main;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		EADF2EE126B1201500572B99 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				EAE6B1B426B996490074C7A7 /* Main */,
+				EAE6B1B126B987A70074C7A7 /* BottomMenu */,
 				EA03A21B26A578CD005B37D2 /* Splash */,
-				EADF2EE026B1200D00572B99 /* Main */,
+				EADF2EE026B1200D00572B99 /* Home */,
+				EAE6B1AC26B984E80074C7A7 /* TableView */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		EAE6B1AC26B984E80074C7A7 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6B1AD26B985070074C7A7 /* TableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		EAE6B1B126B987A70074C7A7 /* BottomMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6B1AF26B987A10074C7A7 /* BottomMenuViewController.swift */,
+			);
+			path = BottomMenu;
+			sourceTree = "<group>";
+		};
+		EAE6B1B426B996490074C7A7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6B1B226B988070074C7A7 /* MainContainerViewController.swift */,
+				EAE6B1B526B996560074C7A7 /* MainReactor.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		EAFB0CA026A8F04600BF3576 /* Router */ = {
@@ -388,7 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA03A1F626A55449005B37D2 /* MainViewController.swift in Sources */,
+				EA03A1F626A55449005B37D2 /* HomeViewController.swift in Sources */,
 				EA03A22226A578EE005B37D2 /* SplashReactor.swift in Sources */,
 				EA03A23C26A646E9005B37D2 /* NetworkChecker.swift in Sources */,
 				EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */,
@@ -396,11 +432,12 @@
 				EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */,
 				EA6F714626A93B360004FB02 /* ImageViewBuilder.swift in Sources */,
 				EA03A24026A646E9005B37D2 /* API.swift in Sources */,
+				EAE6B1B326B988070074C7A7 /* MainContainerViewController.swift in Sources */,
 				EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */,
 				EABB572226A807A4004323AE /* Todo.swift in Sources */,
 				EA03A23A26A646E9005B37D2 /* AlertUtils.swift in Sources */,
 				EA03A24326A646E9005B37D2 /* TextFieldBuilder.swift in Sources */,
-				EA03A21926A5777D005B37D2 /* MainReactor.swift in Sources */,
+				EA03A21926A5777D005B37D2 /* HomeReactor.swift in Sources */,
 				EA03A23D26A646E9005B37D2 /* RequestBuilder.swift in Sources */,
 				EA03A21D26A578D5005B37D2 /* SplashViewController.swift in Sources */,
 				EA6F714426A93AAD0004FB02 /* SplashLogoView.swift in Sources */,
@@ -412,7 +449,10 @@
 				EA03A23E26A646E9005B37D2 /* NetworkService.swift in Sources */,
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
+				EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */,
 				EA03A24626A646E9005B37D2 /* Validation.swift in Sources */,
+				EAE6B1AE26B985070074C7A7 /* TableViewController.swift in Sources */,
+				EAE6B1B026B987A10074C7A7 /* BottomMenuViewController.swift in Sources */,
 				EA03A24226A646E9005B37D2 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
