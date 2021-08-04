@@ -15,7 +15,7 @@ enum BottomMenuState {
     var amount: CGFloat {
         switch self {
         case .CLOSED:
-            return 100
+            return BottomMenuIndicator.INDICATOR_HEIGHT
         case .EXPANDED:
             return UIScreen.main.bounds.size.height - 100
         }
@@ -23,6 +23,7 @@ enum BottomMenuState {
 }
 
 class BottomMenuIndicator: UIView {
+    static let INDICATOR_HEIGHT: CGFloat = 100
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,23 +52,6 @@ class BottomMenuViewController: UIViewController {
         self.view.backgroundColor = .white
         self.view.layer.masksToBounds = true
         self.view.layer.cornerRadius = currentHeight / 2
-        
-//        self.view.addGestureRecognizer(tapGesture)
-//        self.tapGesture.rx.event
-//            .asDriver()
-//            .drive(onNext: { tap in
-//                //update bottom menu height
-//            }, onCompleted: {
-//                //completed
-//            })
-//            .disposed(by: disposeBag)
-//
-//        self.dragGesture.rx.event
-//            .asDriver()
-//            .drive(onNext: { gesture in
-//
-//            })
-//            .disposed(by: disposeBag)
         
         self.view.addSubview(indicator)
         self.indicator.snp.makeConstraints { create in

@@ -1,5 +1,5 @@
 //
-//  MainContainerViewController.swift
+//  MainViewController.swift
 //  FirstReactorKit
 //
 //  Created by 권성우 on 2021/08/03.
@@ -10,12 +10,12 @@ import RxCocoa
 import SnapKit
 import ReactorKit
 
-class MainContainerViewController: UIViewController {
+class MainViewController: UIViewController {
     
     var bottomMenuViewBottomOffset: Constraint?
-    var bottomMenuState: BottomMenuState = .CLOSED
+    var bottomMenutapGesture = UITapGestureRecognizer()
     
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     let mainContentViewController: HomeViewController = {
         let vc = HomeViewController()
         let homeReactor = HomeReactor()
@@ -28,6 +28,11 @@ class MainContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setChilds()
+        self.setGestures()
+    }
+    
+    private func setChilds() {
         self.addChild(mainContentViewController)
         self.view.addSubview(mainContentViewController.view)
         self.mainContentViewController.willMove(toParent: self)
@@ -38,16 +43,11 @@ class MainContainerViewController: UIViewController {
         self.bottomMenuViewController.willMove(toParent: self)
         bottomMenuViewController.didMove(toParent: self)
         
-        let tapGesture = UITapGestureRecognizer()
-        self.bottomMenuViewController.view.addGestureRecognizer(tapGesture)
-        tapGesture.rx.event
-            .bind(onNext: { [weak self] tap in
-                guard let self = self else { return }
-                self.mutateBottomMenuOffset()
-            })
-            .disposed(by: disposeBag)
-        
         setBottomMenuViewConstraints()
+    }
+    
+    private func setGestures() {
+        self.bottomMenuViewController.view.addGestureRecognizer(bottomMenutapGesture)
     }
     
     private func setBottomMenuViewConstraints() {
@@ -55,29 +55,47 @@ class MainContainerViewController: UIViewController {
             guard let self = self else { return }
             create.left.right.equalToSuperview()
             self.bottomMenuViewBottomOffset = create.top.equalTo(self.view.snp.bottom)
-                .offset(-self.bottomMenuState.amount).constraint
-            create.height.equalToSuperview().offset(-100)
+                .offset(-(self.reactor?.currentState.bottomMenuState.amount ?? 0)).constraint
+            create.height.equalToSuperview()
+                .offset(reactor?.currentState.bottomMenuState.amount ?? 0)
             
             bottomMenuViewBottomOffset?.activate()
         }
     }
     
-    private func toggleBottomMenuState() {
-        switch self.bottomMenuState {
-        case .CLOSED:
-            self.bottomMenuState = .EXPANDED
-        case .EXPANDED:
-            self.bottomMenuState = .CLOSED
-        }
-    }
-    
-    private func mutateBottomMenuOffset() {
-        UIView.animate(withDuration: 0.5) { [weak self] in
+    private func mutateBottomMenuOffset(offset: CGFloat) {
+        UIView.animate(withDuration: 0.5, delay: 0,
+                       usingSpringWithDamping: 0.9,
+                       initialSpringVelocity: 5) { [weak self] in
             guard let self = self else { return }
-            self.toggleBottomMenuState()
             self.bottomMenuViewBottomOffset?
-                .update(offset: -self.bottomMenuState.amount)
+                .update(offset: -offset)
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+extension MainViewController: View {
+    typealias Reactor = MainReactor
+    
+    func bind(reactor: Reactor) {
+        
+        //Tap Gesture tap event를 bind
+        bottomMenutapGesture.rx.event
+            .map { _ in
+                Reactor.Action.toggleBottomMenu
+            }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        //reactor의 offset 이벤트 처리
+        reactor.state
+            .skip(1)
+            .map { $0.bottomMenuState.amount }
+            .bind { [weak self] offset in
+                guard let self = self else { return }
+                self.mutateBottomMenuOffset(offset: offset)
+            }
+            .disposed(by: disposeBag)
     }
 }

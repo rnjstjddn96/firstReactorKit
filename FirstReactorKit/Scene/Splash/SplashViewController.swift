@@ -62,7 +62,9 @@ extension SplashViewController: View {
             .observe(on:MainScheduler.asyncInstance)
             .delay(.milliseconds(300), scheduler: MainScheduler.instance)
             .map { _ in
-                let destination = MainContainerViewController()
+                let destination = MainViewController()
+                let reactor = MainReactor()
+                destination.reactor = reactor
                 return Reactor.Action.route(to: destination)
             }
             .bind(to: reactor.action)
@@ -127,7 +129,7 @@ extension SplashViewController: View {
             .subscribe(onNext: { [weak self] failure in
                 guard let self = self else { return }
                 self.showAlert(title: "유저정보를 받아오지 못했습니다.",
-                               message: "")
+                               message: failure?.resultMessage ?? "")
             })
             .disposed(by: disposeBag)
 
@@ -138,7 +140,7 @@ extension SplashViewController: View {
             .subscribe(onNext: { [weak self] error in
                 guard let self = self else { return }
                 self.showAlert(title: "유저정보를 받아오지 못했습니다.",
-                               message: "")
+                               message: error?.localizedDescription ?? "")
             })
             .disposed(by: disposeBag)
     }

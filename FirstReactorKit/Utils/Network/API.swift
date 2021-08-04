@@ -56,7 +56,7 @@ extension API: RequestBuilder {
                 headers["Content-Type"] = "Application/json"
                 return headers
             case .GET_PROFILE:
-                headers["X-Auth-Token"] = "T2h9fS8tgajxOG+fjAxB4QIJECZ0GrDVCcucJO4G/xNbdQaqBgP8f2zgN4bGOAsRqrVjW5MayNV8M3Ifva9vaO/aWXXinGs6zs9I3Zt0nOayQSAT02+jJby03WyyZyP3Ewib0/OtncAESQGNhb0bnHj+TkeP8BFyt+XhdYN2MxFaq13+WjTNQaNW6rguwdtlOHWnTqTZk7M30HyKWFJ6cXml8cxHGyswmxP8UXU567luvN3VOMSRA/K/eAywRUqIgO/cGdjIP1NABfPzDuXJUKHmDO5/4U002iP6xoGHubhCyC5Jjo+GBencMHkj58nC9WzHsiqkpcHYQwQtjRyEk0yWjnxIgg3K2TEzm1ss7IPXQYZlMvynpDiJwMMGG7oIOhdD8yaZFTFetxAp08+x7grKazLnqxNNwLuZBY3UXkoSXa1cGrO8U7Fslke4aqHsk0FlPEsAOH22R8AoSy1Dup/L6saorqIJ/MaNX25SiWgss/Sf/mq/GjJT93owOe4OQVjv7dXlb0ixJhOuoRUeTPQyInQUzV7L6oi2gK1H5AC4Bv0J9eDpGop6F19dZcGcCvQHJqJzv1uy7vL/N0wIQQD8oODW6UwV+HBglj1X70ac89Ca/B7XVxchirBcFPLsT88dNlxgDkqP0cDr8yAbEUtlUuk2bIyWyGgoMXXGyU8="
+                headers["X-Auth-Token"] = "svt9CJSguQBTyxGj2ZxMdwdbIHNg/4sA5HCVYZzpVjxSjasnV3+AuqfJ4Ohs/cEPdysaC+9ioR/TJ4K+TQhw1fjBF78SFZ4UDWCqYHKiKgpR1k7nRTM9tX0wmrePxMsJEFc3pp2Svh/38OySEMlyIlidHz7hdjLOC4RZH/NAaQfYuBBqC56YCHmXVytY5S5gIkSX8c4OBx7ZSQJa09V1IvEfQtPLZ1X47Uf6LdneCSl8anlxPSNnaaA5P3SntGEjHg81k1m6OoCnObMVpywl4AA4XstB6Sf1xF7nEVtHpumYvUSheJ5WHiiNHd5cK0b5LrfUn1xqt/aHUVksh/yOTuHrq7CVKXKv8JvF1+J1fddiGZyMiClaIwg2uSyr620wTEbMt44xJH91meSJBsE9EEk6eA8Sy6S3eXPARfEx8XPSDGPQm+fr3x/Ddjx3I/cbw5mJR2ylIVo7nu6vEadOfbh815Nq9k+SsE0fOdiMF9p9rdwrmyV5DwC2xT7pG0Vz3CgFZPcHzjAfw0iP0KW/tcntFjjhdT1FEsBBaS0pCXlAqiv8B7zJB9zyZCCDdw7XnUXl1XmO501d2eyjZ8209L37Wf+/u440lTFrV5QhREQPV8BwOMJj3Mq9pWjNmmy/iwE7m81hfZbdZg/UUgcC9NAkRYpnMrcL2BrNhxwznZI="
                 return headers
         }
     }
