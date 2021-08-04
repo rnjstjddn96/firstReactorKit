@@ -66,10 +66,10 @@ class HomeViewController: UIViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        btnToTable.rx.tap
-            .map { Reactor.Action.route(to: TableViewController()) }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+//        btnToTable.rx.tap
+//            .map { Reactor.Action.route(to: TableViewController()) }
+//            .bind(to: reactor.action)
+//            .disposed(by: disposeBag)
         
         reactor.state
             .map { $0.value }

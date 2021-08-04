@@ -22,42 +22,70 @@ enum BottomMenuState {
     }
 }
 
-class BottomMenuIndicator: UIView {
-    static let INDICATOR_HEIGHT: CGFloat = 100
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = .yellow
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-}
-
 class BottomMenuViewController: UIViewController {
-    
+
     let indicator = BottomMenuIndicator()
     var disposeBag = DisposeBag()
     
-    //Reactor로 이동 필요
-    let currentHeight: CGFloat = 100            //MainReactor로 부터 값 조정
-    
-    //improvement: RxGesture
-    let tapGesture = UITapGestureRecognizer()
-    let dragGesture = UIGestureRecognizer()
+    let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.view.layer.masksToBounds = true
-        self.view.layer.cornerRadius = currentHeight / 2
+        self.view.layer.cornerRadius = 50
         
         self.view.addSubview(indicator)
         self.indicator.snp.makeConstraints { create in
             create.top.left.right.equalToSuperview()
             create.height.equalTo(100)
         }
+        
+        self.view.addSubview(tableView)
+        tableView.snp.makeConstraints { create in
+            create.top.equalTo(indicator.snp.bottom)
+            create.left.right.bottom.equalToSuperview()
+        }
+        
+        setTableView()
     }
     
+    private func setTableView() {
+        tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.ID)
+    }
+}
+
+extension BottomMenuViewController: View {
+    func bind(reactor: BottomMenuReactor) {
+        
+    }
+}
+
+class BottomMenuReactor: Reactor, APIService {
+    var session: NetworkService = NetworkService()
+    var initialState: State = State()
+    
+    enum Action {
+        
+    }
+    
+    enum Mutation {
+        
+    }
+    
+    struct State {
+        var todos: [Todo] = []
+        
+    }
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        return Observable.create { observer in
+            return Disposables.create()
+        }
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var newState = State()
+        return newState
+    }
 }

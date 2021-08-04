@@ -23,8 +23,12 @@ class MainViewController: UIViewController {
         return vc
     }()
     
-    let bottomMenuViewController = BottomMenuViewController()
-//    let bottomMenuReactor = BottomMenuReactor()
+    let bottomMenuViewController: BottomMenuViewController = {
+        let vc = BottomMenuViewController()
+        let bottomMenuReactor = BottomMenuReactor()
+        vc.reactor = bottomMenuReactor
+        return vc
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +92,16 @@ extension MainViewController: View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+//        bottomMenutapGesture.rx.event
+//            .filter { _ in
+//                reactor.currentState.bottomMenuState == .EXPANDED
+//            }
+//            .map { _ in
+//                Reactor.Action.getTodos
+//            }
+//            .bind(to: reactor.action)
+//            .disposed(by: disposeBag)
+        
         //reactor의 offset 이벤트 처리
         reactor.state
             .skip(1)
@@ -97,5 +111,6 @@ extension MainViewController: View {
                 self.mutateBottomMenuOffset(offset: offset)
             }
             .disposed(by: disposeBag)
+        
     }
 }

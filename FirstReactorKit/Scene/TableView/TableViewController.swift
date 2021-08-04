@@ -9,10 +9,3 @@ import Foundation
 import ReactorKit
 import RxCocoa
 
-class TableViewController: UIViewController {
- 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .white
-    }
-}

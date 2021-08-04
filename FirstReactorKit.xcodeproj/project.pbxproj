@@ -40,6 +40,9 @@
 		EAE6B1B026B987A10074C7A7 /* BottomMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AF26B987A10074C7A7 /* BottomMenuViewController.swift */; };
 		EAE6B1B326B988070074C7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B226B988070074C7A7 /* MainViewController.swift */; };
 		EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B526B996560074C7A7 /* MainReactor.swift */; };
+		EAE6B1B826BA91B70074C7A7 /* BottomMenuIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B726BA91B70074C7A7 /* BottomMenuIndicatorView.swift */; };
+		EAE6B1BA26BA92460074C7A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B926BA92460074C7A7 /* Extensions.swift */; };
+		EAE6B1BC26BA92A90074C7A7 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */; };
 		EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB0CA126A8F05000BF3576 /* ViewRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +85,9 @@
 		EAE6B1AF26B987A10074C7A7 /* BottomMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuViewController.swift; sourceTree = "<group>"; };
 		EAE6B1B226B988070074C7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EAE6B1B526B996560074C7A7 /* MainReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReactor.swift; sourceTree = "<group>"; };
+		EAE6B1B726BA91B70074C7A7 /* BottomMenuIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuIndicatorView.swift; sourceTree = "<group>"; };
+		EAE6B1B926BA92460074C7A7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		EAFB0CA126A8F05000BF3576 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +183,7 @@
 				EA03A22A26A646E8005B37D2 /* Alert */,
 				EA03A22C26A646E9005B37D2 /* Network */,
 				EA03A23826A646E9005B37D2 /* Validation */,
+				EAE6B1B926BA92460074C7A7 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -228,6 +235,8 @@
 			children = (
 				EA6F713D26A9191C0004FB02 /* Indicator.swift */,
 				EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */,
+				EAE6B1B726BA91B70074C7A7 /* BottomMenuIndicatorView.swift */,
+				EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -428,6 +437,7 @@
 				EA03A22226A578EE005B37D2 /* SplashReactor.swift in Sources */,
 				EA03A23C26A646E9005B37D2 /* NetworkChecker.swift in Sources */,
 				EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */,
+				EAE6B1B826BA91B70074C7A7 /* BottomMenuIndicatorView.swift in Sources */,
 				EA03A23F26A646E9005B37D2 /* APIError + APIResult.swift in Sources */,
 				EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */,
 				EA6F714626A93B360004FB02 /* ImageViewBuilder.swift in Sources */,
@@ -436,6 +446,7 @@
 				EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */,
 				EABB572226A807A4004323AE /* Todo.swift in Sources */,
 				EA03A23A26A646E9005B37D2 /* AlertUtils.swift in Sources */,
+				EAE6B1BC26BA92A90074C7A7 /* CustomCell.swift in Sources */,
 				EA03A24326A646E9005B37D2 /* TextFieldBuilder.swift in Sources */,
 				EA03A21926A5777D005B37D2 /* HomeReactor.swift in Sources */,
 				EA03A23D26A646E9005B37D2 /* RequestBuilder.swift in Sources */,
@@ -450,6 +461,7 @@
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
 				EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */,
+				EAE6B1BA26BA92460074C7A7 /* Extensions.swift in Sources */,
 				EA03A24626A646E9005B37D2 /* Validation.swift in Sources */,
 				EAE6B1AE26B985070074C7A7 /* TableViewController.swift in Sources */,
 				EAE6B1B026B987A10074C7A7 /* BottomMenuViewController.swift in Sources */,

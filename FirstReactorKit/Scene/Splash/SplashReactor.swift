@@ -9,7 +9,7 @@ import Foundation
 import ReactorKit
 import Alamofire
 
-enum SplashError: Error {
+enum ReactorError: Error {
     case UNKNOWN
     case NETWORK(failure: APIFailure?, error: APIError?)
     
@@ -29,7 +29,7 @@ class SplashReactor: Reactor, APIService {
     
     enum Action {
         case viewWillAppear
-        case errorOccered(type: SplashError)
+        case errorOccered(type: ReactorError)
         case getUser
         case route(to: UIViewController)
     }
@@ -38,7 +38,7 @@ class SplashReactor: Reactor, APIService {
         case setLoading(Bool)
         case setLogo(Bool)
         case setUser(user: User)
-        case setError(error: SplashError)
+        case setError(error: ReactorError)
         case setAlert(message: String)
         case setDestination(to: UIViewController)
     }
@@ -98,7 +98,7 @@ class SplashReactor: Reactor, APIService {
         case .setError(let error):
             switch error {
             case .UNKNOWN:
-                newState.error = SplashError.UNKNOWN
+                newState.error = ReactorError.UNKNOWN
             case .NETWORK(let failure, let error):
                 newState.failure = failure
                 newState.error = error
