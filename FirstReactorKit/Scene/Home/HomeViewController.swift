@@ -48,6 +48,22 @@ class HomeViewController: UIViewController, View {
         .withCornerRadius(radius: 10)
         .build()
     
+    let btnToken =
+        UIButton.Builder()
+        .withText("GetToken", for: .normal)
+        .withTextColor(.white, for: .normal)
+        .withBackground(color: .black)
+        .withCornerRadius(radius: 10)
+        .build()
+    
+    let btnAnimal =
+        UIButton.Builder()
+        .withText("GetAnimal", for: .normal)
+        .withTextColor(.white, for: .normal)
+        .withBackground(color: .black)
+        .withCornerRadius(radius: 10)
+        .build()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -69,6 +85,65 @@ class HomeViewController: UIViewController, View {
         btnToTable.rx.tap
             .map { Reactor.Action.route(to: TableViewController()) }
             .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        btnToken.rx.tap
+            .map { _ in
+                let param = ["grant_type": "client_credentials",
+                             "client_id": "laHKVVf7SD0zx8O5hjVIcDzIwMwcP7CMHnkGcPS5wLu6h10Np0",
+                             "client_secret": "ZEhiRKXRyL1WBLXRkCVqkJeYnHvx4AvGcPbucUVE"]
+                return Reactor.Action.getToken(param: param)
+            }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        btnAnimal.rx.tap
+            .map { _ in
+                return Reactor.Action.getAnimal
+            }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        reactor.state
+            .asObservable()
+            .map { $0.token }
+            .filter { $0 != nil }
+            .subscribe(onNext: { token in
+                UserDefaultsManager.shared.signIn(apiKey: "laHKVVf7SD0zx8O5hjVIcDzIwMwcP7CMHnkGcPS5wLu6h10Np0",
+                                                  secretKey: "ZEhiRKXRyL1WBLXRkCVqkJeYnHvx4AvGcPbucUVE",
+                                                  token: token?.access_token ?? "")
+            })
+            .disposed(by: disposeBag)
+        
+        reactor.state
+            .asObservable()
+            .map { $0.allAnimal }
+            .filter { $0 != nil }
+            .subscribe(onNext: { animal in
+                print("Animal : \(animal?.animals?.first?.species?.rawValue ?? "animal empty")")
+            })
+            .disposed(by: disposeBag)
+        
+        reactor.state
+            .asObservable()
+            .map { $0.failure }
+            .filter { $0 != nil }
+            .subscribe(onNext: { [weak self] failure in
+                guard let self = self else { return }
+                self.showAlert(title: failure?.detail ?? "",
+                               message: "")
+            })
+            .disposed(by: disposeBag)
+
+        reactor.state
+            .asObservable()
+            .map { $0.error }
+            .filter { $0 != nil }
+            .subscribe(onNext: { [weak self] error in
+                guard let self = self else { return }
+                self.showAlert(title: error?.localizedDescription ?? "",
+                               message: "")
+            })
             .disposed(by: disposeBag)
         
         reactor.state
@@ -101,6 +176,8 @@ class HomeViewController: UIViewController, View {
         self.view.addSubview(btnInc)
         self.view.addSubview(btnDec)
         self.view.addSubview(btnToTable)
+        self.view.addSubview(btnToken)
+        self.view.addSubview(btnAnimal)
         
         self.view.backgroundColor = .orange
         
@@ -125,5 +202,30 @@ class HomeViewController: UIViewController, View {
             create.width.equalTo(80)
             create.height.equalTo(50)
         }
+        
+        btnToken.snp.makeConstraints { create in
+            create.top.equalTo(btnToTable.snp.bottom).offset(30)
+            create.centerX.equalToSuperview()
+            create.width.equalTo(80)
+            create.height.equalTo(50)
+        }
+        
+        btnAnimal.snp.makeConstraints { create in
+            create.top.equalTo(btnToken.snp.bottom).offset(30)
+            create.centerX.equalToSuperview()
+            create.width.equalTo(80)
+            create.height.equalTo(50)
+        }
     }
+    
+    private func showAlert(title: String, message: String) {
+        AlertUtils.displayBasicAlert(controller: self,
+                                     title: title, message: message,
+                                     showCancelButton: false,
+                                     okButtonTitle: "확인",
+                                     cancelButtonTitle: nil,
+                                     okButtonCallback: nil,
+                                     cancelButtonCallback: nil)
+    }
+    
 }

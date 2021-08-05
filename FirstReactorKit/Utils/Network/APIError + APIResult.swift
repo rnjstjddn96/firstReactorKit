@@ -34,6 +34,7 @@ struct APIFailure: Codable {
     var statusCode: Int?
     var message: String?
     var name: String?
+    var detail: String?
 }
 
 enum NetworkError: Int, Error {

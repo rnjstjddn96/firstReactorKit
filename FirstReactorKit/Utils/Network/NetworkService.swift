@@ -24,7 +24,7 @@ final class NetworkService: NetworkServiceInterface {
                         -> Observable<APIResult<T>> where T: Codable {
         
         log.debug("""
-        REQUEST:\n\(apiBuilder.path)\nHEADER:\n\(apiBuilder.headers)
+        REQUEST:\n\(apiBuilder.path)\nHEADER:\n\(apiBuilder.headers ?? HTTPHeaders())
         PARAMETER:\n\(String(describing: apiBuilder.parameters))
         """)
         
@@ -42,8 +42,9 @@ final class NetworkService: NetworkServiceInterface {
                 method: apiBuilder.method,
                 parameters: apiBuilder.parameters,
                 headers: apiBuilder.headers,
-                interceptor: nil
+                interceptor: apiBuilder.interceptor
             )
+            .validate()
             .responseData { response in
                 switch response.result {
                 case let .success(data):

@@ -12,5 +12,6 @@ struct NetworkConfig {
     static let API_VERSION = "v2"
     
     static let url: URL = URL(string: "\(baseUrl)\(API_SERVICE)")!
+    static let animalUrl: URL = URL(string: "https://api.petfinder.com")!
 }
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3842FF8A26BA763A0009C885 /* AllAnimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8826BA763A0009C885 /* AllAnimal.swift */; };
+		3842FF8B26BA763A0009C885 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8926BA763A0009C885 /* Token.swift */; };
+		3842FF8D26BA777B0009C885 /* CustomInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8C26BA777B0009C885 /* CustomInterceptor.swift */; };
+		3842FF8F26BA77830009C885 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8E26BA77830009C885 /* UserDefaultsManager.swift */; };
 		B5D92B349578544B7A5582E9 /* Pods_FirstReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FEC6067F16A9E93D93864E /* Pods_FirstReactorKit.framework */; };
 		EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A1F126A55449005B37D2 /* AppDelegate.swift */; };
 		EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A1F326A55449005B37D2 /* SceneDelegate.swift */; };
@@ -45,6 +49,10 @@
 
 /* Begin PBXFileReference section */
 		2A91F7B0E74B8C89ABEB9FA9 /* Pods-FirstReactorKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstReactorKit.debug.xcconfig"; path = "Target Support Files/Pods-FirstReactorKit/Pods-FirstReactorKit.debug.xcconfig"; sourceTree = "<group>"; };
+		3842FF8826BA763A0009C885 /* AllAnimal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAnimal.swift; sourceTree = "<group>"; };
+		3842FF8926BA763A0009C885 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		3842FF8C26BA777B0009C885 /* CustomInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInterceptor.swift; sourceTree = "<group>"; };
+		3842FF8E26BA77830009C885 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		3BFE01EE64AF38667F65F56F /* Pods-FirstReactorKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstReactorKit.release.xcconfig"; path = "Target Support Files/Pods-FirstReactorKit/Pods-FirstReactorKit.release.xcconfig"; sourceTree = "<group>"; };
 		48FEC6067F16A9E93D93864E /* Pods_FirstReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA03A1EE26A55449005B37D2 /* FirstReactorKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstReactorKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +173,8 @@
 			children = (
 				EA03A22526A57997005B37D2 /* User.swift */,
 				EABB572126A807A4004323AE /* Todo.swift */,
+				3842FF8826BA763A0009C885 /* AllAnimal.swift */,
+				3842FF8926BA763A0009C885 /* Token.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +209,8 @@
 				EA03A23126A646E9005B37D2 /* APIError + APIResult.swift */,
 				EA03A23226A646E9005B37D2 /* API.swift */,
 				EA03A23326A646E9005B37D2 /* NetworkConfig.swift */,
+				3842FF8E26BA77830009C885 /* UserDefaultsManager.swift */,
+				3842FF8C26BA777B0009C885 /* CustomInterceptor.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -426,14 +438,17 @@
 			files = (
 				EA03A1F626A55449005B37D2 /* HomeViewController.swift in Sources */,
 				EA03A22226A578EE005B37D2 /* SplashReactor.swift in Sources */,
+				3842FF8F26BA77830009C885 /* UserDefaultsManager.swift in Sources */,
 				EA03A23C26A646E9005B37D2 /* NetworkChecker.swift in Sources */,
 				EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */,
 				EA03A23F26A646E9005B37D2 /* APIError + APIResult.swift in Sources */,
 				EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */,
 				EA6F714626A93B360004FB02 /* ImageViewBuilder.swift in Sources */,
+				3842FF8B26BA763A0009C885 /* Token.swift in Sources */,
 				EA03A24026A646E9005B37D2 /* API.swift in Sources */,
 				EAE6B1B326B988070074C7A7 /* MainViewController.swift in Sources */,
 				EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */,
+				3842FF8D26BA777B0009C885 /* CustomInterceptor.swift in Sources */,
 				EABB572226A807A4004323AE /* Todo.swift in Sources */,
 				EA03A23A26A646E9005B37D2 /* AlertUtils.swift in Sources */,
 				EA03A24326A646E9005B37D2 /* TextFieldBuilder.swift in Sources */,
@@ -441,6 +456,7 @@
 				EA03A23D26A646E9005B37D2 /* RequestBuilder.swift in Sources */,
 				EA03A21D26A578D5005B37D2 /* SplashViewController.swift in Sources */,
 				EA6F714426A93AAD0004FB02 /* SplashLogoView.swift in Sources */,
+				3842FF8A26BA763A0009C885 /* AllAnimal.swift in Sources */,
 				EA6F714926A94C560004FB02 /* UserManager.swift in Sources */,
 				EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */,
 				EA03A24126A646E9005B37D2 /* NetworkConfig.swift in Sources */,

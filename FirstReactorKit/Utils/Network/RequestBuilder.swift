@@ -13,9 +13,11 @@ protocol RequestBuilder {
     typealias Multiparts = [String: Data?]
 //    var request: DataRequest { get }
     var url: URL { get }
-    var headers: HTTPHeaders { get }
+    var headers: HTTPHeaders? { get }
     var parameters: Parameters? { get }
     var multipartData: Multiparts? { get }
     var method: HTTPMethod { get }
     var path: String { get }
+    var encoding: ParameterEncoding? { get }
+    var interceptor: RequestInterceptor? { get }
 }

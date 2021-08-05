@@ -8,6 +8,7 @@
 import UIKit
 import SwiftyBeaver
 
+var cnt = 1
 let log = SwiftyBeaver.self
 let SIZE = UIScreen.main.bounds.size
 @main

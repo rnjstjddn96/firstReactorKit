@@ -23,4 +23,12 @@ extension APIService {
     func getProfile() -> Observable<APIResult<User>> {
         return session.request(API.GET_PROFILE)
     }
+    
+    func getToken(param: [String: Any]) -> Observable<APIResult<Token>> {
+        return session.request(API.GET_TOKEN(param: param))
+    }
+    
+    func getAnimal() -> Observable<APIResult<AllAnimal>> {
+        return session.request(API.GET_ANIMAL)
+    }
 }

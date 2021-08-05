@@ -8,11 +8,15 @@
 import Foundation
 import ReactorKit
 
-class HomeReactor: Reactor {
+class HomeReactor: Reactor, APIService {
+    var session: NetworkService = NetworkService()
+    
     enum Action {
         case increase
         case decrease
         case route(to: UIViewController)
+        case getToken(param: [String: Any])
+        case getAnimal
     }
     
     enum Mutation {
@@ -20,12 +24,19 @@ class HomeReactor: Reactor {
         case decreaseValue
         case setLoading(Bool)
         case setDestinaion(view: UIViewController)
+        case setToken(token: Token)
+        case setError(error: SplashError)
+        case setAnimal(allAnimal: AllAnimal)
     }
     
     struct State {
         var value: Int = 0
         var isLoading: Bool = false
         var destination: UIViewController?
+        var token: Token?
+        var failure: APIFailure?
+        var error: Error?
+        var allAnimal: AllAnimal?
     }
     
     let initialState: State
@@ -56,6 +67,35 @@ class HomeReactor: Reactor {
                 observer.onCompleted()
                 return Disposables.create()
             }
+        case .getToken(param: let param):
+            return Observable.concat([
+                     self.getToken(param: param)
+                         .map { result in
+                         if let data = result.value {
+                             return Mutation.setToken(token: data)
+                         } else {
+                             return Mutation.setError(
+                                 error: .NETWORK(failure: result.failed,
+                                                 error: result.error)
+                             )
+                         }
+                     }
+                 ])
+        case .getAnimal:
+            return Observable.concat([
+                     self.getAnimal()
+                        .debug("getAnimal")
+                         .map { result in
+                         if let data = result.value {
+                             return Mutation.setAnimal(allAnimal: data)
+                         } else {
+                             return Mutation.setError(
+                                 error: .NETWORK(failure: result.failed,
+                                                 error: result.error)
+                             )
+                         }
+                     }
+                 ])
         }
     }
     
@@ -70,6 +110,18 @@ class HomeReactor: Reactor {
             newState.isLoading = loading
         case .setDestinaion(view: let view):
             newState.destination = view
+        case .setToken(token: let token):
+            newState.token = token
+        case .setError(let error):
+            switch error {
+            case .UNKNOWN:
+                newState.error = SplashError.UNKNOWN
+            case .NETWORK(let failure, let error):
+                newState.failure = failure
+                newState.error = error
+            }
+        case .setAnimal(allAnimal: let dogAnimal):
+            newState.allAnimal = dogAnimal
         }
         return newState
     }
