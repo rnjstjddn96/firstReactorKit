@@ -19,7 +19,7 @@ class HomeReactor: Reactor {
         case increaseValue
         case decreaseValue
         case setLoading(Bool)
-        case setUser(user: User)
+        case setAuthorization(authorized: Authorization)
         case setDestinaion(view: UIViewController)
     }
     
@@ -64,9 +64,10 @@ class HomeReactor: Reactor {
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
         return Observable.merge(
             mutation,
-            UserManager.current.user
-                .filter { $0 != nil }
-                .map { Mutation.setUser(user: $0!)}
+            UserManager.current.authoriation
+                .map { authorized in
+                    Mutation.setAuthorization(authorized: authorized)
+                }
         )
     }
     
@@ -81,8 +82,14 @@ class HomeReactor: Reactor {
             newState.isLoading = loading
         case .setDestinaion(view: let view):
             newState.destination = view
-        case .setUser(user: let user):
-            newState.user = user
+        case .setAuthorization(authorized: let authorized):
+            switch authorized {
+            case .AUTHORIZED(user: let user):
+                newState.user = user
+            case .UNAUTHORIZED:
+                break;
+            }
+
         }
         return newState
     }

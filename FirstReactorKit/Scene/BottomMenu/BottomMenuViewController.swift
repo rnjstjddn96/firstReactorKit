@@ -61,9 +61,16 @@ extension BottomMenuViewController: View {
     }
 }
 
+
 class BottomMenuReactor: Reactor, APIService {
     var session: NetworkService = NetworkService()
     var initialState: State = State()
+    
+    let service: BottomMenuServiceProtocol
+    
+    init(service: BottomMenuServiceProtocol) {
+        self.service = service
+    }
     
     enum Action {
         
@@ -88,4 +95,5 @@ class BottomMenuReactor: Reactor, APIService {
         var newState = State()
         return newState
     }
+    
 }

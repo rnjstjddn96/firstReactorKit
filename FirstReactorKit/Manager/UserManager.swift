@@ -9,17 +9,22 @@ import Foundation
 import UIKit
 import RxSwift
 
+enum Authorization: Equatable {
+    case AUTHORIZED(user: User)
+    case UNAUTHORIZED
+}
+
 class UserManager {
     static let current = UserManager()
-    var user = BehaviorSubject<User?>(value: nil)
+    var authoriation = BehaviorSubject<Authorization>(value: .UNAUTHORIZED)
 
     private init() { }
     
-    func updateUser(user: User) {
-        self.user.onNext(user)
+    func authorize(user: User) {
+        self.authoriation.onNext(.AUTHORIZED(user: user))
     }
     
     func deleteUser() {
-        self.user.onNext(nil)
+        self.authoriation.onNext(.UNAUTHORIZED)
     }
 }

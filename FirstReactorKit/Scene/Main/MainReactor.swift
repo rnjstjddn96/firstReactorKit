@@ -12,8 +12,14 @@ class MainReactor: Reactor, APIService {
     var initialState: State = State()
     var session: NetworkService = NetworkService()
     
+    let bottomMenuService: BottomMenuServiceProtocol
+    
+    init(bottomMenuService: BottomMenuServiceProtocol) {
+        self.bottomMenuService = bottomMenuService
+    }
+    
     enum Action {
-        case toggleBottomMenu
+//        case toggleBottomMenu
         case showIndicator
         case hideIndicator
         case showError(error: ReactorError)
@@ -40,14 +46,24 @@ class MainReactor: Reactor, APIService {
         return currentState == .CLOSED ? .EXPANDED : .CLOSED
     }
     
+    func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
+        let bottomMenuEventMutation = bottomMenuService.eventRelay
+            .asObservable()
+            .flatMap { event -> Observable<Mutation> in
+                return .just(.setBottomMenuState(event.menuState))
+            }
+        return Observable.merge(mutation, bottomMenuEventMutation)
+    }
+    
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .toggleBottomMenu:
-            return Observable.just(
-                Mutation.setBottomMenuState(
-                    getToggledBottomMenuState(currentState: currentState.bottomMenuState)
-                )
-            )
+//        case .toggleBottomMenu:
+//            return
+//                Observable.just(
+//                Mutation.setBottomMenuState(
+//                    getToggledBottomMenuState(currentState: currentState.bottomMenuState)
+//                )
+//            )
         case .getTodos:
             return Observable.concat([
                 Observable.just(Mutation.setIndicator(isOn: true)),
@@ -87,5 +103,13 @@ class MainReactor: Reactor, APIService {
             newState.error = error
         }
         return newState
+    }
+    
+    func reactorForBottomMenu() -> BottomMenuReactor {
+        return BottomMenuReactor(service: bottomMenuService)
+    }
+    
+    func reactorForHome() -> HomeReactor {
+        return HomeReactor()
     }
 }

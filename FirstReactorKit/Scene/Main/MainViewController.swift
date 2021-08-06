@@ -25,12 +25,7 @@ class MainViewController: UIViewController {
         return vc
     }()
     
-    let bottomMenuViewController: BottomMenuViewController = {
-        let vc = BottomMenuViewController()
-        let bottomMenuReactor = BottomMenuReactor()
-        vc.reactor = bottomMenuReactor
-        return vc
-    }()
+    let bottomMenuViewController = BottomMenuViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +36,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         didEnterMainView.on(.next(()))
+        didEnterMainView.on(.completed)
     }
     
     private func setChilds() {
@@ -49,6 +45,8 @@ class MainViewController: UIViewController {
         self.homeViewController.willMove(toParent: self)
         self.homeViewController.didMove(toParent: self)
         
+        let bottomMenuReactor = self.reactor?.reactorForBottomMenu()
+        bottomMenuViewController.reactor = bottomMenuReactor
         self.addChild(bottomMenuViewController)
         self.view.addSubview(bottomMenuViewController.view)
         self.bottomMenuViewController.willMove(toParent: self)
@@ -104,18 +102,16 @@ extension MainViewController: View {
     func bind(reactor: Reactor) {
         
         //Tap Gesture tap event를 bind
-        bottomMenutapGesture.rx.event
-            .map { _ in
-                Reactor.Action.toggleBottomMenu
-            }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+//        bottomMenutapGesture.rx.event
+//            .map { _ in
+//                Reactor.Action.toggleBottomMenu
+//            }
+//            .bind(to: reactor.action)
+//            .disposed(by: disposeBag)
         
         didEnterMainView
             .delay(.milliseconds(100), scheduler: MainScheduler.instance)
-            .map {
-                Reactor.Action.getTodos
-            }
+            .map { Reactor.Action.getTodos }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         

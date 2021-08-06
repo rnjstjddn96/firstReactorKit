@@ -93,7 +93,7 @@ class SplashReactor: Reactor, APIService {
             newState.isLoading = loading
         case .setAlert(let message):
             newState.message = message
-        case .setUser(let user):
+        case .setUser(user: let user):
             newState.user = user
         case .setError(let error):
             switch error {

@@ -56,14 +56,14 @@ extension SplashViewController: View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        UserManager.current.user
+        UserManager.current.authoriation
             .skip(1)
             .distinctUntilChanged()
             .observe(on:MainScheduler.asyncInstance)
             .delay(.milliseconds(300), scheduler: MainScheduler.instance)
             .map { _ in
                 let destination = MainViewController()
-                let reactor = MainReactor()
+                let reactor = MainReactor(bottomMenuService: BottomMenuService())
                 destination.reactor = reactor
                 return Reactor.Action.route(to: destination)
             }
@@ -114,11 +114,10 @@ extension SplashViewController: View {
         
         reactor.state
             .map { $0.user }
-            .asObservable()
             .distinctUntilChanged()
             .filter { $0 != nil }
             .subscribe(onNext: {
-                UserManager.current.updateUser(user: $0!)
+                UserManager.current.authorize(user: $0!)
             })
             .disposed(by: disposeBag)
         
