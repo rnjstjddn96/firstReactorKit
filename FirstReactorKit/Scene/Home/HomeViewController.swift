@@ -66,10 +66,14 @@ class HomeViewController: UIViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-//        btnToTable.rx.tap
+        btnToTable.rx.tap
 //            .map { Reactor.Action.route(to: TableViewController()) }
 //            .bind(to: reactor.action)
 //            .disposed(by: disposeBag)
+            .bind { _ in
+                _ = BottomMenuManager.shared.updateState(event: .openMenu)
+            }
+            .disposed(by: disposeBag)
         
         reactor.state
             .map { $0.value }

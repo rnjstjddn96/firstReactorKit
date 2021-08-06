@@ -12,12 +12,6 @@ class MainReactor: Reactor, APIService {
     var initialState: State = State()
     var session: NetworkService = NetworkService()
     
-    let bottomMenuService: BottomMenuServiceProtocol
-    
-    init(bottomMenuService: BottomMenuServiceProtocol) {
-        self.bottomMenuService = bottomMenuService
-    }
-    
     enum Action {
         case showIndicator
         case hideIndicator
@@ -58,13 +52,5 @@ class MainReactor: Reactor, APIService {
             newState.error = error
         }
         return newState
-    }
-    
-    func reactorForBottomMenu() -> BottomMenuReactor {
-        return BottomMenuReactor(service: bottomMenuService)
-    }
-    
-    func reactorForHome() -> HomeReactor {
-        return HomeReactor()
     }
 }

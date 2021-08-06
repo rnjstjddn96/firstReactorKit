@@ -11,6 +11,7 @@ import RxCocoa
 
 class BottomMenuViewController: UIViewController {
 
+    var viewWillAppearSubject = PublishSubject<BottomMenuReactor.Action>()
     var bottomMenutapGesture = UITapGestureRecognizer()
     let indicator = BottomMenuIndicator()
     var disposeBag = DisposeBag()
@@ -39,6 +40,12 @@ class BottomMenuViewController: UIViewController {
         setGesture()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewWillAppearSubject.on(.next(BottomMenuReactor.Action.getTodos))
+        viewWillAppearSubject.on(.completed)
+    }
+    
     private func setGesture() {
         indicator.addGestureRecognizer(bottomMenutapGesture)
     }
@@ -50,11 +57,21 @@ class BottomMenuViewController: UIViewController {
 
 extension BottomMenuViewController: View {
     func bind(reactor: BottomMenuReactor) {
+        let manager = BottomMenuManager.shared
         
         bottomMenutapGesture.rx.event
-            .map { _ in
-                Reactor.Action.toggleBottomMenu
-            }
+            .bind(onNext: { _ in
+                switch manager.currentState.value {
+                case .CLOSED:
+                    _ = manager.updateState(event: .openMenu)
+                case .EXPANDED:
+                    _ = manager.updateState(event: .closeMenu)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        viewWillAppearSubject
+            .asObservable()
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }

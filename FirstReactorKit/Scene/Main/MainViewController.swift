@@ -14,13 +14,8 @@ class MainViewController: UIViewController {
     var bottomMenuViewBottomOffset: Constraint?
     
     var disposeBag = DisposeBag()
-    let homeViewController: HomeViewController = {
-        let vc = HomeViewController()
-        let homeReactor = HomeReactor()
-        vc.reactor = homeReactor
-        return vc
-    }()
     
+    let homeViewController = HomeViewController()
     let bottomMenuViewController = BottomMenuViewController()
     
     override func viewDidLoad() {
@@ -33,13 +28,14 @@ class MainViewController: UIViewController {
     }
     
     private func setChilds() {
+        
+        homeViewController.reactor = HomeReactor()
         self.addChild(homeViewController)
         self.view.addSubview(homeViewController.view)
         self.homeViewController.willMove(toParent: self)
         self.homeViewController.didMove(toParent: self)
         
-        let bottomMenuReactor = self.reactor?.reactorForBottomMenu()
-        bottomMenuViewController.reactor = bottomMenuReactor
+        bottomMenuViewController.reactor = BottomMenuReactor()
         self.addChild(bottomMenuViewController)
         self.view.addSubview(bottomMenuViewController.view)
         self.bottomMenuViewController.willMove(toParent: self)
@@ -53,9 +49,10 @@ class MainViewController: UIViewController {
             guard let self = self else { return }
             create.left.right.equalToSuperview()
             self.bottomMenuViewBottomOffset = create.top.equalTo(self.view.snp.bottom)
-                .offset(-(bottomMenuViewController.reactor?.currentState.menuState.amount ?? 0)).constraint
+                .offset(-(BottomMenuManager.shared.currentState.value.amount))
+                .constraint
             create.height.equalToSuperview()
-                .offset(bottomMenuViewController.reactor?.currentState.menuState.amount ?? 0)
+                .offset(BottomMenuManager.shared.currentState.value.amount)
             
             bottomMenuViewBottomOffset?.activate()
         }
@@ -98,19 +95,19 @@ extension MainViewController: View {
             })
             .disposed(by: disposeBag)
         
-        reactor.bottomMenuService
+        BottomMenuManager.shared
             .eventRelay
             .asObservable()
-            .bind { [weak self] event in
+            .bind(onNext: { [weak self] event in
                 guard let self = self else { return }
                 self.mutateBottomMenuOffset(offset: event.menuState.amount)
-                switch event {
-                case .openMenu:
-                    break;
-                case .closeMenu:
-                    break;
-                }
-            }
+//                switch event {
+//                case .openMenu:
+//                    break;
+//                case .closeMenu:
+//                    break;
+//                }
+            })
             .disposed(by: disposeBag)
     }
 }

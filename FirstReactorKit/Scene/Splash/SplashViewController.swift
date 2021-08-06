@@ -63,7 +63,7 @@ extension SplashViewController: View {
             .delay(.milliseconds(300), scheduler: MainScheduler.instance)
             .map { _ in
                 let destination = MainViewController()
-                let reactor = MainReactor(bottomMenuService: BottomMenuService())
+                let reactor = MainReactor()
                 destination.reactor = reactor
                 return Reactor.Action.route(to: destination)
             }
