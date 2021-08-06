@@ -9,21 +9,9 @@ import Foundation
 import ReactorKit
 import RxCocoa
 
-enum BottomMenuState {
-    case EXPANDED, CLOSED
-    
-    var amount: CGFloat {
-        switch self {
-        case .CLOSED:
-            return BottomMenuIndicator.INDICATOR_HEIGHT
-        case .EXPANDED:
-            return UIScreen.main.bounds.size.height - 100
-        }
-    }
-}
-
 class BottomMenuViewController: UIViewController {
 
+    var bottomMenutapGesture = UITapGestureRecognizer()
     let indicator = BottomMenuIndicator()
     var disposeBag = DisposeBag()
     
@@ -48,6 +36,11 @@ class BottomMenuViewController: UIViewController {
         }
         
         setTableView()
+        setGesture()
+    }
+    
+    private func setGesture() {
+        indicator.addGestureRecognizer(bottomMenutapGesture)
     }
     
     private func setTableView() {
@@ -58,42 +51,11 @@ class BottomMenuViewController: UIViewController {
 extension BottomMenuViewController: View {
     func bind(reactor: BottomMenuReactor) {
         
+        bottomMenutapGesture.rx.event
+            .map { _ in
+                Reactor.Action.toggleBottomMenu
+            }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
-}
-
-
-class BottomMenuReactor: Reactor, APIService {
-    var session: NetworkService = NetworkService()
-    var initialState: State = State()
-    
-    let service: BottomMenuServiceProtocol
-    
-    init(service: BottomMenuServiceProtocol) {
-        self.service = service
-    }
-    
-    enum Action {
-        
-    }
-    
-    enum Mutation {
-        
-    }
-    
-    struct State {
-        var todos: [Todo] = []
-        
-    }
-    
-    func mutate(action: Action) -> Observable<Mutation> {
-        return Observable.create { observer in
-            return Disposables.create()
-        }
-    }
-    
-    func reduce(state: State, mutation: Mutation) -> State {
-        var newState = State()
-        return newState
-    }
-    
 }

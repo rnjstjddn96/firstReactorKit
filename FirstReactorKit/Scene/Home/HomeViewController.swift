@@ -96,10 +96,9 @@ class HomeViewController: UIViewController, View {
             .disposed(by: disposeBag)
         
         reactor.state
-            .debug("home user")
             .map { $0.user }
             .subscribe(onNext: {
-                log.debug("home user: \($0)")
+                
             })
             .disposed(by: disposeBag)
     }

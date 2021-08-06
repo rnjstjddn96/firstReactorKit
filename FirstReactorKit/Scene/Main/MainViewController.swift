@@ -11,11 +11,7 @@ import SnapKit
 import ReactorKit
 
 class MainViewController: UIViewController {
-    
-    var didEnterMainView = PublishSubject<Void>()
-    
     var bottomMenuViewBottomOffset: Constraint?
-    var bottomMenutapGesture = UITapGestureRecognizer()
     
     var disposeBag = DisposeBag()
     let homeViewController: HomeViewController = {
@@ -30,13 +26,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setChilds()
-        self.setGestures()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        didEnterMainView.on(.next(()))
-        didEnterMainView.on(.completed)
     }
     
     private func setChilds() {
@@ -55,18 +48,14 @@ class MainViewController: UIViewController {
         setBottomMenuViewConstraints()
     }
     
-    private func setGestures() {
-        self.bottomMenuViewController.view.addGestureRecognizer(bottomMenutapGesture)
-    }
-    
     private func setBottomMenuViewConstraints() {
         self.bottomMenuViewController.view.snp.makeConstraints { [weak self] create in
             guard let self = self else { return }
             create.left.right.equalToSuperview()
             self.bottomMenuViewBottomOffset = create.top.equalTo(self.view.snp.bottom)
-                .offset(-(self.reactor?.currentState.bottomMenuState.amount ?? 0)).constraint
+                .offset(-(bottomMenuViewController.reactor?.currentState.menuState.amount ?? 0)).constraint
             create.height.equalToSuperview()
-                .offset(reactor?.currentState.bottomMenuState.amount ?? 0)
+                .offset(bottomMenuViewController.reactor?.currentState.menuState.amount ?? 0)
             
             bottomMenuViewBottomOffset?.activate()
         }
@@ -100,32 +89,6 @@ extension MainViewController: View {
     typealias Reactor = MainReactor
     
     func bind(reactor: Reactor) {
-        
-        //Tap Gesture tap event를 bind
-//        bottomMenutapGesture.rx.event
-//            .map { _ in
-//                Reactor.Action.toggleBottomMenu
-//            }
-//            .bind(to: reactor.action)
-//            .disposed(by: disposeBag)
-        
-        didEnterMainView
-            .delay(.milliseconds(100), scheduler: MainScheduler.instance)
-            .map { Reactor.Action.getTodos }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        
-        //reactor의 offset 이벤트 처리
-        reactor.state
-            .skip(1)
-            .map { $0.bottomMenuState.amount }
-            .distinctUntilChanged()
-            .bind { [weak self] offset in
-                guard let self = self else { return }
-                self.mutateBottomMenuOffset(offset: offset)
-            }
-            .disposed(by: disposeBag)
-        
         reactor.state
             .map { $0.error }
             .filter { $0 != nil }
@@ -133,6 +96,21 @@ extension MainViewController: View {
                 guard let self = self else { return }
                 self.displayReactorError(error: error!)
             })
+            .disposed(by: disposeBag)
+        
+        reactor.bottomMenuService
+            .eventRelay
+            .asObservable()
+            .bind { [weak self] event in
+                guard let self = self else { return }
+                self.mutateBottomMenuOffset(offset: event.menuState.amount)
+                switch event {
+                case .openMenu:
+                    break;
+                case .closeMenu:
+                    break;
+                }
+            }
             .disposed(by: disposeBag)
     }
 }

@@ -9,6 +9,19 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+enum BottomMenuState {
+    case EXPANDED, CLOSED
+    
+    var amount: CGFloat {
+        switch self {
+        case .CLOSED:
+            return BottomMenuIndicator.INDICATOR_HEIGHT
+        case .EXPANDED:
+            return UIScreen.main.bounds.size.height - 100
+        }
+    }
+}
+
 enum BottomMenuEvent {
     case openMenu
     case closeMenu
