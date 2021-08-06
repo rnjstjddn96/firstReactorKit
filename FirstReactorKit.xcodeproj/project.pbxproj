@@ -11,6 +11,9 @@
 		3842FF8B26BA763A0009C885 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8926BA763A0009C885 /* Token.swift */; };
 		3842FF8D26BA777B0009C885 /* CustomInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8C26BA777B0009C885 /* CustomInterceptor.swift */; };
 		3842FF8F26BA77830009C885 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8E26BA77830009C885 /* UserDefaultsManager.swift */; };
+		389C892E26BBAF2F00142F12 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C892D26BBAF2F00142F12 /* EventViewController.swift */; };
+		389C893026BBB39500142F12 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C892F26BBB39500142F12 /* Extensions.swift */; };
+		389C894026BBC47800142F12 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C893F26BBC47800142F12 /* EventData.swift */; };
 		B5D92B349578544B7A5582E9 /* Pods_FirstReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FEC6067F16A9E93D93864E /* Pods_FirstReactorKit.framework */; };
 		EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A1F126A55449005B37D2 /* AppDelegate.swift */; };
 		EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A1F326A55449005B37D2 /* SceneDelegate.swift */; };
@@ -53,6 +56,20 @@
 		3842FF8926BA763A0009C885 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		3842FF8C26BA777B0009C885 /* CustomInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInterceptor.swift; sourceTree = "<group>"; };
 		3842FF8E26BA77830009C885 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		389C892D26BBAF2F00142F12 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		389C892F26BBB39500142F12 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		389C893426BBBC2200142F12 /* gotham_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gotham_medium.ttf; sourceTree = "<group>"; };
+		389C893526BBBC2200142F12 /* gothambook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothambook.ttf; sourceTree = "<group>"; };
+		389C893626BBBC2200142F12 /* gothamblack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothamblack.ttf; sourceTree = "<group>"; };
+		389C893726BBBC2200142F12 /* notosanscjkkr_light_alphabetic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notosanscjkkr_light_alphabetic.otf; sourceTree = "<group>"; };
+		389C893826BBBC2200142F12 /* ufonts_com_gotham_light_0.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ufonts_com_gotham_light_0.otf; sourceTree = "<group>"; };
+		389C893926BBBC2200142F12 /* notosanscjkkr_regular_alphabetic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notosanscjkkr_regular_alphabetic.otf; sourceTree = "<group>"; };
+		389C893A26BBBC2200142F12 /* notosanscjkkr_medium_alphabetic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notosanscjkkr_medium_alphabetic.otf; sourceTree = "<group>"; };
+		389C893B26BBBC2200142F12 /* notosanscjkkr_thin_alphabetic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notosanscjkkr_thin_alphabetic.otf; sourceTree = "<group>"; };
+		389C893C26BBBC2200142F12 /* gothambold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothambold.ttf; sourceTree = "<group>"; };
+		389C893D26BBBC2200142F12 /* notosans_black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notosans_black.otf; sourceTree = "<group>"; };
+		389C893E26BBBC2200142F12 /* notosanscjkkr_bold_alphabetic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notosanscjkkr_bold_alphabetic.otf; sourceTree = "<group>"; };
+		389C893F26BBC47800142F12 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		3BFE01EE64AF38667F65F56F /* Pods-FirstReactorKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstReactorKit.release.xcconfig"; path = "Target Support Files/Pods-FirstReactorKit/Pods-FirstReactorKit.release.xcconfig"; sourceTree = "<group>"; };
 		48FEC6067F16A9E93D93864E /* Pods_FirstReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA03A1EE26A55449005B37D2 /* FirstReactorKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstReactorKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +122,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		389C892C26BBAF0900142F12 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				389C892D26BBAF2F00142F12 /* EventViewController.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		389C893326BBBC1200142F12 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				389C893426BBBC2200142F12 /* gotham_medium.ttf */,
+				389C893626BBBC2200142F12 /* gothamblack.ttf */,
+				389C893C26BBBC2200142F12 /* gothambold.ttf */,
+				389C893526BBBC2200142F12 /* gothambook.ttf */,
+				389C893D26BBBC2200142F12 /* notosans_black.otf */,
+				389C893E26BBBC2200142F12 /* notosanscjkkr_bold_alphabetic.otf */,
+				389C893726BBBC2200142F12 /* notosanscjkkr_light_alphabetic.otf */,
+				389C893A26BBBC2200142F12 /* notosanscjkkr_medium_alphabetic.otf */,
+				389C893926BBBC2200142F12 /* notosanscjkkr_regular_alphabetic.otf */,
+				389C893B26BBBC2200142F12 /* notosanscjkkr_thin_alphabetic.otf */,
+				389C893826BBBC2200142F12 /* ufonts_com_gotham_light_0.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		BF60006248A5DD5842FD4934 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +218,7 @@
 				EABB572126A807A4004323AE /* Todo.swift */,
 				3842FF8826BA763A0009C885 /* AllAnimal.swift */,
 				3842FF8926BA763A0009C885 /* Token.swift */,
+				389C893F26BBC47800142F12 /* EventData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +231,7 @@
 				EA03A22A26A646E8005B37D2 /* Alert */,
 				EA03A22C26A646E9005B37D2 /* Network */,
 				EA03A23826A646E9005B37D2 /* Validation */,
+				389C892F26BBB39500142F12 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -247,6 +292,7 @@
 		EA6F714126A934640004FB02 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				389C893326BBBC1200142F12 /* Font */,
 				EA6F714226A934690004FB02 /* Loader */,
 			);
 			path = Resource;
@@ -285,6 +331,7 @@
 				EA03A21B26A578CD005B37D2 /* Splash */,
 				EADF2EE026B1200D00572B99 /* Home */,
 				EAE6B1AC26B984E80074C7A7 /* TableView */,
+				389C892C26BBAF0900142F12 /* Event */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -452,9 +499,11 @@
 				EABB572226A807A4004323AE /* Todo.swift in Sources */,
 				EA03A23A26A646E9005B37D2 /* AlertUtils.swift in Sources */,
 				EA03A24326A646E9005B37D2 /* TextFieldBuilder.swift in Sources */,
+				389C894026BBC47800142F12 /* EventData.swift in Sources */,
 				EA03A21926A5777D005B37D2 /* HomeReactor.swift in Sources */,
 				EA03A23D26A646E9005B37D2 /* RequestBuilder.swift in Sources */,
 				EA03A21D26A578D5005B37D2 /* SplashViewController.swift in Sources */,
+				389C893026BBB39500142F12 /* Extensions.swift in Sources */,
 				EA6F714426A93AAD0004FB02 /* SplashLogoView.swift in Sources */,
 				3842FF8A26BA763A0009C885 /* AllAnimal.swift in Sources */,
 				EA6F714926A94C560004FB02 /* UserManager.swift in Sources */,
@@ -466,6 +515,7 @@
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
 				EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */,
+				389C892E26BBAF2F00142F12 /* EventViewController.swift in Sources */,
 				EA03A24626A646E9005B37D2 /* Validation.swift in Sources */,
 				EAE6B1AE26B985070074C7A7 /* TableViewController.swift in Sources */,
 				EAE6B1B026B987A10074C7A7 /* BottomMenuViewController.swift in Sources */,

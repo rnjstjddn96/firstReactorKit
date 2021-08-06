@@ -64,6 +64,14 @@ class HomeViewController: UIViewController, View {
         .withCornerRadius(radius: 10)
         .build()
     
+    let btnEvent =
+        UIButton.Builder()
+        .withText("EventView", for: .normal)
+        .withTextColor(.white, for: .normal)
+        .withBackground(color: .black)
+        .withCornerRadius(radius: 10)
+        .build()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -101,6 +109,11 @@ class HomeViewController: UIViewController, View {
             .map { _ in
                 return Reactor.Action.getAnimal
             }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        btnEvent.rx.tap
+            .map { Reactor.Action.route(to: EventViewController()) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -178,6 +191,7 @@ class HomeViewController: UIViewController, View {
         self.view.addSubview(btnToTable)
         self.view.addSubview(btnToken)
         self.view.addSubview(btnAnimal)
+        self.view.addSubview(btnEvent)
         
         self.view.backgroundColor = .orange
         
@@ -212,6 +226,13 @@ class HomeViewController: UIViewController, View {
         
         btnAnimal.snp.makeConstraints { create in
             create.top.equalTo(btnToken.snp.bottom).offset(30)
+            create.centerX.equalToSuperview()
+            create.width.equalTo(80)
+            create.height.equalTo(50)
+        }
+        
+        btnEvent.snp.makeConstraints { create in
+            create.top.equalTo(btnAnimal.snp.bottom).offset(30)
             create.centerX.equalToSuperview()
             create.width.equalTo(80)
             create.height.equalTo(50)

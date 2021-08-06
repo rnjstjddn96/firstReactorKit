@@ -14,4 +14,6 @@ target 'FirstReactorKit' do
 	pod 'SwiftyJSON'
 	pod 'RxAlamofire'
 	pod 'lottie-ios'
+  pod 'Hero', '~> 1.6.1'
+  pod "RxGesture"
 end
