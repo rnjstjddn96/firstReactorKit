@@ -15,7 +15,7 @@ class SplashViewController: UIViewController {
     var session = NetworkService()
     var disposeBag = DisposeBag()
     
-    var didEnterSplashView = PublishSubject<Bool>()
+    var didEnterSplashView = PublishSubject<Void>()
     
     lazy var loadingIndicator = LoadingIndicator(view: self.view)
     let splashLogoView = SplashLogoView()
@@ -24,7 +24,7 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        didEnterSplashView.onNext(true)
+        didEnterSplashView.onNext(())
     }
     
     private func showAlert(title: String, message: String) {

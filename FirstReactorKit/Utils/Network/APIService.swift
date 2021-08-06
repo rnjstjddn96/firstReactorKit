@@ -17,7 +17,7 @@ protocol APIService {
 
 extension APIService {
     func getTodos() -> Observable<APIResult<[Todo]>> {
-        return session.request(API.TEST(""))
+        return session.request(API.TEST("todos"))
     }
     
     func getProfile() -> Observable<APIResult<User>> {

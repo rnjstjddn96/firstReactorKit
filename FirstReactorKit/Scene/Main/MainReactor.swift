@@ -14,10 +14,12 @@ class MainReactor: Reactor, APIService {
     
     enum Action {
         case toggleBottomMenu
-        case getTodos
         case showIndicator
         case hideIndicator
         case showError(error: ReactorError)
+        
+        //MARK: Data
+        case getTodos
     }
     
     enum Mutation {
@@ -62,6 +64,7 @@ class MainReactor: Reactor, APIService {
                     },
                 Observable.just(Mutation.setIndicator(isOn: false))
             ])
+            
         case .showIndicator:
             return Observable.just(Mutation.setIndicator(isOn: true))
         case .hideIndicator:

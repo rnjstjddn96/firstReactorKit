@@ -16,13 +16,18 @@ enum API {
 extension API: RequestBuilder {
 
     var url: URL {
-        NetworkConfig.url.appendingPathComponent(self.path)
+        switch self {
+        case .TEST(_):
+            return URL(string: "https://jsonplaceholder.typicode.com/")!.appendingPathComponent(self.path)
+        case .GET_PROFILE:
+            return NetworkConfig.url.appendingPathComponent(self.path)
+        }
     }
     
     var path: String {
         switch self {
-        case .TEST(_):
-            return "todos"
+        case .TEST(let test):
+            return test
         case .GET_PROFILE:
             return "appusers/profile"
         }

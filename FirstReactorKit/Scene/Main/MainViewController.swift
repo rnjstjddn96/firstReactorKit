@@ -12,11 +12,13 @@ import ReactorKit
 
 class MainViewController: UIViewController {
     
+    var didEnterMainView = PublishSubject<Void>()
+    
     var bottomMenuViewBottomOffset: Constraint?
     var bottomMenutapGesture = UITapGestureRecognizer()
     
     var disposeBag = DisposeBag()
-    let mainContentViewController: HomeViewController = {
+    let homeViewController: HomeViewController = {
         let vc = HomeViewController()
         let homeReactor = HomeReactor()
         vc.reactor = homeReactor
@@ -36,11 +38,16 @@ class MainViewController: UIViewController {
         self.setGestures()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        didEnterMainView.on(.next(()))
+    }
+    
     private func setChilds() {
-        self.addChild(mainContentViewController)
-        self.view.addSubview(mainContentViewController.view)
-        self.mainContentViewController.willMove(toParent: self)
-        self.mainContentViewController.didMove(toParent: self)
+        self.addChild(homeViewController)
+        self.view.addSubview(homeViewController.view)
+        self.homeViewController.willMove(toParent: self)
+        self.homeViewController.didMove(toParent: self)
         
         self.addChild(bottomMenuViewController)
         self.view.addSubview(bottomMenuViewController.view)
@@ -77,6 +84,18 @@ class MainViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+    
+    private func displayReactorError(error: ReactorError,
+                                     action: (() -> Void)? = nil) {
+        AlertUtils.displayBasicAlert(controller: self,
+                                     title: "에러가 발생했습니다.",
+                                     message: error.desc,
+                                     showCancelButton: false,
+                                     okButtonTitle: "확인",
+                                     cancelButtonTitle: nil,
+                                     okButtonCallback: action,
+                                     cancelButtonCallback: nil)
+    }
 }
 
 extension MainViewController: View {
@@ -92,25 +111,32 @@ extension MainViewController: View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-//        bottomMenutapGesture.rx.event
-//            .filter { _ in
-//                reactor.currentState.bottomMenuState == .EXPANDED
-//            }
-//            .map { _ in
-//                Reactor.Action.getTodos
-//            }
-//            .bind(to: reactor.action)
-//            .disposed(by: disposeBag)
+        didEnterMainView
+            .delay(.milliseconds(100), scheduler: MainScheduler.instance)
+            .map {
+                Reactor.Action.getTodos
+            }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
         //reactor의 offset 이벤트 처리
         reactor.state
             .skip(1)
             .map { $0.bottomMenuState.amount }
+            .distinctUntilChanged()
             .bind { [weak self] offset in
                 guard let self = self else { return }
                 self.mutateBottomMenuOffset(offset: offset)
             }
             .disposed(by: disposeBag)
         
+        reactor.state
+            .map { $0.error }
+            .filter { $0 != nil }
+            .subscribe(onNext: { [weak self] error in
+                guard let self = self else { return }
+                self.displayReactorError(error: error!)
+            })
+            .disposed(by: disposeBag)
     }
 }
