@@ -19,12 +19,14 @@ class HomeReactor: Reactor {
         case increaseValue
         case decreaseValue
         case setLoading(Bool)
+        case setUser(user: User)
         case setDestinaion(view: UIViewController)
     }
     
     struct State {
         var value: Int = 0
         var isLoading: Bool = false
+        var user: User?
         var destination: UIViewController?
     }
     
@@ -59,6 +61,15 @@ class HomeReactor: Reactor {
         }
     }
     
+    func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
+        return Observable.merge(
+            mutation,
+            UserManager.current.user
+                .filter { $0 != nil }
+                .map { Mutation.setUser(user: $0!)}
+        )
+    }
+    
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
@@ -70,6 +81,8 @@ class HomeReactor: Reactor {
             newState.isLoading = loading
         case .setDestinaion(view: let view):
             newState.destination = view
+        case .setUser(user: let user):
+            newState.user = user
         }
         return newState
     }
