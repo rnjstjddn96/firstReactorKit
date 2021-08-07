@@ -57,10 +57,8 @@ class WalletReactor: Reactor, APIService {
                         if let todos = result.value {
                             return Mutation.setTodos(todos: todos)
                         } else {
-                            return Mutation.setError(
-                                error: .NETWORK(failure: result.failed,
-                                                error: result.error)
-                            )
+                            return .setError(error: .NETWORK(failure: result.failed,
+                                                             error: result.error))
                         }
                     },
                 Observable.just(Mutation.setIndicator(isOn: false))
@@ -73,8 +71,9 @@ class WalletReactor: Reactor, APIService {
         }
     }
     
+    var newState = State()
+    
     func reduce(state: State, mutation: Mutation) -> State {
-        var newState = State()
         switch mutation {
         case .setError(error: let error):
             newState.error = error

@@ -19,7 +19,6 @@ class MainReactor: Reactor, APIService {
     }
     
     enum Mutation {
-        case setTodos(todos: [Todo])
         case setIndicator(isOn: Bool)
         case setError(error: ReactorError)
     }
@@ -44,8 +43,6 @@ class MainReactor: Reactor, APIService {
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = State()
         switch mutation {
-        case .setTodos(todos: let todos):
-            newState.todos = todos
         case .setIndicator(isOn: let isOn):
             newState.isLoading = isOn
         case .setError(error: let error):

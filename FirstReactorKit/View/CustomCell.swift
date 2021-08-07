@@ -19,7 +19,7 @@ class CustomCell: UITableViewCell {
     
     let iv: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         return iv
     }()
     
@@ -47,7 +47,7 @@ class CustomCell: UITableViewCell {
         }
     }
     
-    func setCellUI(text: String, image: UIImage) {
+    func bindUI(text: String, image: UIImage) {
         self.label.text = text
         self.iv.image = image
     }

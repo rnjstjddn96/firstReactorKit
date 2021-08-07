@@ -16,7 +16,11 @@ class WalletViewController: UIViewController {
     let indicator = WalletIndicator()
     var disposeBag = DisposeBag()
     
-    let tableView = UITableView()
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.ID)
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +39,10 @@ class WalletViewController: UIViewController {
             create.top.equalTo(indicator.snp.bottom)
             create.left.right.bottom.equalToSuperview()
         }
+        tableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
         
-        setTableView()
         setGesture()
     }
     
@@ -48,10 +54,6 @@ class WalletViewController: UIViewController {
     
     private func setGesture() {
         indicator.addGestureRecognizer(bottomMenutapGesture)
-    }
-    
-    private func setTableView() {
-        tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.ID)
     }
 }
 
@@ -74,5 +76,21 @@ extension WalletViewController: View {
             .asObservable()
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        reactor.state
+            .debug("todos")
+            .map { $0.todos }
+            .bind(to: tableView.rx.items(cellIdentifier: CustomCell.ID,
+                                         cellType: CustomCell.self)) { row, todo, cell in
+                cell.bindUI(text: todo.title ?? "",
+                           image: UIImage(named: "profile")!)
+            }
+            .disposed(by: disposeBag)
+    }
+}
+
+extension WalletViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
