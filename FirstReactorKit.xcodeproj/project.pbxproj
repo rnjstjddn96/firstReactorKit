@@ -35,14 +35,14 @@
 		EA6F714426A93AAD0004FB02 /* SplashLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */; };
 		EA6F714626A93B360004FB02 /* ImageViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F714526A93B360004FB02 /* ImageViewBuilder.swift */; };
 		EA6F714926A94C560004FB02 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F714826A94C560004FB02 /* UserManager.swift */; };
-		EA774DE626BD7C0C0022ABD2 /* BottomMenuReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DE526BD7C0C0022ABD2 /* BottomMenuReactor.swift */; };
-		EA774DE826BDB3AE0022ABD2 /* BottomMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DE726BDB3AE0022ABD2 /* BottomMenuManager.swift */; };
+		EA774DE626BD7C0C0022ABD2 /* WalletReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DE526BD7C0C0022ABD2 /* WalletReactor.swift */; };
+		EA774DE826BDB3AE0022ABD2 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */; };
 		EABB572226A807A4004323AE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB572126A807A4004323AE /* Todo.swift */; };
 		EAE6B1AE26B985070074C7A7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AD26B985070074C7A7 /* TableViewController.swift */; };
-		EAE6B1B026B987A10074C7A7 /* BottomMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AF26B987A10074C7A7 /* BottomMenuViewController.swift */; };
+		EAE6B1B026B987A10074C7A7 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */; };
 		EAE6B1B326B988070074C7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B226B988070074C7A7 /* MainViewController.swift */; };
 		EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B526B996560074C7A7 /* MainReactor.swift */; };
-		EAE6B1B826BA91B70074C7A7 /* BottomMenuIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B726BA91B70074C7A7 /* BottomMenuIndicatorView.swift */; };
+		EAE6B1B826BA91B70074C7A7 /* WalletIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B726BA91B70074C7A7 /* WalletIndicatorView.swift */; };
 		EAE6B1BA26BA92460074C7A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B926BA92460074C7A7 /* Extensions.swift */; };
 		EAE6B1BC26BA92A90074C7A7 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */; };
 		EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB0CA126A8F05000BF3576 /* ViewRouter.swift */; };
@@ -82,14 +82,14 @@
 		EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashLogoView.swift; sourceTree = "<group>"; };
 		EA6F714526A93B360004FB02 /* ImageViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewBuilder.swift; sourceTree = "<group>"; };
 		EA6F714826A94C560004FB02 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		EA774DE526BD7C0C0022ABD2 /* BottomMenuReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuReactor.swift; sourceTree = "<group>"; };
-		EA774DE726BDB3AE0022ABD2 /* BottomMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuManager.swift; sourceTree = "<group>"; };
+		EA774DE526BD7C0C0022ABD2 /* WalletReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletReactor.swift; sourceTree = "<group>"; };
+		EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
 		EABB572126A807A4004323AE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		EAE6B1AD26B985070074C7A7 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		EAE6B1AF26B987A10074C7A7 /* BottomMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuViewController.swift; sourceTree = "<group>"; };
+		EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		EAE6B1B226B988070074C7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EAE6B1B526B996560074C7A7 /* MainReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReactor.swift; sourceTree = "<group>"; };
-		EAE6B1B726BA91B70074C7A7 /* BottomMenuIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuIndicatorView.swift; sourceTree = "<group>"; };
+		EAE6B1B726BA91B70074C7A7 /* WalletIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletIndicatorView.swift; sourceTree = "<group>"; };
 		EAE6B1B926BA92460074C7A7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		EAFB0CA126A8F05000BF3576 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
@@ -146,7 +146,6 @@
 		EA03A1F026A55449005B37D2 /* FirstReactorKit */ = {
 			isa = PBXGroup;
 			children = (
-				EA911FDB26BD3C4600825166 /* Service */,
 				EA6F714726A94C4E0004FB02 /* Manager */,
 				EA6F714126A934640004FB02 /* Resource */,
 				EA6F713C26A919150004FB02 /* View */,
@@ -240,7 +239,7 @@
 			children = (
 				EA6F713D26A9191C0004FB02 /* Indicator.swift */,
 				EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */,
-				EAE6B1B726BA91B70074C7A7 /* BottomMenuIndicatorView.swift */,
+				EAE6B1B726BA91B70074C7A7 /* WalletIndicatorView.swift */,
 				EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */,
 			);
 			path = View;
@@ -266,16 +265,9 @@
 			isa = PBXGroup;
 			children = (
 				EA6F714826A94C560004FB02 /* UserManager.swift */,
-				EA774DE726BDB3AE0022ABD2 /* BottomMenuManager.swift */,
+				EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		EA911FDB26BD3C4600825166 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		EADF2EE026B1200D00572B99 /* Home */ = {
@@ -292,7 +284,7 @@
 			children = (
 				EA03A21B26A578CD005B37D2 /* Splash */,
 				EAE6B1B426B996490074C7A7 /* Main */,
-				EAE6B1B126B987A70074C7A7 /* BottomMenu */,
+				EAE6B1B126B987A70074C7A7 /* Wallet */,
 				EADF2EE026B1200D00572B99 /* Home */,
 				EAE6B1AC26B984E80074C7A7 /* TableView */,
 			);
@@ -307,13 +299,13 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		EAE6B1B126B987A70074C7A7 /* BottomMenu */ = {
+		EAE6B1B126B987A70074C7A7 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				EAE6B1AF26B987A10074C7A7 /* BottomMenuViewController.swift */,
-				EA774DE526BD7C0C0022ABD2 /* BottomMenuReactor.swift */,
+				EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */,
+				EA774DE526BD7C0C0022ABD2 /* WalletReactor.swift */,
 			);
-			path = BottomMenu;
+			path = Wallet;
 			sourceTree = "<group>";
 		};
 		EAE6B1B426B996490074C7A7 /* Main */ = {
@@ -451,7 +443,7 @@
 				EA03A22226A578EE005B37D2 /* SplashReactor.swift in Sources */,
 				EA03A23C26A646E9005B37D2 /* NetworkChecker.swift in Sources */,
 				EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */,
-				EAE6B1B826BA91B70074C7A7 /* BottomMenuIndicatorView.swift in Sources */,
+				EAE6B1B826BA91B70074C7A7 /* WalletIndicatorView.swift in Sources */,
 				EA03A23F26A646E9005B37D2 /* APIError + APIResult.swift in Sources */,
 				EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */,
 				EA6F714626A93B360004FB02 /* ImageViewBuilder.swift in Sources */,
@@ -470,17 +462,17 @@
 				EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */,
 				EA03A24126A646E9005B37D2 /* NetworkConfig.swift in Sources */,
 				EA03A24426A646E9005B37D2 /* ButtonBuilder.swift in Sources */,
-				EA774DE826BDB3AE0022ABD2 /* BottomMenuManager.swift in Sources */,
+				EA774DE826BDB3AE0022ABD2 /* WalletManager.swift in Sources */,
 				EA03A23B26A646E9005B37D2 /* APIService.swift in Sources */,
 				EA03A23E26A646E9005B37D2 /* NetworkService.swift in Sources */,
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
 				EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */,
-				EA774DE626BD7C0C0022ABD2 /* BottomMenuReactor.swift in Sources */,
+				EA774DE626BD7C0C0022ABD2 /* WalletReactor.swift in Sources */,
 				EAE6B1BA26BA92460074C7A7 /* Extensions.swift in Sources */,
 				EA03A24626A646E9005B37D2 /* Validation.swift in Sources */,
 				EAE6B1AE26B985070074C7A7 /* TableViewController.swift in Sources */,
-				EAE6B1B026B987A10074C7A7 /* BottomMenuViewController.swift in Sources */,
+				EAE6B1B026B987A10074C7A7 /* WalletViewController.swift in Sources */,
 				EA03A24226A646E9005B37D2 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  BottomMenuReactor.swift
+//  WalletReactor.swift
 //  FirstReactorKit
 //
 //  Created by 권성우 on 2021/08/06.
@@ -9,13 +9,9 @@ import Foundation
 import ReactorKit
 import RxCocoa
 
-class BottomMenuReactor: Reactor, APIService {
+class WalletReactor: Reactor, APIService {
     var session: NetworkService = NetworkService()
     var initialState: State = State()
-    
-    private func getToggledBottomMenuState(currentState: BottomMenuState) -> BottomMenuState {
-        return currentState == .CLOSED ? .EXPANDED : .CLOSED
-    }
     
     enum Action {
 //        case toggleBottomMenu
@@ -39,10 +35,11 @@ class BottomMenuReactor: Reactor, APIService {
     
     
     func transform(action: Observable<Action>) -> Observable<Action> {
-        let refreshTodos = BottomMenuManager.shared.eventRelay
+        let refreshTodos = WalletManager.shared.eventRelay
             .asObservable()
             .distinctUntilChanged()
-            .filter { $0 == .openMenu }
+            //Refresh data after menu closed
+            .filter { $0 == .closeMenu }
             .flatMapLatest { event -> Observable<Action> in
                 return .just(Action.getTodos)
             }

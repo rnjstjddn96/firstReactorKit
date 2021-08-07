@@ -1,5 +1,5 @@
 //
-//  BottomMenuIndicatorView.swift
+//  WalletIndicator.swift
 //  FirstReactorKit
 //
 //  Created by 권성우 on 2021/08/04.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class BottomMenuIndicator: UIView {
+class WalletIndicator: UIView {
     static let INDICATOR_HEIGHT: CGFloat = 100
     
     override init(frame: CGRect) {

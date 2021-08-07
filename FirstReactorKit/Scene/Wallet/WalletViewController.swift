@@ -1,5 +1,5 @@
 //
-//  BottomMenuViewController.swift
+//  WalletViewController.swift
 //  FirstReactorKit
 //
 //  Created by 권성우 on 2021/08/03.
@@ -9,11 +9,11 @@ import Foundation
 import ReactorKit
 import RxCocoa
 
-class BottomMenuViewController: UIViewController {
+class WalletViewController: UIViewController {
 
-    var viewWillAppearSubject = PublishSubject<BottomMenuReactor.Action>()
+    var viewWillAppearSubject = PublishSubject<WalletReactor.Action>()
     var bottomMenutapGesture = UITapGestureRecognizer()
-    let indicator = BottomMenuIndicator()
+    let indicator = WalletIndicator()
     var disposeBag = DisposeBag()
     
     let tableView = UITableView()
@@ -42,7 +42,7 @@ class BottomMenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewWillAppearSubject.on(.next(BottomMenuReactor.Action.getTodos))
+        viewWillAppearSubject.on(.next(.getTodos))
         viewWillAppearSubject.on(.completed)
     }
     
@@ -55,9 +55,9 @@ class BottomMenuViewController: UIViewController {
     }
 }
 
-extension BottomMenuViewController: View {
-    func bind(reactor: BottomMenuReactor) {
-        let manager = BottomMenuManager.shared
+extension WalletViewController: View {
+    func bind(reactor: WalletReactor) {
+        let manager = WalletManager.shared
         
         bottomMenutapGesture.rx.event
             .bind(onNext: { _ in

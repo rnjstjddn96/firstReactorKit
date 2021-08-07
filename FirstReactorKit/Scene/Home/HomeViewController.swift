@@ -71,7 +71,7 @@ class HomeViewController: UIViewController, View {
 //            .bind(to: reactor.action)
 //            .disposed(by: disposeBag)
             .bind { _ in
-                _ = BottomMenuManager.shared.updateState(event: .openMenu)
+                _ = WalletManager.shared.updateState(event: .openMenu)
             }
             .disposed(by: disposeBag)
         

@@ -11,12 +11,12 @@ import SnapKit
 import ReactorKit
 
 class MainViewController: UIViewController {
-    var bottomMenuViewBottomOffset: Constraint?
+    var walletBottomOffset: Constraint?
     
     var disposeBag = DisposeBag()
     
     let homeViewController = HomeViewController()
-    let bottomMenuViewController = BottomMenuViewController()
+    let walletViewController = WalletViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,26 +35,26 @@ class MainViewController: UIViewController {
         self.homeViewController.willMove(toParent: self)
         self.homeViewController.didMove(toParent: self)
         
-        bottomMenuViewController.reactor = BottomMenuReactor()
-        self.addChild(bottomMenuViewController)
-        self.view.addSubview(bottomMenuViewController.view)
-        self.bottomMenuViewController.willMove(toParent: self)
-        bottomMenuViewController.didMove(toParent: self)
+        walletViewController.reactor = WalletReactor()
+        self.addChild(walletViewController)
+        self.view.addSubview(walletViewController.view)
+        self.walletViewController.willMove(toParent: self)
+        walletViewController.didMove(toParent: self)
         
         setBottomMenuViewConstraints()
     }
     
     private func setBottomMenuViewConstraints() {
-        self.bottomMenuViewController.view.snp.makeConstraints { [weak self] create in
+        self.walletViewController.view.snp.makeConstraints { [weak self] create in
             guard let self = self else { return }
             create.left.right.equalToSuperview()
-            self.bottomMenuViewBottomOffset = create.top.equalTo(self.view.snp.bottom)
-                .offset(-(BottomMenuManager.shared.currentState.value.amount))
+            self.walletBottomOffset = create.top.equalTo(self.view.snp.bottom)
+                .offset(-(WalletManager.shared.currentState.value.amount))
                 .constraint
             create.height.equalToSuperview()
-                .offset(BottomMenuManager.shared.currentState.value.amount)
+                .offset(WalletManager.shared.currentState.value.amount)
             
-            bottomMenuViewBottomOffset?.activate()
+            walletBottomOffset?.activate()
         }
     }
     
@@ -63,7 +63,7 @@ class MainViewController: UIViewController {
                        usingSpringWithDamping: 0.9,
                        initialSpringVelocity: 5) { [weak self] in
             guard let self = self else { return }
-            self.bottomMenuViewBottomOffset?
+            self.walletBottomOffset?
                 .update(offset: -offset)
             self.view.layoutIfNeeded()
         }
@@ -95,12 +95,12 @@ extension MainViewController: View {
             })
             .disposed(by: disposeBag)
         
-        BottomMenuManager.shared
+        WalletManager.shared
             .eventRelay
             .asObservable()
             .bind(onNext: { [weak self] event in
                 guard let self = self else { return }
-                self.mutateBottomMenuOffset(offset: event.menuState.amount)
+                self.mutateBottomMenuOffset(offset: event.state.amount)
 //                switch event {
 //                case .openMenu:
 //                    break;

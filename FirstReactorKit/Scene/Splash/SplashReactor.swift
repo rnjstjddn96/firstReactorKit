@@ -28,7 +28,7 @@ class SplashReactor: Reactor, APIService {
     var initialState: State = State()
     
     enum Action {
-        case viewWillAppear
+        case showLogo
         case errorOccered(type: ReactorError)
         case getUser
         case route(to: UIViewController)
@@ -55,17 +55,12 @@ class SplashReactor: Reactor, APIService {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .viewWillAppear:
-            return Observable.concat([
-                Observable.just(Mutation.setLogo(true)),
-                Observable.just(Mutation.setLogo(false))
-                    .delay(.milliseconds(2100), scheduler: MainScheduler.instance)
-            ])
+        case .showLogo:
+            return Observable.just(Mutation.setLogo(true))
         case .errorOccered(let type):
             return Observable.just(Mutation.setAlert(message: type.desc))
         case .getUser:
-            return Observable.concat([
-                Observable.just(Mutation.setLoading(true)),
+            return
                 self.getProfile()
                     .delay(.seconds(3), scheduler: MainScheduler.instance)
                     .map { result in
@@ -77,9 +72,7 @@ class SplashReactor: Reactor, APIService {
                                             error: result.error)
                         )
                     }
-                },
-                Observable.just(Mutation.setLoading(false))
-            ])
+                }
         case .route(let view):
             return Observable.just(Mutation.setDestination(to: view))
         }

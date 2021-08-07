@@ -15,7 +15,7 @@ class SplashViewController: UIViewController {
     var session = NetworkService()
     var disposeBag = DisposeBag()
     
-    var didEnterSplashView = PublishSubject<Void>()
+    var viewWillAppearSubject = PublishSubject<SplashReactor.Action>()
     
     lazy var loadingIndicator = LoadingIndicator(view: self.view)
     let splashLogoView = SplashLogoView()
@@ -24,7 +24,8 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        didEnterSplashView.onNext(())
+        viewWillAppearSubject.on(.next(.showLogo))
+        viewWillAppearSubject.on(.next(.getUser))
     }
     
     private func showAlert(title: String, message: String) {
@@ -41,31 +42,25 @@ class SplashViewController: UIViewController {
 extension SplashViewController: View {
     func bind(reactor: SplashReactor) {
         //MARK: View Interaction 또는 Life Cycle을 Reactor의 Action과 바인딩해준다.
-        didEnterSplashView
-            .map { _ in
-                Reactor.Action.viewWillAppear
-            }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        
-        didEnterSplashView
-            .delay(.seconds(2), scheduler: MainScheduler.instance)
-            .map { _ in
-                Reactor.Action.getUser
-            }
+        viewWillAppearSubject
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
         UserManager.current.authoriation
             .skip(1)
             .distinctUntilChanged()
-            .observe(on:MainScheduler.asyncInstance)
-            .delay(.milliseconds(300), scheduler: MainScheduler.instance)
-            .map { _ in
+            .observe(on: MainScheduler.asyncInstance)
+            .debug("UserManager.current.authoriation")
+            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .map { authorization in
                 let destination = MainViewController()
                 let reactor = MainReactor()
                 destination.reactor = reactor
                 return Reactor.Action.route(to: destination)
+//                switch authorization {
+//                case .AUTHORIZED(user: let user):
+//                case .UNAUTHORIZED:
+//                }
             }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
@@ -76,14 +71,9 @@ extension SplashViewController: View {
             .skip(1)
             .observe(on: MainScheduler.instance)
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] logoShown in
+            .bind(onNext: { [weak self] logoShown in
                 guard let self = self else { return }
-                if logoShown {
-                    self.splashLogoView.initSplashLogo(to: self.view)
-                } else {
-                    self.splashLogoView.deinitSplashLogo()
-                    self.didEnterSplashView.onCompleted()
-                }
+                self.splashLogoView.initSplashLogo(to: self.view)
             })
             .disposed(by: disposeBag)
         
@@ -107,7 +97,8 @@ extension SplashViewController: View {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { destination in
                 ViewRouter.route(from: self, to: destination,
-                                 withNavigation: true)
+                                 presentationStyle: .fullScreen,
+                                 transitionStyle: .crossDissolve)
             })
             .disposed(by: disposeBag)
         
