@@ -134,9 +134,6 @@ extension SplashViewController: View {
             .subscribe(onNext: { [weak self] failure in
                 guard let self = self else { return }
                 //MARK: Login Register 버튼 생성
-//                self.showAlert(title: "유저정보를 받아오지 못했습니다.",
-//                               message: failure?.resultMessage ?? "")
-                self.splashLogoView.deinitSplashLogo()
                 self.configureButtons()
             })
             .disposed(by: disposeBag)

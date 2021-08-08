@@ -46,6 +46,7 @@ class CommonButton: UIView {
             .withText(title, for: .normal)
             .withTextColor(titleColor, for: .normal)
             .withBackground(color: background)
+            .withCornerRadius(radius: 10)
             .build()
         
         self.addSubview(btn)

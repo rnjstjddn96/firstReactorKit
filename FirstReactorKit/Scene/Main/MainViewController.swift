@@ -59,13 +59,12 @@ class MainViewController: UIViewController {
     }
     
     private func mutateBottomMenuOffset(offset: CGFloat) {
-        UIView.animate(withDuration: 0.5, delay: 0,
-                       usingSpringWithDamping: 0.9,
-                       initialSpringVelocity: 5) { [weak self] in
+        self.view.animateWithSpring(duration: 0.5,
+                                    damping: 0.9,
+                                    initialVelocity: 5) { [weak self] in
             guard let self = self else { return }
             self.walletBottomOffset?
                 .update(offset: -offset)
-            self.view.layoutIfNeeded()
         }
     }
     
