@@ -19,6 +19,11 @@ class SplashViewController: UIViewController {
     
     lazy var loadingIndicator = LoadingIndicator(view: self.view)
     let splashLogoView = SplashLogoView()
+    var btnToLogin = CommonButton(title: "로그인",
+                                  titleColor: .white,
+                                  background: .systemIndigo,
+                                  titleFont: .systemFont(ofSize: 20, weight: .bold))
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +41,17 @@ class SplashViewController: UIViewController {
                                      okButtonCallback: nil,
                                      cancelButtonCallback: nil)
     }
+    
+    private func configureButtons() {
+        self.view.addSubview(btnToLogin)
+        btnToLogin.snp.makeConstraints { create in
+            create.centerX.equalToSuperview()
+            create.bottom.equalToSuperview().offset(-30)
+            create.height.equalTo(50)
+            create.width.equalToSuperview().multipliedBy(0.8)
+        }
+        btnToLogin.buildCommonButton()
+    }
 }
 
 extension SplashViewController: View {
@@ -49,7 +65,6 @@ extension SplashViewController: View {
             .skip(1)
             .distinctUntilChanged()
             .observe(on: MainScheduler.asyncInstance)
-            .debug("UserManager.current.authoriation")
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .map { authorization in
                 let mainView = MainViewController()
@@ -118,8 +133,11 @@ extension SplashViewController: View {
             .filter { $0 != nil }
             .subscribe(onNext: { [weak self] failure in
                 guard let self = self else { return }
-                self.showAlert(title: "유저정보를 받아오지 못했습니다.",
-                               message: failure?.resultMessage ?? "")
+                //MARK: Login Register 버튼 생성
+//                self.showAlert(title: "유저정보를 받아오지 못했습니다.",
+//                               message: failure?.resultMessage ?? "")
+                self.splashLogoView.deinitSplashLogo()
+                self.configureButtons()
             })
             .disposed(by: disposeBag)
 

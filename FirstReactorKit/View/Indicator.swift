@@ -10,9 +10,9 @@ import UIKit
 import Lottie
 
 class LoadingIndicator: NSObject {
-    var view:UIView!
-    var title:String?
-    var progress:AnimationView!
+    var view: UIView!
+    var title: String?
+    var progress: AnimationView!
     let progressSize: CGFloat = SIZE.width * 0.4
     
     init(view:UIView) {

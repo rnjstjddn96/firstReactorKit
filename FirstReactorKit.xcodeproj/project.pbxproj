@@ -30,6 +30,7 @@
 		EA03A24426A646E9005B37D2 /* ButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23626A646E9005B37D2 /* ButtonBuilder.swift */; };
 		EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23726A646E9005B37D2 /* LabelBuilder.swift */; };
 		EA03A24626A646E9005B37D2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23926A646E9005B37D2 /* Validation.swift */; };
+		EA3E570826BFE53B00740FF6 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3E570726BFE53B00740FF6 /* CommonButton.swift */; };
 		EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F713D26A9191C0004FB02 /* Indicator.swift */; };
 		EA6F714026A9345E0004FB02 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6F713F26A9345D0004FB02 /* loader.json */; };
 		EA6F714426A93AAD0004FB02 /* SplashLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */; };
@@ -78,6 +79,7 @@
 		EA03A23626A646E9005B37D2 /* ButtonBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBuilder.swift; sourceTree = "<group>"; };
 		EA03A23726A646E9005B37D2 /* LabelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelBuilder.swift; sourceTree = "<group>"; };
 		EA03A23926A646E9005B37D2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		EA3E570726BFE53B00740FF6 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		EA49C46226B11547001F9221 /* ReactorPractice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ReactorPractice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EA6F713D26A9191C0004FB02 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		EA6F713F26A9345D0004FB02 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */,
 				EA774DE926BECD110022ABD2 /* HomeNavigationBar.swift */,
 				EA774DEB26BF8DB20022ABD2 /* NavigationBar.swift */,
+				EA3E570726BFE53B00740FF6 /* CommonButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				EA03A23B26A646E9005B37D2 /* APIService.swift in Sources */,
 				EA03A23E26A646E9005B37D2 /* NetworkService.swift in Sources */,
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
+				EA3E570826BFE53B00740FF6 /* CommonButton.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
 				EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */,
 				EA774DE626BD7C0C0022ABD2 /* WalletReactor.swift in Sources */,
