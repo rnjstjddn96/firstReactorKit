@@ -19,6 +19,7 @@ class LabelBuilder: BuilderType {
     private var textColor: UIColor? = nil
     private var textAlignment: NSTextAlignment = .left
     private var alpha: CGFloat = 1.0
+    private var maxLine: Int = 1
     
     func withFrame(_ frame: CGRect) -> LabelBuilder {
         self.frame = frame
@@ -49,6 +50,11 @@ class LabelBuilder: BuilderType {
         self.alpha = alpha
         return self
     }
+    
+    func withMaxLine(limit: Int) -> LabelBuilder {
+        self.maxLine = limit
+        return self
+    }
 
     func build() -> UILabel {
         let label: UILabel = .init(frame: .zero)
@@ -57,6 +63,7 @@ class LabelBuilder: BuilderType {
         label.textColor = self.textColor
         label.textAlignment = self.textAlignment
         label.alpha = self.alpha
+        label.numberOfLines = self.maxLine
         return label
     }
 }

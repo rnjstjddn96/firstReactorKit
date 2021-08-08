@@ -15,6 +15,7 @@ class CustomCell: UITableViewCell {
     let label = UILabel.Builder()
         .withFont(.systemFont(ofSize: 10))
         .withTextColor(.black)
+        .withMaxLine(limit: 2)
         .build()
     
     let iv: UIImageView = {
@@ -26,6 +27,7 @@ class CustomCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setConstraints()
+        self.contentView.backgroundColor = .systemIndigo
     }
     
     required init?(coder: NSCoder) {
@@ -37,12 +39,13 @@ class CustomCell: UITableViewCell {
         self.contentView.addSubview(iv)
         
         iv.snp.makeConstraints { create in
-            create.left.top.bottom.equalToSuperview()
+            create.left.top.bottom.equalTo(self.contentView)
             create.width.equalTo(iv.snp.height)
         }
         
         label.snp.makeConstraints { create in
             create.left.equalTo(iv.snp.right).offset(30)
+            create.right.equalTo(self.contentView.snp.right).offset(-30)
             create.centerY.equalToSuperview()
         }
     }

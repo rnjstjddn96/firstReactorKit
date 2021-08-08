@@ -23,7 +23,6 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         viewWillAppearSubject.on(.next(.showLogo))
         viewWillAppearSubject.on(.next(.getUser))
     }
@@ -53,10 +52,11 @@ extension SplashViewController: View {
             .debug("UserManager.current.authoriation")
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .map { authorization in
-                let destination = MainViewController()
+                let mainView = MainViewController()
                 let reactor = MainReactor()
-                destination.reactor = reactor
-                return Reactor.Action.route(to: destination)
+                mainView.reactor = reactor
+                let naviagation = UINavigationController(rootViewController: mainView)
+                return Reactor.Action.route(to: naviagation)
 //                switch authorization {
 //                case .AUTHORIZED(user: let user):
 //                case .UNAUTHORIZED:

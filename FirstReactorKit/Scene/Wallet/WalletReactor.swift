@@ -12,9 +12,10 @@ import RxCocoa
 class WalletReactor: Reactor, APIService {
     var session: NetworkService = NetworkService()
     var initialState: State = State()
+    var newState: State = State()
     
     enum Action {
-//        case toggleBottomMenu
+//        case toggleBottomMen
         case getTodos
 //        case showIndicator
 //        case hideIndicator
@@ -70,8 +71,6 @@ class WalletReactor: Reactor, APIService {
             return getTodos
         }
     }
-    
-    var newState = State()
     
     func reduce(state: State, mutation: Mutation) -> State {
         switch mutation {

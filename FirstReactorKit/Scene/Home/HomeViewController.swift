@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, View {
     var disposeBag: DisposeBag = DisposeBag()
     
     lazy var loadingIndicator = LoadingIndicator(view: self.view)
+    var homeNavigationBar = HomeNavigationBar()
     
     let label: UILabel = {
         let label = UILabel()
@@ -40,19 +41,21 @@ class HomeViewController: UIViewController, View {
         return button
     }()
     
-    let btnToTable =
-        UIButton.Builder()
-        .withText("RxTables", for: .normal)
-        .withTextColor(.white, for: .normal)
-        .withBackground(color: .black)
-        .withCornerRadius(radius: 10)
-        .build()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .systemBackground
         addSubViews()
+        configureUI()
+    }
+    
+    private func configureUI() {
+        self.view.addSubview(homeNavigationBar)
+        homeNavigationBar.snp.makeConstraints { create in
+            create.left.right.equalToSuperview()
+            create.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            create.height.equalTo(70)
+        }
     }
     
     func bind(reactor: HomeReactor) {
@@ -66,13 +69,10 @@ class HomeViewController: UIViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        btnToTable.rx.tap
-//            .map { Reactor.Action.route(to: TableViewController()) }
-//            .bind(to: reactor.action)
-//            .disposed(by: disposeBag)
-            .bind { _ in
-                _ = WalletManager.shared.updateState(event: .openMenu)
-            }
+        homeNavigationBar.btnMenu.rx
+            .controlEvent(.touchUpInside)
+            .map { Reactor.Action.route(to: MenuViewController()) }
+            .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
         reactor.state
@@ -94,7 +94,7 @@ class HomeViewController: UIViewController, View {
         reactor.state
             .map { $0.destination }
             .distinctUntilChanged()
-            .subscribe(onNext: {
+            .bind(onNext: {
                 ViewRouter.route(from: self, to: $0, withNavigation: true)
             })
             .disposed(by: disposeBag)
@@ -111,9 +111,6 @@ class HomeViewController: UIViewController, View {
         self.view.addSubview(label)
         self.view.addSubview(btnInc)
         self.view.addSubview(btnDec)
-        self.view.addSubview(btnToTable)
-        
-        self.view.backgroundColor = .orange
         
         label.snp.makeConstraints { create in
             create.center.equalToSuperview()
@@ -128,13 +125,6 @@ class HomeViewController: UIViewController, View {
         btnDec.snp.makeConstraints { create in
             create.right.equalTo(label.snp.left).offset(-30)
             create.centerY.equalToSuperview()
-        }
-        
-        btnToTable.snp.makeConstraints { create in
-            create.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(30)
-            create.centerX.equalToSuperview()
-            create.width.equalTo(80)
-            create.height.equalTo(50)
         }
     }
 }
