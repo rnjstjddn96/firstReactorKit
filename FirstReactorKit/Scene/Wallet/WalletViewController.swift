@@ -37,8 +37,11 @@ class WalletViewController: UIViewController {
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { create in
             create.top.equalTo(indicator.snp.bottom)
-            create.left.right.bottom.equalToSuperview()
+            create.left.right.equalToSuperview()
+            create.bottom.equalTo(self.view.snp.bottom)
+                .offset(-(WalletIndicator.INDICATOR_HEIGHT + 100))
         }
+        
         tableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
@@ -78,7 +81,6 @@ extension WalletViewController: View {
             .disposed(by: disposeBag)
         
         reactor.state
-            .debug("todos")
             .map { $0.todos }
             .bind(to: tableView.rx.items(cellIdentifier: CustomCell.ID,
                                          cellType: CustomCell.self)) { row, todo, cell in
