@@ -48,6 +48,7 @@
 		EA911FEB26C0F06600825166 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FEA26C0F06600825166 /* Strings.swift */; };
 		EA911FED26C0F3BA00825166 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */; };
 		EA911FEF26C1034E00825166 /* MenuViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FEE26C1034E00825166 /* MenuViewReactor.swift */; };
+		EA911FF426C11F7E00825166 /* Reusables.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FF326C11F7E00825166 /* Reusables.swift */; };
 		EABB572226A807A4004323AE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB572126A807A4004323AE /* Todo.swift */; };
 		EAE6B1AE26B985070074C7A7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */; };
 		EAE6B1B026B987A10074C7A7 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */; };
@@ -106,6 +107,7 @@
 		EA911FEA26C0F06600825166 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		EA911FEE26C1034E00825166 /* MenuViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewReactor.swift; sourceTree = "<group>"; };
+		EA911FF326C11F7E00825166 /* Reusables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusables.swift; sourceTree = "<group>"; };
 		EABB572126A807A4004323AE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 		EA6F714126A934640004FB02 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				EA911FF326C11F7E00825166 /* Reusables.swift */,
 				EA6F714226A934690004FB02 /* Loader */,
 				EA911FEA26C0F06600825166 /* Strings.swift */,
 			);
@@ -517,6 +520,7 @@
 				EA911FE926C0E5DF00825166 /* MenuCellReactor.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
 				EA911FEB26C0F06600825166 /* Strings.swift in Sources */,
+				EA911FF426C11F7E00825166 /* Reusables.swift in Sources */,
 				EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */,
 				EA774DE626BD7C0C0022ABD2 /* WalletReactor.swift in Sources */,
 				EAE6B1BA26BA92460074C7A7 /* Extensions.swift in Sources */,

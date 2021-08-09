@@ -22,14 +22,9 @@ class MenuViewController: UIViewController {
     lazy var navigationBar = NavigationBar()
     var disposeBag = DisposeBag()
     
-    struct Reusable {
-        static let menuRouteCell = ReusableCell<MenuRouteCell>()
-        static let menuSwitchCell = ReusableCell<MenuSwitchCell>()
-    }
-    
     let menuListView = UITableView().then {
-        $0.register(Reusable.menuRouteCell)
-        $0.register(Reusable.menuSwitchCell)
+        $0.register(Reusables.Cell.menuRouteCell)
+        $0.register(Reusables.Cell.menuSwitchCell)
     }
     
     override func viewDidLoad() {
@@ -75,13 +70,13 @@ extension MenuViewController: View {
             guard let self = self else { return UITableViewCell() }
             switch sectionItems {
             case .routeCell(let reactor):
-                guard let cell = self.menuListView.dequeue(Reusable.menuRouteCell) else {
+                guard let cell = self.menuListView.dequeue(Reusables.Cell.menuRouteCell) else {
                     return UITableViewCell()
                 }
                 cell.reactor = reactor
                 return cell
             case .switchCell(let reactor):
-                guard let cell = self.menuListView.dequeue(Reusable.menuSwitchCell) else {
+                guard let cell = self.menuListView.dequeue(Reusables.Cell.menuSwitchCell) else {
                     return UITableViewCell()
                 }
                 cell.reactor = reactor
