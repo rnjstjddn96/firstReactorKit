@@ -41,8 +41,15 @@
 		EA774DE826BDB3AE0022ABD2 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */; };
 		EA774DEA26BECD110022ABD2 /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DE926BECD110022ABD2 /* HomeNavigationBar.swift */; };
 		EA774DEC26BF8DB20022ABD2 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DEB26BF8DB20022ABD2 /* NavigationBar.swift */; };
+		EA911FDF26C0D06D00825166 /* ShapeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FDE26C0D06D00825166 /* ShapeUtils.swift */; };
+		EA911FE426C0E2FE00825166 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FE326C0E2FE00825166 /* Menu.swift */; };
+		EA911FE626C0E55900825166 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FE526C0E55900825166 /* MenuCell.swift */; };
+		EA911FE926C0E5DF00825166 /* MenuCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FE826C0E5DF00825166 /* MenuCellReactor.swift */; };
+		EA911FEB26C0F06600825166 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FEA26C0F06600825166 /* Strings.swift */; };
+		EA911FED26C0F3BA00825166 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */; };
+		EA911FEF26C1034E00825166 /* MenuViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FEE26C1034E00825166 /* MenuViewReactor.swift */; };
 		EABB572226A807A4004323AE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB572126A807A4004323AE /* Todo.swift */; };
-		EAE6B1AE26B985070074C7A7 /*  MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AD26B985070074C7A7 /*  MenuController.swift */; };
+		EAE6B1AE26B985070074C7A7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */; };
 		EAE6B1B026B987A10074C7A7 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */; };
 		EAE6B1B326B988070074C7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B226B988070074C7A7 /* MainViewController.swift */; };
 		EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B526B996560074C7A7 /* MainReactor.swift */; };
@@ -92,8 +99,15 @@
 		EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
 		EA774DE926BECD110022ABD2 /* HomeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
 		EA774DEB26BF8DB20022ABD2 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		EA911FDE26C0D06D00825166 /* ShapeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeUtils.swift; sourceTree = "<group>"; };
+		EA911FE326C0E2FE00825166 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		EA911FE526C0E55900825166 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		EA911FE826C0E5DF00825166 /* MenuCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCellReactor.swift; sourceTree = "<group>"; };
+		EA911FEA26C0F06600825166 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		EA911FEE26C1034E00825166 /* MenuViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewReactor.swift; sourceTree = "<group>"; };
 		EABB572126A807A4004323AE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
-		EAE6B1AD26B985070074C7A7 /*  MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MenuController.swift"; sourceTree = "<group>"; };
+		EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		EAE6B1B226B988070074C7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EAE6B1B526B996560074C7A7 /* MainReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReactor.swift; sourceTree = "<group>"; };
@@ -183,6 +197,7 @@
 			children = (
 				EA03A22526A57997005B37D2 /* User.swift */,
 				EABB572126A807A4004323AE /* Todo.swift */,
+				EA911FE326C0E2FE00825166 /* Menu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +212,7 @@
 				EA03A23826A646E9005B37D2 /* Validation */,
 				EAE6B1B926BA92460074C7A7 /* Extensions.swift */,
 				EA3E570926C0196000740FF6 /* AnimationUtils.swift */,
+				EA911FDE26C0D06D00825166 /* ShapeUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -246,10 +262,10 @@
 		EA6F713C26A919150004FB02 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA911FE026C0E1EC00825166 /* Cell */,
 				EA6F713D26A9191C0004FB02 /* Indicator.swift */,
 				EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */,
 				EAE6B1B726BA91B70074C7A7 /* WalletIndicatorView.swift */,
-				EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */,
 				EA774DE926BECD110022ABD2 /* HomeNavigationBar.swift */,
 				EA774DEB26BF8DB20022ABD2 /* NavigationBar.swift */,
 				EA3E570726BFE53B00740FF6 /* CommonButton.swift */,
@@ -261,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				EA6F714226A934690004FB02 /* Loader */,
+				EA911FEA26C0F06600825166 /* Strings.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -282,6 +299,26 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		EA911FE026C0E1EC00825166 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */,
+				EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EA911FE726C0E58000825166 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */,
+				EA911FEE26C1034E00825166 /* MenuViewReactor.swift */,
+				EA911FE526C0E55900825166 /* MenuCell.swift */,
+				EA911FE826C0E5DF00825166 /* MenuCellReactor.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		EADF2EE026B1200D00572B99 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,21 +331,13 @@
 		EADF2EE126B1201500572B99 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				EA911FE726C0E58000825166 /* Menu */,
 				EA03A21B26A578CD005B37D2 /* Splash */,
 				EAE6B1B426B996490074C7A7 /* Main */,
 				EAE6B1B126B987A70074C7A7 /* Wallet */,
 				EADF2EE026B1200D00572B99 /* Home */,
-				EAE6B1AC26B984E80074C7A7 /* TableView */,
 			);
 			path = Scene;
-			sourceTree = "<group>";
-		};
-		EAE6B1AC26B984E80074C7A7 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				EAE6B1AD26B985070074C7A7 /*  MenuController.swift */,
-			);
-			path = TableView;
 			sourceTree = "<group>";
 		};
 		EAE6B1B126B987A70074C7A7 /* Wallet */ = {
@@ -457,7 +486,9 @@
 				EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */,
 				EAE6B1B826BA91B70074C7A7 /* WalletIndicatorView.swift in Sources */,
 				EA03A23F26A646E9005B37D2 /* APIError + APIResult.swift in Sources */,
+				EA911FEF26C1034E00825166 /* MenuViewReactor.swift in Sources */,
 				EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */,
+				EA911FED26C0F3BA00825166 /* BaseTableViewCell.swift in Sources */,
 				EA6F714626A93B360004FB02 /* ImageViewBuilder.swift in Sources */,
 				EA03A24026A646E9005B37D2 /* API.swift in Sources */,
 				EAE6B1B326B988070074C7A7 /* MainViewController.swift in Sources */,
@@ -473,6 +504,7 @@
 				EA6F714926A94C560004FB02 /* UserManager.swift in Sources */,
 				EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */,
 				EA03A24126A646E9005B37D2 /* NetworkConfig.swift in Sources */,
+				EA911FE626C0E55900825166 /* MenuCell.swift in Sources */,
 				EA03A24426A646E9005B37D2 /* ButtonBuilder.swift in Sources */,
 				EA774DEA26BECD110022ABD2 /* HomeNavigationBar.swift in Sources */,
 				EA774DE826BDB3AE0022ABD2 /* WalletManager.swift in Sources */,
@@ -481,13 +513,17 @@
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
 				EA3E570826BFE53B00740FF6 /* CommonButton.swift in Sources */,
 				EA3E570A26C0196000740FF6 /* AnimationUtils.swift in Sources */,
+				EA911FE426C0E2FE00825166 /* Menu.swift in Sources */,
+				EA911FE926C0E5DF00825166 /* MenuCellReactor.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
+				EA911FEB26C0F06600825166 /* Strings.swift in Sources */,
 				EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */,
 				EA774DE626BD7C0C0022ABD2 /* WalletReactor.swift in Sources */,
 				EAE6B1BA26BA92460074C7A7 /* Extensions.swift in Sources */,
 				EA03A24626A646E9005B37D2 /* Validation.swift in Sources */,
-				EAE6B1AE26B985070074C7A7 /*  MenuController.swift in Sources */,
+				EAE6B1AE26B985070074C7A7 /* MenuViewController.swift in Sources */,
 				EAE6B1B026B987A10074C7A7 /* WalletViewController.swift in Sources */,
+				EA911FDF26C0D06D00825166 /* ShapeUtils.swift in Sources */,
 				EA774DEC26BF8DB20022ABD2 /* NavigationBar.swift in Sources */,
 				EA03A24226A646E9005B37D2 /* Builder.swift in Sources */,
 			);
@@ -629,6 +665,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2VUB7Y3L2;
 				INFOPLIST_FILE = FirstReactorKit/Info.plist;
@@ -636,8 +673,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.swkwon.FirstReactorKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swkwon.FirstReactorKit1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -649,6 +687,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2VUB7Y3L2;
 				INFOPLIST_FILE = FirstReactorKit/Info.plist;
@@ -656,8 +695,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.swkwon.FirstReactorKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swkwon.FirstReactorKit1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

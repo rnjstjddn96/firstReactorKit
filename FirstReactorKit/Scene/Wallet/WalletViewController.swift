@@ -24,22 +24,21 @@ class WalletViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         self.view.layer.masksToBounds = true
-        self.view.layer.cornerRadius = 50
+        self.view.roundCorners(corners: [.topLeft, .topRight],
+                               radius: WalletIndicator.INDICATOR_HEIGHT / 2)
         
         self.view.addSubview(indicator)
         self.indicator.snp.makeConstraints { create in
             create.top.left.right.equalToSuperview()
-            create.height.equalTo(100)
+            create.height.equalTo(WalletIndicator.INDICATOR_HEIGHT)
         }
         
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { create in
             create.top.equalTo(indicator.snp.bottom)
             create.left.right.equalToSuperview()
-            create.bottom.equalTo(self.view.snp.bottom)
-                .offset(-(WalletIndicator.INDICATOR_HEIGHT + 100))
+            create.bottom.equalToSuperview()
         }
         
         tableView.rx

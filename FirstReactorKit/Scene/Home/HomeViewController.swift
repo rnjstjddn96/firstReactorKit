@@ -50,6 +50,7 @@ class HomeViewController: UIViewController, View {
     }
     
     private func configureUI() {
+        self.view.backgroundColor = .systemBackground
         self.view.addSubview(homeNavigationBar)
         homeNavigationBar.snp.makeConstraints { create in
             create.left.right.equalToSuperview()
@@ -71,7 +72,12 @@ class HomeViewController: UIViewController, View {
         
         homeNavigationBar.btnMenu.rx
             .controlEvent(.touchUpInside)
-            .map { Reactor.Action.route(to: MenuViewController()) }
+            .map {
+                let destination = MenuViewController()
+                let reactor = MenuViewReactor()
+                destination.reactor = reactor
+                return Reactor.Action.route(to: destination)
+            }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         

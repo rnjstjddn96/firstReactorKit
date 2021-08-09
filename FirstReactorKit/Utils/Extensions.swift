@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import ReactorKit
 
 extension String {
     var asImage: UIImage {

@@ -20,6 +20,7 @@ class ButtonBuilder: BuilderType {
     private var textAlignment: NSTextAlignment = .left
     private var textControlState: UIControl.State = .normal
     private var colorControlState: UIControl.State = .normal
+    private var image: UIImage?
     private var background: UIColor?
     private var radius: CGFloat = 0
     
@@ -60,6 +61,11 @@ class ButtonBuilder: BuilderType {
         return self
     }
     
+    func withImage(image: UIImage) -> ButtonBuilder {
+        self.image = image
+        return self
+    }
+    
     func build() -> UIButton {
         let button = UIButton(frame: .zero)
         button.setTitle(title, for: textControlState)
@@ -69,6 +75,7 @@ class ButtonBuilder: BuilderType {
         button.titleLabel?.textAlignment = self.textAlignment
         button.backgroundColor = self.background
         button.layer.cornerRadius = self.radius
+        button.setImage(self.image, for: .normal)
         return button
     }
 }

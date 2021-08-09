@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum SafeArea {
+    case top, bottom, left, right
+}
+var safeAreas: [SafeArea: CGFloat] = [:]
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -17,6 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
+        
+        let safeAreaBottom = window.safeAreaInsets.bottom
+        let safeAreaTop = window.safeAreaInsets.top
+        let safeAreaLeft = window.safeAreaInsets.left
+        let safeAreaRight = window.safeAreaInsets.right
+        safeAreas[.top] = safeAreaTop
+        safeAreas[.bottom] = safeAreaBottom
+        safeAreas[.right] = safeAreaRight
+        safeAreas[.left] = safeAreaLeft
+        
         self.window = window
         let rootViewController = SplashViewController()
         rootViewController.reactor = SplashReactor()

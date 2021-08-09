@@ -14,4 +14,7 @@ target 'FirstReactorKit' do
 	pod 'SwiftyJSON'
 	pod 'RxAlamofire'
 	pod 'lottie-ios'
+	pod 'RxDataSources'
+	pod 'Then'
+	pod 'ReusableKit'
 end

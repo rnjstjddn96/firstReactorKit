@@ -52,7 +52,7 @@ class MainViewController: UIViewController {
                 .offset(-(WalletManager.shared.currentState.value.amount))
                 .constraint
             create.height.equalToSuperview()
-                .offset(WalletManager.shared.currentState.value.amount)
+                .offset(-safeAreas[.top]!)
             
             walletBottomOffset?.activate()
         }

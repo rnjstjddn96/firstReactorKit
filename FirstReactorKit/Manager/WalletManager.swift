@@ -38,7 +38,7 @@ enum WalletState {
         case .CLOSED:
             return WalletIndicator.INDICATOR_HEIGHT
         case .EXPANDED:
-            return UIScreen.main.bounds.size.height - 100
+            return SIZE.height - safeAreas[.top]!
         }
     }
 }
