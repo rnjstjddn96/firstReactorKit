@@ -9,6 +9,7 @@ import UIKit
 import RxCocoa
 import SnapKit
 import ReactorKit
+import RxGesture
 
 class MainViewController: BaseViewController<MainReactor> {
     var walletBottomOffset: Constraint?

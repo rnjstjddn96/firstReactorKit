@@ -11,7 +11,7 @@ import RxCocoa
 
 class WalletViewController: BaseViewController<WalletReactor> {
 
-    var bottomMenutapGesture = UITapGestureRecognizer()
+//    var bottomMenutapGesture = UITapGestureRecognizer()
     let indicator = WalletIndicator()
     
     let tableView: UITableView = {
@@ -43,7 +43,7 @@ class WalletViewController: BaseViewController<WalletReactor> {
             .setDelegate(self)
             .disposed(by: disposeBag)
         
-        setGesture()
+//        setGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +53,7 @@ class WalletViewController: BaseViewController<WalletReactor> {
     }
     
     private func setGesture() {
-        indicator.addGestureRecognizer(bottomMenutapGesture)
+//        indicator.addGestureRecognizer(bottomMenutapGesture)
     }
 }
 
@@ -61,7 +61,9 @@ extension WalletViewController: View {
     func bind(reactor: WalletReactor) {
         let manager = WalletManager.shared
         
-        bottomMenutapGesture.rx.event
+        self.indicator.rx
+            .tapGesture()
+            .when(.recognized)
             .bind(onNext: { _ in
                 switch manager.currentState.value {
                 case .CLOSED:
@@ -69,6 +71,22 @@ extension WalletViewController: View {
                 case .EXPANDED:
                     _ = manager.updateState(event: .closeMenu)
                 }
+            })
+            .disposed(by: disposeBag)
+        
+        self.indicator.rx
+            .swipeGesture(.up)
+            .when(.ended)
+            .bind(onNext: { swipe in
+                _ = manager.updateState(event: .openMenu)
+            })
+            .disposed(by: disposeBag)
+        
+        self.indicator.rx
+            .swipeGesture(.down)
+            .when(.ended)
+            .bind(onNext: { swipe in
+                _ = manager.updateState(event: .closeMenu)
             })
             .disposed(by: disposeBag)
         
@@ -85,6 +103,13 @@ extension WalletViewController: View {
                            image: UIImage(named: "profile")!)
             }
             .disposed(by: disposeBag)
+        
+        tableView.rx
+            .modelSelected(Todo.self)
+            .subscribe(onNext: { element in
+            log.debug(element)
+        })
+        .disposed(by: disposeBag)
     }
 }
 

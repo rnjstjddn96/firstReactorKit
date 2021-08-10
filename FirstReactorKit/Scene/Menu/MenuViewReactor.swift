@@ -18,7 +18,6 @@ class MenuViewReactor: Reactor {
     }
     
     enum Action {
-        
     }
     
     enum Mutation {

@@ -87,6 +87,19 @@ extension MenuViewController: View {
             .asObservable()
             .bind(to: menuListView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+//        menuListView.rx
+//            .modelSelected(MenuCellSelection.self)
+//            .map { cell in
+//                switch cell {
+//                case .routeCell(let reactor):
+//                    return Reactor.Action.Type
+//                case .switchCell(let reactor):
+//                    return Reactor.Action.Type
+//                }
+//            }
+//            .bind(to: reactor.action)
+//            .disposed(by: disposeBag)
     }
 }
 
