@@ -15,3 +15,22 @@ extension String {
         return image 
     }
 }
+
+
+extension CaseIterable where Self: Equatable, AllCases: BidirectionalCollection {
+    var previous: Self? {
+        let all = Self.allCases
+        let idx = all.firstIndex(of: self)!
+        let previous = all.index(before: idx)
+        guard previous >= all.startIndex else { return nil }
+        return all[previous]
+    }
+
+    var next: Self? {
+        let all = Self.allCases
+        let idx = all.firstIndex(of: self)!
+        let next = all.index(after: idx)
+        guard next < all.endIndex else { return nil }
+        return all[next]
+    }
+}

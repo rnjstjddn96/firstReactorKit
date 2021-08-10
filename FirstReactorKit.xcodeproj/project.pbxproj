@@ -49,6 +49,7 @@
 		EA911FED26C0F3BA00825166 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */; };
 		EA911FEF26C1034E00825166 /* MenuViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FEE26C1034E00825166 /* MenuViewReactor.swift */; };
 		EA911FF426C11F7E00825166 /* Reusables.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FF326C11F7E00825166 /* Reusables.swift */; };
+		EA911FF726C1FB3100825166 /* ReactableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FF626C1FB3100825166 /* ReactableView.swift */; };
 		EABB572226A807A4004323AE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB572126A807A4004323AE /* Todo.swift */; };
 		EAE6B1AE26B985070074C7A7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */; };
 		EAE6B1B026B987A10074C7A7 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */; };
@@ -108,6 +109,7 @@
 		EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		EA911FEE26C1034E00825166 /* MenuViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewReactor.swift; sourceTree = "<group>"; };
 		EA911FF326C11F7E00825166 /* Reusables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusables.swift; sourceTree = "<group>"; };
+		EA911FF626C1FB3100825166 /* ReactableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactableView.swift; sourceTree = "<group>"; };
 		EABB572126A807A4004323AE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
@@ -306,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */,
-				EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -322,6 +323,22 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		EA911FF526C1FB2100825166 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EA911FF826C2062500825166 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EA911FF626C1FB3100825166 /* ReactableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		EADF2EE026B1200D00572B99 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,11 +351,13 @@
 		EADF2EE126B1201500572B99 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				EA911FE726C0E58000825166 /* Menu */,
+				EA911FF826C2062500825166 /* Protocols */,
+				EA911FF526C1FB2100825166 /* Cell */,
 				EA03A21B26A578CD005B37D2 /* Splash */,
 				EAE6B1B426B996490074C7A7 /* Main */,
-				EAE6B1B126B987A70074C7A7 /* Wallet */,
 				EADF2EE026B1200D00572B99 /* Home */,
+				EAE6B1B126B987A70074C7A7 /* Wallet */,
+				EA911FE726C0E58000825166 /* Menu */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -512,6 +531,7 @@
 				EA774DEA26BECD110022ABD2 /* HomeNavigationBar.swift in Sources */,
 				EA774DE826BDB3AE0022ABD2 /* WalletManager.swift in Sources */,
 				EA03A23B26A646E9005B37D2 /* APIService.swift in Sources */,
+				EA911FF726C1FB3100825166 /* ReactableView.swift in Sources */,
 				EA03A23E26A646E9005B37D2 /* NetworkService.swift in Sources */,
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
 				EA3E570826BFE53B00740FF6 /* CommonButton.swift in Sources */,

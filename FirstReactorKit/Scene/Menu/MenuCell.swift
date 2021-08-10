@@ -60,7 +60,6 @@ extension MenuRouteCell: View {
     }
 }
 
-
 class MenuSwitchCell: BaseTableViewCell {
     
     var disposeBag = DisposeBag()
@@ -100,6 +99,9 @@ class MenuSwitchCell: BaseTableViewCell {
 
 extension MenuSwitchCell: View {
     func bind(reactor: MenuSwitchCellRector) {
-        self.title.text = reactor.currentState.title
+        reactor.state
+            .map { $0.menu?.title ?? "" }
+            .bind(to: self.title.rx.text)
+            .disposed(by: disposeBag)
     }
 }

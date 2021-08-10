@@ -111,7 +111,9 @@ extension SplashViewController: View {
             .distinctUntilChanged()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { destination in
-                ViewRouter.route(from: self, to: destination,
+                ViewRouter.route(from: self,
+                                 to: destination,
+                                 navigateType: .PRESENT,
                                  presentationStyle: .fullScreen,
                                  transitionStyle: .crossDissolve)
             })

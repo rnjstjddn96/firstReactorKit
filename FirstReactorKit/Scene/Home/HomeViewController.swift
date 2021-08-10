@@ -101,7 +101,7 @@ class HomeViewController: UIViewController, View {
             .map { $0.destination }
             .distinctUntilChanged()
             .bind(onNext: {
-                ViewRouter.route(from: self, to: $0, withNavigation: true)
+                ViewRouter.route(from: self, to: $0, navigateType: .PUSH)
             })
             .disposed(by: disposeBag)
         

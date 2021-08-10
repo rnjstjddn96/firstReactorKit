@@ -12,7 +12,6 @@ import ReusableKit
 import RxDataSources
 import Then
 
-typealias MenuSectionModel = MenuSectionData
 enum MenuCellSelection {
     case routeCell(MenuRouteCellReactor)
     case switchCell(MenuSwitchCellRector)
@@ -25,6 +24,8 @@ class MenuViewController: UIViewController {
     let menuListView = UITableView().then {
         $0.register(Reusables.Cell.menuRouteCell)
         $0.register(Reusables.Cell.menuSwitchCell)
+        
+        $0.separatorStyle = .singleLine
     }
     
     override func viewDidLoad() {
@@ -66,7 +67,7 @@ extension MenuViewController: View {
             .setDelegate(self)
             .disposed(by: disposeBag)
         
-        let dataSource = RxTableViewSectionedReloadDataSource<MenuSectionModel> { [weak self] dataSource, tableView, indexPath, sectionItems in
+        let dataSource = RxTableViewSectionedReloadDataSource<MenuSectionData> { [weak self] dataSource, tableView, indexPath, sectionItems in
             guard let self = self else { return UITableViewCell() }
             switch sectionItems {
             case .routeCell(let reactor):

@@ -26,7 +26,7 @@ class MenuViewReactor: Reactor {
     }
     
     struct State {
-        var sections: [MenuSectionModel]
+        var sections: [MenuSectionData]
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -44,8 +44,8 @@ class MenuViewReactor: Reactor {
         return newState
     }
     
-    static func configMenus() -> [MenuSectionModel] {
-        var sections: [MenuSectionModel] = []
+    static func configMenus() -> [MenuSectionData] {
+        var sections: [MenuSectionData] = []
         
         let displayData1: [[MenuCellType]] = [
             [.ROUTE("1"), .SWITCH("2"), .SWITCH("2"), .ROUTE("4")]
@@ -65,11 +65,11 @@ class MenuViewReactor: Reactor {
                     section.append(item)
                 case .SWITCH(let title):
                     let item: MenuCellSelection
-                        = .switchCell(MenuSwitchCellRector(state: Menu(title: title)))
+                        = .switchCell(MenuSwitchCellRector(menu: Menu(title: title)))
                     section.append(item)
                 }
             }
-            sections.append(MenuSectionModel(header: "section1", items: section))
+            sections.append(MenuSectionData(header: "section1", items: section))
         }
         
         for cellSection in displayData2 {
@@ -82,11 +82,11 @@ class MenuViewReactor: Reactor {
                     section.append(item)
                 case .SWITCH(let title):
                     let item: MenuCellSelection
-                        = .switchCell(MenuSwitchCellRector(state: Menu(title: title)))
+                        = .switchCell(MenuSwitchCellRector(menu: Menu(title: title)))
                     section.append(item)
                 }
             }
-            sections.append(MenuSectionModel(header: "section2", items: section))
+            sections.append(MenuSectionData(header: "section2", items: section))
         }
         
         return sections
