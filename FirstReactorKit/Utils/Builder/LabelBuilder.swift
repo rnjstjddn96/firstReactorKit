@@ -46,7 +46,7 @@ class LabelBuilder: BuilderType {
         return self
     }
     
-    func withAlpah(alpha: CGFloat) -> LabelBuilder {
+    func withAlpha(alpha: CGFloat) -> LabelBuilder {
         self.alpha = alpha
         return self
     }

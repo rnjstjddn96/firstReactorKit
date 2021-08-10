@@ -10,10 +10,8 @@ import RxCocoa
 import SnapKit
 import ReactorKit
 
-class MainViewController: UIViewController {
+class MainViewController: BaseViewController<MainReactor> {
     var walletBottomOffset: Constraint?
-    
-    var disposeBag = DisposeBag()
     
     let homeViewController = HomeViewController()
     let walletViewController = WalletViewController()

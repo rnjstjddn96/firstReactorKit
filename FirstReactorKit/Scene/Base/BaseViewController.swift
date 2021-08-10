@@ -26,14 +26,19 @@ class BaseViewController<T: Reactor>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
+        setConstraints()
     }
     
     override func updateViewConstraints() {
         if !didSetupConstraints {
-            self.setConstraints()
+            self.updateConstraints()
             self.didSetupConstraints = true
         }
         super.updateViewConstraints()
+    }
+    
+    func updateConstraints() {
+        
     }
     
     func setConstraints() {

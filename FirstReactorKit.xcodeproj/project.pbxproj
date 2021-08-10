@@ -30,7 +30,6 @@
 		EA03A24426A646E9005B37D2 /* ButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23626A646E9005B37D2 /* ButtonBuilder.swift */; };
 		EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23726A646E9005B37D2 /* LabelBuilder.swift */; };
 		EA03A24626A646E9005B37D2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23926A646E9005B37D2 /* Validation.swift */; };
-		EA3E570826BFE53B00740FF6 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3E570726BFE53B00740FF6 /* CommonButton.swift */; };
 		EA3E570A26C0196000740FF6 /* AnimationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3E570926C0196000740FF6 /* AnimationUtils.swift */; };
 		EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F713D26A9191C0004FB02 /* Indicator.swift */; };
 		EA6F714026A9345E0004FB02 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6F713F26A9345D0004FB02 /* loader.json */; };
@@ -89,7 +88,6 @@
 		EA03A23626A646E9005B37D2 /* ButtonBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBuilder.swift; sourceTree = "<group>"; };
 		EA03A23726A646E9005B37D2 /* LabelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelBuilder.swift; sourceTree = "<group>"; };
 		EA03A23926A646E9005B37D2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		EA3E570726BFE53B00740FF6 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		EA3E570926C0196000740FF6 /* AnimationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtils.swift; sourceTree = "<group>"; };
 		EA49C46226B11547001F9221 /* ReactorPractice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ReactorPractice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EA6F713D26A9191C0004FB02 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 				EAE6B1B726BA91B70074C7A7 /* WalletIndicatorView.swift */,
 				EA774DE926BECD110022ABD2 /* HomeNavigationBar.swift */,
 				EA774DEB26BF8DB20022ABD2 /* NavigationBar.swift */,
-				EA3E570726BFE53B00740FF6 /* CommonButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,18 +320,11 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
-		EA911FF526C1FB2100825166 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		EA911FF926C266A600825166 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				EA911FF626C1FB3100825166 /* BaseViewController.swift */,
+				EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -352,7 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				EA911FF926C266A600825166 /* Base */,
-				EA911FF526C1FB2100825166 /* Cell */,
 				EA03A21B26A578CD005B37D2 /* Splash */,
 				EAE6B1B426B996490074C7A7 /* Main */,
 				EADF2EE026B1200D00572B99 /* Home */,
@@ -534,7 +523,6 @@
 				EA911FF726C1FB3100825166 /* BaseViewController.swift in Sources */,
 				EA03A23E26A646E9005B37D2 /* NetworkService.swift in Sources */,
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
-				EA3E570826BFE53B00740FF6 /* CommonButton.swift in Sources */,
 				EA3E570A26C0196000740FF6 /* AnimationUtils.swift in Sources */,
 				EA911FE426C0E2FE00825166 /* Menu.swift in Sources */,
 				EA911FE926C0E5DF00825166 /* MenuCellReactor.swift in Sources */,

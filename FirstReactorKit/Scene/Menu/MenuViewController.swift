@@ -17,20 +17,14 @@ enum MenuCellSelection {
     case switchCell(MenuSwitchCellRector)
 }
 
-class MenuViewController: UIViewController {
+class MenuViewController: BaseViewController<MenuViewReactor> {
     lazy var navigationBar = NavigationBar()
-    var disposeBag = DisposeBag()
     
     let menuListView = UITableView().then {
         $0.register(Reusables.Cell.menuRouteCell)
         $0.register(Reusables.Cell.menuSwitchCell)
         
-        $0.separatorStyle = .singleLine
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .white
+        $0.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {

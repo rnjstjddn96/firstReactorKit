@@ -9,12 +9,10 @@ import Foundation
 import ReactorKit
 import RxCocoa
 
-class WalletViewController: UIViewController {
+class WalletViewController: BaseViewController<WalletReactor> {
 
-    var viewWillAppearSubject = PublishSubject<WalletReactor.Action>()
     var bottomMenutapGesture = UITapGestureRecognizer()
     let indicator = WalletIndicator()
-    var disposeBag = DisposeBag()
     
     let tableView: UITableView = {
         let tableView = UITableView()

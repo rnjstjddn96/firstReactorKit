@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0B967D7F8561D42493EE289EC8D450D1"
-               BuildableName = "lottie-ios.framework"
-               BlueprintName = "lottie-ios"
+               BlueprintIdentifier = "D77CA6E20D3F659D26E05339EBA33B59"
+               BuildableName = "RxGesture.framework"
+               BlueprintName = "RxGesture"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

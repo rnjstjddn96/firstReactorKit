@@ -17,4 +17,5 @@ target 'FirstReactorKit' do
 	pod 'RxDataSources'
 	pod 'Then'
 	pod 'ReusableKit'
+	pod "RxGesture"
 end

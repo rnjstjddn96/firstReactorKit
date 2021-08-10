@@ -10,9 +10,7 @@ import ReactorKit
 import RxCocoa
 import SnapKit
 
-class HomeViewController: UIViewController, View {
-    var disposeBag: DisposeBag = DisposeBag()
-    
+class HomeViewController: BaseViewController<HomeReactor>, View {
     lazy var loadingIndicator = LoadingIndicator(view: self.view)
     var homeNavigationBar = HomeNavigationBar()
     

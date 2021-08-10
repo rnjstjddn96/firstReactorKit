@@ -62,7 +62,7 @@ class SplashReactor: Reactor, APIService {
         case .getUser:
             return
                 self.getProfile()
-                    .delay(.seconds(3), scheduler: MainScheduler.instance)
+//                    .delay(.seconds(3), scheduler: MainScheduler.instance)
                     .map { result in
                     if let user = result.value {
                         return Mutation.setUser(user: user)

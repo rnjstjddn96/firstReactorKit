@@ -18,7 +18,7 @@ class SplashLogoView: UIView {
         .withFont(.systemFont(ofSize: 30, weight: .bold))
         .withTextAlignment(.center)
         .withTextColor(.black)
-        .withAlpah(alpha: 0.0)
+        .withAlpha(alpha: 0.0)
         .build()
     
     func initSplashLogo(to view: UIView) {

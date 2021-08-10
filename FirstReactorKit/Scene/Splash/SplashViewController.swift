@@ -16,10 +16,23 @@ class SplashViewController: BaseViewController<SplashReactor> {
     
     lazy var loadingIndicator = LoadingIndicator(view: self.view)
     let splashLogoView = SplashLogoView()
-    var btnToLogin = CommonButton(title: "로그인",
-                                  titleColor: .white,
-                                  background: .systemIndigo,
-                                  titleFont: .systemFont(ofSize: 20, weight: .bold))
+    var btnToLogin = UIButton.Builder()
+        .withText("Login", for: .normal)
+        .withTextColor(.white, for: .normal)
+        .withBackground(color: .systemIndigo)
+        .withAlpha(alpha: 0)
+        .withCornerRadius(radius: 10)
+        .withFont(.systemFont(ofSize: 14, weight: .bold))
+        .build()
+    var btnToRegister = UIButton.Builder()
+        .withText("Register", for: .normal)
+        .withTextColor(.white, for: .normal)
+        .withBackground(color: .systemIndigo)
+        .withCornerRadius(radius: 10)
+        .withAlpha(alpha: 0)
+        .withFont(.systemFont(ofSize: 14, weight: .bold))
+        .build()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,25 +40,36 @@ class SplashViewController: BaseViewController<SplashReactor> {
         viewWillAppearSubject.on(.next(.getUser))
     }
     
-    private func showAlert(title: String, message: String) {
-        AlertUtils.displayBasicAlert(controller: self,
-                                     title: title, message: message,
-                                     showCancelButton: false,
-                                     okButtonTitle: "확인",
-                                     cancelButtonTitle: nil,
-                                     okButtonCallback: nil,
-                                     cancelButtonCallback: nil)
+    override func setConstraints() {
+        configureButtons()
     }
     
     private func configureButtons() {
         self.view.addSubview(btnToLogin)
+        self.view.addSubview(btnToRegister)
+        
+        btnToRegister.snp.makeConstraints { create in
+            create.centerX.equalToSuperview()
+            create.bottom.equalTo(btnToLogin.snp.top).offset(-30)
+            create.height.equalTo(50)
+            create.width.equalToSuperview().multipliedBy(0.8)
+        }
+        
+        
         btnToLogin.snp.makeConstraints { create in
             create.centerX.equalToSuperview()
             create.bottom.equalToSuperview().offset(-30)
             create.height.equalTo(50)
             create.width.equalToSuperview().multipliedBy(0.8)
         }
-        btnToLogin.buildCommonButton()
+    }
+    
+    private func showButtons() {
+        self.view.animate(duration: 0.5) { [weak self] in
+            guard let self = self else { return }
+            self.btnToLogin.alpha = 1.0
+            self.btnToRegister.alpha = 1.0
+        }
     }
 }
 
@@ -60,7 +84,7 @@ extension SplashViewController: View {
             .skip(1)
             .distinctUntilChanged()
             .observe(on: MainScheduler.asyncInstance)
-            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .debounce(.seconds(2), scheduler: MainScheduler.instance)
             .map { authorization in
                 let mainView = MainViewController()
                 let reactor = MainReactor()
@@ -127,11 +151,12 @@ extension SplashViewController: View {
         reactor.state
             .asObservable()
             .map { $0.failure }
+            .debounce(.seconds(2), scheduler: MainScheduler.instance)
             .filter { $0 != nil }
             .subscribe(onNext: { [weak self] failure in
                 guard let self = self else { return }
                 //MARK: Login Register 버튼 생성
-                self.configureButtons()
+                self.showButtons()
             })
             .disposed(by: disposeBag)
 
@@ -141,8 +166,13 @@ extension SplashViewController: View {
             .filter { $0 != nil }
             .subscribe(onNext: { [weak self] error in
                 guard let self = self else { return }
-                self.showAlert(title: "유저정보를 받아오지 못했습니다.",
-                               message: error?.localizedDescription ?? "")
+                self.showBasicAlert(title: "User Error",
+                                    message: error?.localizedDescription ?? "",
+                                    showCancelButton: false,
+                                    okButtonTitle: Strings.Common.CONFIRM,
+                                    cancelButtonTitle: nil,
+                                    okButtonCallback: nil,
+                                    cancelButtonCallback: nil)
             })
             .disposed(by: disposeBag)
     }
