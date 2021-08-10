@@ -10,12 +10,9 @@ import UIKit
 import ReactorKit
 import RxCocoa
 
-class SplashViewController: UIViewController {
+class SplashViewController: BaseViewController<SplashReactor> {
     
     var session = NetworkService()
-    var disposeBag = DisposeBag()
-    
-    var viewWillAppearSubject = PublishSubject<SplashReactor.Action>()
     
     lazy var loadingIndicator = LoadingIndicator(view: self.view)
     let splashLogoView = SplashLogoView()
@@ -24,10 +21,8 @@ class SplashViewController: UIViewController {
                                   background: .systemIndigo,
                                   titleFont: .systemFont(ofSize: 20, weight: .bold))
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .systemBackground
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewWillAppearSubject.on(.next(.showLogo))
         viewWillAppearSubject.on(.next(.getUser))
     }
