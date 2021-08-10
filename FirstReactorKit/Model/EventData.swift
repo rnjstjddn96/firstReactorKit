@@ -8,14 +8,51 @@
 import Foundation
 import UIKit
 
-class EventData {
-    var eventImage: UIImage!
-    var eventTitle: String!
-    var eventSubTitle: String!
+enum CardViewMode {
+    case full_CardViewMode
+    case card_CardViewMode
+}
+
+enum CardViewType {
+    case event_CardViewType(bgImage: UIImage, eventTitle: String, eventSubTitle: String)
     
-    init(eventImage: UIImage, eventTitle: String, eventSubTitle: String) {
-        self.eventImage = eventImage
-        self.eventTitle = eventTitle
-        self.eventSubTitle = eventSubTitle
+    var backgroundImage: UIImage? {
+        switch self {
+        case .event_CardViewType(let bgImage, _, _):
+            return bgImage
+        }
     }
+}
+
+
+class EventData {
+    var viewMode: CardViewMode = .card_CardViewMode
+    let viewType: CardViewType
+    var eventImage: UIImage? = nil
+    var eventTitle: String? = nil
+    var eventSubTitle: String? = nil
+    
+    init(viewType: CardViewType) {
+        self.viewType = viewType
+        switch viewType {
+        case .event_CardViewType(let bgImage, let eventTitle, let eventSubTitle):
+            self.eventImage = bgImage.imageWith(newSize: CGSize(width: 375, height: 450))
+            self.eventTitle = eventTitle
+            self.eventSubTitle = eventSubTitle
+        }
+        
+    }
+}
+
+extension UIImage {
+    
+    func imageWith(newSize: CGSize) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size:newSize)
+        let image = renderer.image { _ in
+            draw(in: CGRect.init(origin: CGPoint.zero, size: newSize))
+        }
+
+        return image
+    }
+    
 }

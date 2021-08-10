@@ -43,7 +43,11 @@ final class NetworkService: NetworkServiceInterface {
                 parameters: apiBuilder.parameters,
                 headers: apiBuilder.headers,
                 interceptor: apiBuilder.interceptor
-            )
+            ){
+                if apiBuilder.timeoutInterval != nil {
+                    $0.timeoutInterval = apiBuilder.timeoutInterval!
+                }
+            }
             .validate()
             .responseData { response in
                 switch response.result {
@@ -69,8 +73,9 @@ final class NetworkService: NetworkServiceInterface {
                     }
                 case let .failure(error):
                     //MARK: Connection Failed
-                    log.debug("RESPONSE:\n\(apiBuilder.path)\n\(JSON(error))")
-                    observer.onError(APIError.HTTP(error))
+                    let isTimeOut = error.isSessionTaskError
+                    log.debug("RESPONSE:\n\(apiBuilder.path)\n\(isTimeOut ? error.localizedDescription : JSON(error).description)")
+                    observer.onError(isTimeOut ? APIError.NOT_CONNECTED : APIError.HTTP(error))
                 }
             }
             

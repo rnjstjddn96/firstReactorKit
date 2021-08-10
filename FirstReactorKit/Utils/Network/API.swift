@@ -16,7 +16,7 @@ enum API {
 }
 
 extension API: RequestBuilder {
-   
+    
 //    var request: DataRequest {
 //        let url = NetworkConfig.url.appendingPathComponent(path)
 //        let request: DataRequest =
@@ -115,6 +115,17 @@ extension API: RequestBuilder {
             return nil
         case .GET_ANIMAL:
             return customInterceptor
+        }
+    }
+    
+    var timeoutInterval: Double? {
+        switch self {
+        case .TEST(_),
+             .GET_PROFILE,
+             .GET_TOKEN(_):
+            return nil
+        case .GET_ANIMAL:
+            return 3
         }
     }
     

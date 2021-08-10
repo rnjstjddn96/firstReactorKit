@@ -16,4 +16,5 @@ target 'FirstReactorKit' do
 	pod 'lottie-ios'
   pod 'Hero', '~> 1.6.1'
   pod "RxGesture"
+  pod 'RxDataSources'
 end

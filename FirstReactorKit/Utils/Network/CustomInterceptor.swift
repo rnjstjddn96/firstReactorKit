@@ -20,13 +20,13 @@ class CustomInterceptor: RequestInterceptor {
             return
         }
         
-        var bearerToken = ""
-        if cnt % 2 == 0 {
-            bearerToken = "Bearer \(token)"
-        } else {
-            cnt += 1
-            bearerToken = "Bearer \(token)000000"
-        }
+        var bearerToken = "Bearer \(token)"
+//        if cnt % 2 == 0 {
+//            bearerToken = "Bearer \(token)"
+//        } else {
+//            cnt += 1
+//            bearerToken = "Bearer \(token)000000"
+//        }
         request.setValue(bearerToken, forHTTPHeaderField: "Authorization")
         print("\nadapted; token added to the header field is: \(bearerToken)\n")
         completion(.success(request))

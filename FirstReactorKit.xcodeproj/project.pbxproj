@@ -11,9 +11,15 @@
 		3842FF8B26BA763A0009C885 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8926BA763A0009C885 /* Token.swift */; };
 		3842FF8D26BA777B0009C885 /* CustomInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8C26BA777B0009C885 /* CustomInterceptor.swift */; };
 		3842FF8F26BA77830009C885 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8E26BA77830009C885 /* UserDefaultsManager.swift */; };
-		389C892E26BBAF2F00142F12 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C892D26BBAF2F00142F12 /* EventViewController.swift */; };
+		389AFEBE26C0E66B00E57730 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AFEBD26C0E66B00E57730 /* EventViewController.swift */; };
+		389AFECD26C123A800E57730 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AFECC26C123A800E57730 /* EventDetailViewController.swift */; };
+		389C892E26BBAF2F00142F12 /* 1EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C892D26BBAF2F00142F12 /* 1EventViewController.swift */; };
 		389C893026BBB39500142F12 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C892F26BBB39500142F12 /* Extensions.swift */; };
 		389C894026BBC47800142F12 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C893F26BBC47800142F12 /* EventData.swift */; };
+		38A71EB626C25105009954CB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A71EB526C25105009954CB /* CardView.swift */; };
+		38A71EB826C2702C009954CB /* CardTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A71EB726C2702C009954CB /* CardTransitionManager.swift */; };
+		38BC9A2E26BCF86600172E69 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC9A2D26BCF86600172E69 /* TableViewCell.swift */; };
+		38BC9A3226BD20A200172E69 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC9A3126BD20A200172E69 /* CollectionViewCell.swift */; };
 		B5D92B349578544B7A5582E9 /* Pods_FirstReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FEC6067F16A9E93D93864E /* Pods_FirstReactorKit.framework */; };
 		EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A1F126A55449005B37D2 /* AppDelegate.swift */; };
 		EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A1F326A55449005B37D2 /* SceneDelegate.swift */; };
@@ -56,7 +62,9 @@
 		3842FF8926BA763A0009C885 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		3842FF8C26BA777B0009C885 /* CustomInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInterceptor.swift; sourceTree = "<group>"; };
 		3842FF8E26BA77830009C885 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		389C892D26BBAF2F00142F12 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		389AFEBD26C0E66B00E57730 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		389AFECC26C123A800E57730 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		389C892D26BBAF2F00142F12 /* 1EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1EventViewController.swift; sourceTree = "<group>"; };
 		389C892F26BBB39500142F12 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		389C893426BBBC2200142F12 /* gotham_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gotham_medium.ttf; sourceTree = "<group>"; };
 		389C893526BBBC2200142F12 /* gothambook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothambook.ttf; sourceTree = "<group>"; };
@@ -70,6 +78,10 @@
 		389C893D26BBBC2200142F12 /* notosans_black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notosans_black.otf; sourceTree = "<group>"; };
 		389C893E26BBBC2200142F12 /* notosanscjkkr_bold_alphabetic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notosanscjkkr_bold_alphabetic.otf; sourceTree = "<group>"; };
 		389C893F26BBC47800142F12 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		38A71EB526C25105009954CB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		38A71EB726C2702C009954CB /* CardTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTransitionManager.swift; sourceTree = "<group>"; };
+		38BC9A2D26BCF86600172E69 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		38BC9A3126BD20A200172E69 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3BFE01EE64AF38667F65F56F /* Pods-FirstReactorKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstReactorKit.release.xcconfig"; path = "Target Support Files/Pods-FirstReactorKit/Pods-FirstReactorKit.release.xcconfig"; sourceTree = "<group>"; };
 		48FEC6067F16A9E93D93864E /* Pods_FirstReactorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstReactorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA03A1EE26A55449005B37D2 /* FirstReactorKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstReactorKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +137,12 @@
 		389C892C26BBAF0900142F12 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				389C892D26BBAF2F00142F12 /* EventViewController.swift */,
+				389C892D26BBAF2F00142F12 /* 1EventViewController.swift */,
+				38BC9A3126BD20A200172E69 /* CollectionViewCell.swift */,
+				389AFEBD26C0E66B00E57730 /* EventViewController.swift */,
+				389AFECC26C123A800E57730 /* EventDetailViewController.swift */,
+				38A71EB526C25105009954CB /* CardView.swift */,
+				38A71EB726C2702C009954CB /* CardTransitionManager.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -340,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				EAE6B1AD26B985070074C7A7 /* TableViewController.swift */,
+				38BC9A2D26BCF86600172E69 /* TableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -483,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38BC9A2E26BCF86600172E69 /* TableViewCell.swift in Sources */,
 				EA03A1F626A55449005B37D2 /* HomeViewController.swift in Sources */,
 				EA03A22226A578EE005B37D2 /* SplashReactor.swift in Sources */,
 				3842FF8F26BA77830009C885 /* UserDefaultsManager.swift in Sources */,
@@ -490,6 +509,7 @@
 				EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */,
 				EA03A23F26A646E9005B37D2 /* APIError + APIResult.swift in Sources */,
 				EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */,
+				389AFEBE26C0E66B00E57730 /* EventViewController.swift in Sources */,
 				EA6F714626A93B360004FB02 /* ImageViewBuilder.swift in Sources */,
 				3842FF8B26BA763A0009C885 /* Token.swift in Sources */,
 				EA03A24026A646E9005B37D2 /* API.swift in Sources */,
@@ -509,13 +529,17 @@
 				EA6F714926A94C560004FB02 /* UserManager.swift in Sources */,
 				EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */,
 				EA03A24126A646E9005B37D2 /* NetworkConfig.swift in Sources */,
+				38A71EB626C25105009954CB /* CardView.swift in Sources */,
+				389AFECD26C123A800E57730 /* EventDetailViewController.swift in Sources */,
 				EA03A24426A646E9005B37D2 /* ButtonBuilder.swift in Sources */,
 				EA03A23B26A646E9005B37D2 /* APIService.swift in Sources */,
 				EA03A23E26A646E9005B37D2 /* NetworkService.swift in Sources */,
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
+				38BC9A3226BD20A200172E69 /* CollectionViewCell.swift in Sources */,
 				EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */,
-				389C892E26BBAF2F00142F12 /* EventViewController.swift in Sources */,
+				38A71EB826C2702C009954CB /* CardTransitionManager.swift in Sources */,
+				389C892E26BBAF2F00142F12 /* 1EventViewController.swift in Sources */,
 				EA03A24626A646E9005B37D2 /* Validation.swift in Sources */,
 				EAE6B1AE26B985070074C7A7 /* TableViewController.swift in Sources */,
 				EAE6B1B026B987A10074C7A7 /* BottomMenuViewController.swift in Sources */,
@@ -588,7 +612,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -643,7 +667,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -660,7 +684,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2VUB7Y3L2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FirstReactorKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -680,7 +704,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2VUB7Y3L2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FirstReactorKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

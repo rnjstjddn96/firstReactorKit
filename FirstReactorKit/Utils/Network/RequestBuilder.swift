@@ -20,4 +20,5 @@ protocol RequestBuilder {
     var path: String { get }
     var encoding: ParameterEncoding? { get }
     var interceptor: RequestInterceptor? { get }
+    var timeoutInterval: Double? { get }
 }
