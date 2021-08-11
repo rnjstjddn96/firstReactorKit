@@ -12,10 +12,17 @@ import ReactorKit
 
 struct Menu {
     var title: String
+    var destination: UIViewController? = nil
     
-    init(title: String) {
+    init(title: String, destination: UIViewController? = nil) {
         self.title = title
+        self.destination = destination
     }
+}
+
+enum MenuCellSelection {
+    case routeCell(MenuRouteCellReactor)
+    case switchCell(MenuSwitchCellRector)
 }
 
 struct MenuSectionData {

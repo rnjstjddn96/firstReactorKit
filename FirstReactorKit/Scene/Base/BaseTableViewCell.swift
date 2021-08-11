@@ -34,3 +34,9 @@ class BaseTableViewCell: UITableViewCell {
         
     }
 }
+
+extension BaseTableViewCell {
+    func withSelectionStyle(style: UITableViewCell.SelectionStyle) {
+        self.selectionStyle = style
+    }
+}

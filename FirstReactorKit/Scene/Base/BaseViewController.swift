@@ -26,7 +26,13 @@ class BaseViewController<T: Reactor>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         setConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func updateViewConstraints() {
@@ -63,6 +69,19 @@ extension BaseViewController {
                                      cancelButtonTitle: cancelButtonTitle,
                                      okButtonCallback: okButtonCallback,
                                      cancelButtonCallback: cancelButtonCallback)
+    }
+    
+    func route<T: UIViewController>(to destination: T?,
+                                            navigateType: NavigateType.Route,
+                                            presentationStyle: UIModalPresentationStyle = .fullScreen,
+                                            transitionStyle: UIModalTransitionStyle = .coverVertical,
+                                            completion: (() -> Void)? = nil) {
         
+        ViewRouter.route(from: self,
+                         to: destination,
+                         navigateType: navigateType,
+                         presentationStyle: presentationStyle,
+                         transitionStyle: transitionStyle,
+                         completion: completion)
     }
 }

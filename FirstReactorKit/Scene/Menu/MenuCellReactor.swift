@@ -9,11 +9,35 @@ import Foundation
 import ReactorKit
 
 class MenuRouteCellReactor: Reactor {
-    typealias Action = NoAction
-    let initialState: Menu
+    let initialState: State
+    
+    init(menu: Menu) {
+        self.initialState = State(menu: menu)
+    }
+    
+    enum Action {
+        
+    }
+    
+    enum Mutation {
+        
+    }
+    
+    struct State {
+        var menu: Menu?
+    }
   
-    init(state: Menu) {
-        self.initialState = state
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        
+        }
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var newState = state
+
+        return newState
     }
 }
 
@@ -25,7 +49,7 @@ class MenuSwitchCellRector: Reactor {
     }
     
     enum Action {
-        
+
     }
     
     enum Mutation {

@@ -12,11 +12,6 @@ import ReusableKit
 import RxDataSources
 import Then
 
-enum MenuCellSelection {
-    case routeCell(MenuRouteCellReactor)
-    case switchCell(MenuSwitchCellRector)
-}
-
 class MenuViewController: BaseViewController<MenuViewReactor> {
     lazy var navigationBar = NavigationBar()
     
@@ -68,12 +63,14 @@ extension MenuViewController: View {
                 guard let cell = self.menuListView.dequeue(Reusables.Cell.menuRouteCell) else {
                     return UITableViewCell()
                 }
+                cell.withSelectionStyle(style: .none)
                 cell.reactor = reactor
                 return cell
             case .switchCell(let reactor):
                 guard let cell = self.menuListView.dequeue(Reusables.Cell.menuSwitchCell) else {
                     return UITableViewCell()
                 }
+                cell.withSelectionStyle(style: .none)
                 cell.reactor = reactor
                 return cell
             }
@@ -88,18 +85,29 @@ extension MenuViewController: View {
             .bind(to: menuListView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-//        menuListView.rx
-//            .modelSelected(MenuCellSelection.self)
-//            .map { cell in
-//                switch cell {
-//                case .routeCell(let reactor):
-//                    return Reactor.Action.Type
-//                case .switchCell(let reactor):
-//                    return Reactor.Action.Type
-//                }
-//            }
-//            .bind(to: reactor.action)
-//            .disposed(by: disposeBag)
+        menuListView.rx
+            .modelSelected(MenuCellSelection.self)
+            .map { cell in
+                switch cell {
+                case .routeCell(let _reactor):
+                    let destination = _reactor.currentState.menu?.destination
+                    return Reactor.Action.route(to: destination!)
+                case .switchCell:
+                    return Reactor.Action.route(to: SampleDetailViewController1() )
+                }
+            }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        reactor.state
+            .map { $0.destination }
+            .asObservable()
+            .filter { $0 != nil }
+            .bind { [weak self] destination in
+                guard let self = self else { return }
+                self.route(to: destination!, navigateType: .PUSH)
+            }
+            .disposed(by: disposeBag)
     }
 }
 

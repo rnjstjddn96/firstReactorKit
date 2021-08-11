@@ -18,49 +18,53 @@ class MenuViewReactor: Reactor {
     }
     
     enum Action {
+        case route(to: UIViewController)
     }
     
     enum Mutation {
-        
+        case setDestination(view: UIViewController)
     }
     
     struct State {
         var sections: [MenuSectionData]
+        var destination: UIViewController?
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-                    
+        case .route(to: let vc):
+            return Observable.just(Mutation.setDestination(view: vc))
         }
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
-                
         switch mutation {
-            
+        case .setDestination(view: let vc):
+            newState.destination = vc
         }
         return newState
     }
     
     static func configMenus() -> [MenuSectionData] {
         var sections: [MenuSectionData] = []
+        let destination: UIViewController = SampleDetailViewController()
         
         let displayData1: [[MenuCellType]] = [
-            [.ROUTE("1"), .SWITCH("2"), .SWITCH("2"), .ROUTE("4")]
+            [.ROUTE("메뉴1", destination), .SWITCH("토글1"), .SWITCH("메뉴2"), .ROUTE("메뉴3", destination)]
         ]
         
         let displayData2: [[MenuCellType]] = [
-            [.ROUTE("1"), .ROUTE("2"), .SWITCH("2"), .ROUTE("4")]
+            [.ROUTE("메뉴4", destination), .SWITCH("토글2"), .SWITCH("토글3"), .ROUTE("메뉴5", destination)]
         ]
         
         for cellSection in displayData1 {
             var section: [MenuCellSelection] = []
             for item in cellSection {
                 switch item {
-                case .ROUTE(let title):
+                case .ROUTE(let title, let destination):
                     let item: MenuCellSelection
-                        = .routeCell(MenuRouteCellReactor(state: Menu(title: title)))
+                        = .routeCell(MenuRouteCellReactor(menu: Menu(title: title, destination: destination)))
                     section.append(item)
                 case .SWITCH(let title):
                     let item: MenuCellSelection
@@ -75,9 +79,9 @@ class MenuViewReactor: Reactor {
             var section: [MenuCellSelection] = []
             for item in cellSection {
                 switch item {
-                case .ROUTE(let title):
+                case .ROUTE(let title, let destination):
                     let item: MenuCellSelection
-                        = .routeCell(MenuRouteCellReactor(state: Menu(title: title)))
+                        = .routeCell(MenuRouteCellReactor(menu: Menu(title: title, destination: destination)))
                     section.append(item)
                 case .SWITCH(let title):
                     let item: MenuCellSelection

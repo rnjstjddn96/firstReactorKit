@@ -89,7 +89,7 @@ extension SplashViewController: View {
                 let mainView = MainViewController()
                 let reactor = MainReactor()
                 mainView.reactor = reactor
-                let naviagation = UINavigationController(rootViewController: mainView)
+                let naviagation = BaseNavigationController(rootViewController: mainView)
                 return Reactor.Action.route(to: naviagation)
 //                switch authorization {
 //                case .AUTHORIZED(user: let user):

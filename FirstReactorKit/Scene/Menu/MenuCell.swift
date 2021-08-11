@@ -11,7 +11,7 @@ import SnapKit
 import ReactorKit
 
 enum MenuCellType {
-    case ROUTE(_ title: String)
+    case ROUTE(_ title: String, _ destination: UIViewController)
     case SWITCH(_ title: String)
 }
 
@@ -56,7 +56,7 @@ class MenuRouteCell: BaseTableViewCell {
 
 extension MenuRouteCell: View {
     func bind(reactor: MenuRouteCellReactor) {
-        self.title.text = reactor.currentState.title
+        self.title.text = reactor.currentState.menu?.title
     }
 }
 

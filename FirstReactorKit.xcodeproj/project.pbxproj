@@ -31,6 +31,8 @@
 		EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23726A646E9005B37D2 /* LabelBuilder.swift */; };
 		EA03A24626A646E9005B37D2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23926A646E9005B37D2 /* Validation.swift */; };
 		EA3E570A26C0196000740FF6 /* AnimationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3E570926C0196000740FF6 /* AnimationUtils.swift */; };
+		EA5CC37426C3CEA3004EBA75 /* SampleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37326C3CEA3004EBA75 /* SampleDetailViewController.swift */; };
+		EA5CC37626C3D7D9004EBA75 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37526C3D7D9004EBA75 /* BaseNavigationController.swift */; };
 		EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F713D26A9191C0004FB02 /* Indicator.swift */; };
 		EA6F714026A9345E0004FB02 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6F713F26A9345D0004FB02 /* loader.json */; };
 		EA6F714426A93AAD0004FB02 /* SplashLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */; };
@@ -90,6 +92,8 @@
 		EA03A23926A646E9005B37D2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		EA3E570926C0196000740FF6 /* AnimationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtils.swift; sourceTree = "<group>"; };
 		EA49C46226B11547001F9221 /* ReactorPractice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ReactorPractice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EA5CC37326C3CEA3004EBA75 /* SampleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDetailViewController.swift; sourceTree = "<group>"; };
+		EA5CC37526C3D7D9004EBA75 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		EA6F713D26A9191C0004FB02 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		EA6F713F26A9345D0004FB02 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashLogoView.swift; sourceTree = "<group>"; };
@@ -325,6 +329,7 @@
 			children = (
 				EA911FF626C1FB3100825166 /* BaseViewController.swift */,
 				EA911FEC26C0F3BA00825166 /* BaseTableViewCell.swift */,
+				EA5CC37526C3D7D9004EBA75 /* BaseNavigationController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				EADF2EE026B1200D00572B99 /* Home */,
 				EAE6B1B126B987A70074C7A7 /* Wallet */,
 				EA911FE726C0E58000825166 /* Menu */,
+				EA5CC37326C3CEA3004EBA75 /* SampleDetailViewController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 				EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */,
 				EABB572226A807A4004323AE /* Todo.swift in Sources */,
 				EA03A23A26A646E9005B37D2 /* AlertUtils.swift in Sources */,
+				EA5CC37626C3D7D9004EBA75 /* BaseNavigationController.swift in Sources */,
 				EAE6B1BC26BA92A90074C7A7 /* CustomCell.swift in Sources */,
 				EA03A24326A646E9005B37D2 /* TextFieldBuilder.swift in Sources */,
 				EA03A21926A5777D005B37D2 /* HomeReactor.swift in Sources */,
@@ -537,6 +544,7 @@
 				EAE6B1B026B987A10074C7A7 /* WalletViewController.swift in Sources */,
 				EA911FDF26C0D06D00825166 /* ShapeUtils.swift in Sources */,
 				EA774DEC26BF8DB20022ABD2 /* NavigationBar.swift in Sources */,
+				EA5CC37426C3CEA3004EBA75 /* SampleDetailViewController.swift in Sources */,
 				EA03A24226A646E9005B37D2 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
