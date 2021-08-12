@@ -8,58 +8,92 @@
 import Foundation
 import ReactorKit
 import RxCocoa
+import Parchment
 
 class WalletViewController: BaseViewController<WalletReactor> {
-
+    
+    var pagingViewController: PagingViewController? = nil
     let indicator = WalletIndicator()
-    let tabBarControl = TabBarView()
-    
-    let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.ID)
-        return tableView
-    }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewDidLoadSubject.onNext(.loadMenu(menus: WalletMenu.allCases))
+    }
+    
+    override func setConstraints() {
         self.view.layer.masksToBounds = true
         self.view.roundCorners(corners: [.topLeft, .topRight],
                                radius: WalletIndicator.INDICATOR_HEIGHT / 2)
-        
         self.view.addSubview(indicator)
         self.indicator.snp.makeConstraints { create in
             create.top.left.right.equalToSuperview()
             create.height.equalTo(WalletIndicator.INDICATOR_HEIGHT)
         }
-        
-        tabBarControl.initTabBar(position: .TOP(topGuide: self.indicator.snp.bottom),
-                                 to: self,
-                                 dataSource: WalletMenu.allCases)
-        
-        self.view.addSubview(tableView)
-        tableView.snp.makeConstraints { create in
-            create.top.equalTo(tabBarControl.snp.bottom)
-            create.left.right.equalToSuperview()
-            create.bottom.equalToSuperview()
-        }
-        
-      
-        
-        tableView.rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewWillAppearSubject.on(.next(.getTodos))
         viewWillAppearSubject.on(.completed)
+    }
+    
+    private func addTabBar(tabs: [TabBarInterface]) {
+        pagingViewController = PagingViewController(
+            viewControllers: tabs.map { $0.destination }
+        )
+        if let pvc = pagingViewController {
+            pvc.delegate = self
+            pvc.dataSource = self
+            pvc.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+            pvc.selectedFont = UIFont.systemFont(ofSize: 15, weight: .bold)
+            pvc.textColor = .systemGray3
+            pvc.selectedTextColor = .label
+            pvc.indicatorColor = .systemIndigo
+            pvc.menuItemSize = .selfSizing(estimatedWidth: 55,
+                                           height: SIZE.width * 0.112)
+            pvc.menuItemLabelSpacing = 0
+            pvc.menuInsets = UIEdgeInsets(top: 0, left: 0.05 * SIZE.width,
+                                          bottom: .zero, right: 0.05 * SIZE.width)
+            pvc.menuItemSpacing = 30
+            pvc.indicatorOptions = .visible(height: 4, zIndex: Int.max, spacing: .zero, insets: .zero)
+            
+            self.addChild(pvc)
+            self.view.addSubview(pvc.view)
+            pvc.didMove(toParent: self)
+            
+            pvc.view.snp.makeConstraints { create in
+                create.top.equalTo(indicator.snp.bottom)
+                create.left.right.bottom.equalToSuperview()
+            }
+        }
+    }
+}
+
+extension WalletViewController: PagingViewControllerDelegate, PagingViewControllerDataSource {
+    func pagingViewController(_: PagingViewController, pagingItemAt index: Int) -> PagingItem {
+        return PagingIndexItem(index: index, title: reactor!.currentState.menus[index].title)
+    }
+    
+    func pagingViewController(_: PagingViewController, viewControllerAt index: Int) -> UIViewController {
+        return self.reactor!.currentState.menus[index].destination
+    }
+    
+    func numberOfViewControllers(in pagingViewController: PagingViewController) -> Int {
+        return self.reactor!.currentState.menus.count
     }
 }
 
 extension WalletViewController: View {
     func bind(reactor: WalletReactor) {
         let manager = WalletManager.shared
+        
+        
+        viewDidLoadSubject
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        viewWillAppearSubject
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
         self.indicator.rx
             .tapGesture()
@@ -96,25 +130,11 @@ extension WalletViewController: View {
             .disposed(by: disposeBag)
         
         reactor.state
-            .map { $0.todos }
-            .bind(to: tableView.rx.items(cellIdentifier: CustomCell.ID,
-                                         cellType: CustomCell.self)) { row, todo, cell in
-                cell.bindUI(text: todo.title ?? "",
-                           image: UIImage(named: "profile")!)
+            .map { $0.menus }
+            .bind { [weak self] tabs in
+                guard let self = self else { return }
+                self.addTabBar(tabs: tabs)
             }
             .disposed(by: disposeBag)
-        
-        tableView.rx
-            .modelSelected(Todo.self)
-            .subscribe(onNext: { element in
-            log.debug(element)
-        })
-        .disposed(by: disposeBag)
-    }
-}
-
-extension WalletViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
 }

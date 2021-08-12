@@ -9,77 +9,44 @@ import Foundation
 import ReactorKit
 import RxCocoa
 
-class WalletReactor: Reactor, APIService {
-    var session: NetworkService = NetworkService()
+class WalletReactor: Reactor {
     var initialState: State = State()
-    var newState: State = State()
     
     enum Action {
-//        case toggleBottomMen
-        case getTodos
+        case loadMenu(menus: [TabBarInterface])
 //        case showIndicator
 //        case hideIndicator
 //        case showError(error: ReactorError)
     }
     
     enum Mutation {
-        case setTodos(todos: [Todo])
+        case setMenu(menus: [TabBarInterface])
         case setIndicator(isOn: Bool)
         case setError(error: ReactorError)
     }
     
     struct State {
-        var todos: [Todo] = []
+        var menus: [TabBarInterface] = []
         var isLoading: Bool = false
         var error: ReactorError?
     }
     
-    
-    func transform(action: Observable<Action>) -> Observable<Action> {
-        let refreshTodos = WalletManager.shared.eventRelay
-            .asObservable()
-            .distinctUntilChanged()
-            //Refresh data after menu closed
-            .filter { $0 == .closeMenu }
-            .flatMapLatest { event -> Observable<Action> in
-                return .just(Action.getTodos)
-            }
-            .observe(on: MainScheduler.asyncInstance)
-
-        return Observable.merge(action, refreshTodos)
-    }
-    
     func mutate(action: Action) -> Observable<Mutation> {
-        var getTodos: Observable<Mutation> {
-            return Observable.concat([
-                Observable.just(Mutation.setIndicator(isOn: true)),
-                self.getTodos()
-                    .map { result in
-                        if let todos = result.value {
-                            return Mutation.setTodos(todos: todos)
-                        } else {
-                            return .setError(error: .NETWORK(failure: result.failed,
-                                                             error: result.error))
-                        }
-                    },
-                Observable.just(Mutation.setIndicator(isOn: false))
-            ])
-        }
-        
         switch action {
-        case .getTodos:
-            return getTodos
+        case .loadMenu(menus: let menus):
+            return Observable.just(.setMenu(menus: menus))
         }
     }
     
     func reduce(state: State, mutation: Mutation) -> State {
+        var newState: State = state
         switch mutation {
         case .setError(error: let error):
             newState.error = error
         case .setIndicator(isOn: let isOn):
             newState.isLoading = isOn
-        case .setTodos(todos: let todos):
-            newState.todos = todos
+        case .setMenu(menus: let menus):
+            newState.menus = menus
         }
         return newState
     }

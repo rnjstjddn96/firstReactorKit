@@ -80,8 +80,6 @@ class MainViewController: BaseViewController<MainReactor> {
 }
 
 extension MainViewController: View {
-    typealias Reactor = MainReactor
-    
     func bind(reactor: Reactor) {
         reactor.state
             .map { $0.error }

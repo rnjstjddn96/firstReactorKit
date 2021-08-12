@@ -7,13 +7,15 @@
 
 import Foundation
 import UIKit
+import ReactorKit
 
-protocol TabBarControlInterface {
+protocol TabBarInterface {
     var title: String { get }
     var index: Int { get }
+    var destination: UIViewController { get }
 }
 
-enum WalletMenu: CaseIterable, TabBarControlInterface {
+enum WalletMenu: CaseIterable, TabBarInterface {
     case PAYMENT
     case COUPON
     case HISTORY
@@ -34,6 +36,19 @@ enum WalletMenu: CaseIterable, TabBarControlInterface {
             return Strings.Wallet.Menu.COUPON
         case .HISTORY:
             return Strings.Wallet.Menu.HISTORY
+        }
+    }
+
+    var destination: UIViewController {
+        switch self {
+        case .PAYMENT:
+            return SampleDetailViewController()
+        case .COUPON:
+            let view = SampleDetailTableViewController()
+            view.reactor = SampleTableViewReactor()
+            return view
+        case .HISTORY:
+            return SampleDetailViewController()
         }
     }
 }

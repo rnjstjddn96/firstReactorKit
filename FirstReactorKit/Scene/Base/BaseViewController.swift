@@ -12,6 +12,7 @@ import Then
 import SnapKit
 
 class BaseViewController<T: Reactor>: UIViewController {
+    typealias Reactor = T
     
     //MARK: RxSwift
     var disposeBag = DisposeBag()
