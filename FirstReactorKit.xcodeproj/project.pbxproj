@@ -23,7 +23,7 @@
 		EA03A23D26A646E9005B37D2 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A22F26A646E9005B37D2 /* RequestBuilder.swift */; };
 		EA03A23E26A646E9005B37D2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23026A646E9005B37D2 /* NetworkService.swift */; };
 		EA03A23F26A646E9005B37D2 /* APIError + APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23126A646E9005B37D2 /* APIError + APIResult.swift */; };
-		EA03A24026A646E9005B37D2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23226A646E9005B37D2 /* API.swift */; };
+		EA03A24026A646E9005B37D2 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23226A646E9005B37D2 /* APIs.swift */; };
 		EA03A24126A646E9005B37D2 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23326A646E9005B37D2 /* NetworkConfig.swift */; };
 		EA03A24226A646E9005B37D2 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23426A646E9005B37D2 /* Builder.swift */; };
 		EA03A24326A646E9005B37D2 /* TextFieldBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03A23526A646E9005B37D2 /* TextFieldBuilder.swift */; };
@@ -34,6 +34,8 @@
 		EA5CC37426C3CEA3004EBA75 /* SampleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37326C3CEA3004EBA75 /* SampleDetailViewController.swift */; };
 		EA5CC37626C3D7D9004EBA75 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37526C3D7D9004EBA75 /* BaseNavigationController.swift */; };
 		EA5CC37A26C4A830004EBA75 /* WalletMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37926C4A830004EBA75 /* WalletMenu.swift */; };
+		EA5CC37C26C503E7004EBA75 /* CardAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37B26C503E7004EBA75 /* CardAccount.swift */; };
+		EA5CC37F26C50854004EBA75 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37E26C50854004EBA75 /* Divider.swift */; };
 		EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F713D26A9191C0004FB02 /* Indicator.swift */; };
 		EA6F714026A9345E0004FB02 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6F713F26A9345D0004FB02 /* loader.json */; };
 		EA6F714426A93AAD0004FB02 /* SplashLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */; };
@@ -84,7 +86,7 @@
 		EA03A22F26A646E9005B37D2 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		EA03A23026A646E9005B37D2 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		EA03A23126A646E9005B37D2 /* APIError + APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIError + APIResult.swift"; sourceTree = "<group>"; };
-		EA03A23226A646E9005B37D2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		EA03A23226A646E9005B37D2 /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		EA03A23326A646E9005B37D2 /* NetworkConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		EA03A23426A646E9005B37D2 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		EA03A23526A646E9005B37D2 /* TextFieldBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldBuilder.swift; sourceTree = "<group>"; };
@@ -96,6 +98,8 @@
 		EA5CC37326C3CEA3004EBA75 /* SampleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDetailViewController.swift; sourceTree = "<group>"; };
 		EA5CC37526C3D7D9004EBA75 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		EA5CC37926C4A830004EBA75 /* WalletMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMenu.swift; sourceTree = "<group>"; };
+		EA5CC37B26C503E7004EBA75 /* CardAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAccount.swift; sourceTree = "<group>"; };
+		EA5CC37E26C50854004EBA75 /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
 		EA6F713D26A9191C0004FB02 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		EA6F713F26A9345D0004FB02 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashLogoView.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 				EABB572126A807A4004323AE /* Todo.swift */,
 				EA911FE326C0E2FE00825166 /* Menu.swift */,
 				EA5CC37926C4A830004EBA75 /* WalletMenu.swift */,
+				EA5CC37B26C503E7004EBA75 /* CardAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,7 +247,7 @@
 				EA03A22F26A646E9005B37D2 /* RequestBuilder.swift */,
 				EA03A23026A646E9005B37D2 /* NetworkService.swift */,
 				EA03A23126A646E9005B37D2 /* APIError + APIResult.swift */,
-				EA03A23226A646E9005B37D2 /* API.swift */,
+				EA03A23226A646E9005B37D2 /* APIs.swift */,
 				EA03A23326A646E9005B37D2 /* NetworkConfig.swift */,
 			);
 			path = Network;
@@ -268,11 +273,20 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		EA5CC37D26C50838004EBA75 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				EA6F713D26A9191C0004FB02 /* Indicator.swift */,
+				EA5CC37E26C50854004EBA75 /* Divider.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		EA6F713C26A919150004FB02 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA5CC37D26C50838004EBA75 /* Component */,
 				EA911FE026C0E1EC00825166 /* Cell */,
-				EA6F713D26A9191C0004FB02 /* Indicator.swift */,
 				EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */,
 				EAE6B1B726BA91B70074C7A7 /* WalletIndicatorView.swift */,
 				EA774DE926BECD110022ABD2 /* HomeNavigationBar.swift */,
@@ -510,11 +524,12 @@
 				EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */,
 				EA911FED26C0F3BA00825166 /* BaseTableViewCell.swift in Sources */,
 				EA6F714626A93B360004FB02 /* ImageViewBuilder.swift in Sources */,
-				EA03A24026A646E9005B37D2 /* API.swift in Sources */,
+				EA03A24026A646E9005B37D2 /* APIs.swift in Sources */,
 				EAE6B1B326B988070074C7A7 /* MainViewController.swift in Sources */,
 				EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */,
 				EABB572226A807A4004323AE /* Todo.swift in Sources */,
 				EA03A23A26A646E9005B37D2 /* AlertUtils.swift in Sources */,
+				EA5CC37F26C50854004EBA75 /* Divider.swift in Sources */,
 				EA5CC37626C3D7D9004EBA75 /* BaseNavigationController.swift in Sources */,
 				EAE6B1BC26BA92A90074C7A7 /* CustomCell.swift in Sources */,
 				EA03A24326A646E9005B37D2 /* TextFieldBuilder.swift in Sources */,
@@ -528,6 +543,7 @@
 				EA5CC37A26C4A830004EBA75 /* WalletMenu.swift in Sources */,
 				EA911FE626C0E55900825166 /* MenuCell.swift in Sources */,
 				EA03A24426A646E9005B37D2 /* ButtonBuilder.swift in Sources */,
+				EA5CC37C26C503E7004EBA75 /* CardAccount.swift in Sources */,
 				EA774DEA26BECD110022ABD2 /* HomeNavigationBar.swift in Sources */,
 				EA774DE826BDB3AE0022ABD2 /* WalletManager.swift in Sources */,
 				EA03A23B26A646E9005B37D2 /* APIService.swift in Sources */,

@@ -21,7 +21,7 @@ class LoadingIndicator: NSObject {
         self.addProgressView()
     }
     
-    init(view:UIView, title:String){
+    init(view:UIView, title:String) {
         self.view = view
         self.title = title
         super.init()

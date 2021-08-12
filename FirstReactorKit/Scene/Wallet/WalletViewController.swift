@@ -86,7 +86,6 @@ extension WalletViewController: View {
     func bind(reactor: WalletReactor) {
         let manager = WalletManager.shared
         
-        
         viewDidLoadSubject
             .bind(to: reactor.action)
             .disposed(by: disposeBag)

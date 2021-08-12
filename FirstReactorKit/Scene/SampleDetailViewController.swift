@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import RxSwift
 import ReactorKit
+import RxDataSources
 
 class SampleDetailViewController: UIViewController {
     override func viewDidLoad() {
@@ -24,8 +25,23 @@ class SampleDetailViewController1: UIViewController {
     }
 }
 
+struct SectionOfCustomData {
+    var header: String? = nil
+    var items: [Item]
+}
+
+extension SectionOfCustomData: SectionModelType {
+    typealias Item = Todo
+    
+    init(original: SectionOfCustomData, items: [Item]) {
+        self = original
+        self.items = items
+    }
+}
+
 class SampleDetailTableViewController: BaseViewController<SampleTableViewReactor> {
     let tableView = UITableView().then {
+//        $0.register(Reusables.Cell.customCell)
         $0.register(CustomCell.self, forCellReuseIdentifier: CustomCell.ID)
     }
     
@@ -56,9 +72,25 @@ extension SampleDetailTableViewController: View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<Void, Todo>>(configureCell: { dataSource, tableView, row, item in
+            guard let cell = tableView.dequeue(Reusables.Cell.customCell) else { return UITableViewCell() }
+            cell.bindUI(text: item.title ?? "",
+                        image: UIImage(named: "profile")!)
+            return cell
+        })
+        
+//        dataSource.titleForHeaderInSection = { dataSource, index in
+//            return dataSource[index].header
+//        }
+        
+//        reactor.state
+//            .map { $0.todos }
+//            .asObservable()
+//            .bind(to: tableView.rx.items(dataSource: dataSource))
+//            .disposed(by: disposeBag)
+        
         reactor.state
             .map { $0.todos }
-            .debug("getTodo")
             .bind(to: tableView.rx.items(cellIdentifier: CustomCell.ID,
                                          cellType: CustomCell.self)) { row, todo, cell in
                 cell.bindUI(text: todo.title ?? "",
@@ -66,12 +98,12 @@ extension SampleDetailTableViewController: View {
             }
             .disposed(by: disposeBag)
         
-        tableView.rx
-            .modelSelected(Todo.self)
-            .subscribe(onNext: { element in
-            log.debug(element)
-        })
-        .disposed(by: disposeBag)
+//        tableView.rx
+//            .modelSelected(Todo.self)
+//            .subscribe(onNext: { element in
+//            log.debug(element)
+//        })
+//        .disposed(by: disposeBag)
     }
 }
 

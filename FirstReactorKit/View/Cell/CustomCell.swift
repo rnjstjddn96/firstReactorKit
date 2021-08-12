@@ -10,19 +10,29 @@ import UIKit
 import SnapKit
 
 class CustomCell: UITableViewCell {
-    static let ID = "CustomCell"
+    static let ID = "customCell"
     
-    let label = UILabel.Builder()
+    let cardNameLabel = UILabel.Builder()
         .withFont(.systemFont(ofSize: 10))
         .withTextColor(.black)
-        .withMaxLine(limit: 2)
+        .withMaxLine(limit: 1)
         .build()
     
-    let iv: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        return iv
-    }()
+    let cardCompanyLabel = UILabel.Builder()
+        .withFont(.systemFont(ofSize: 10))
+        .withTextColor(.black)
+        .withMaxLine(limit: 1)
+        .build()
+    
+    let mainCardLabel = UILabel.Builder()
+        .withFont(.systemFont(ofSize: 10))
+        .withTextColor(.black)
+        .withMaxLine(limit: 1)
+        .build()
+    
+    let cardImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,24 +45,26 @@ class CustomCell: UITableViewCell {
     }
     
     private func setConstraints() {
-        self.contentView.addSubview(label)
-        self.contentView.addSubview(iv)
+        self.contentView.addSubview(cardNameLabel)
+        self.contentView.addSubview(cardImageView)
         
-        iv.snp.makeConstraints { create in
+        cardImageView.snp.makeConstraints { create in
             create.left.top.bottom.equalTo(self.contentView)
-            create.width.equalTo(iv.snp.height)
+            create.width.equalTo(cardImageView.snp.height)
         }
         
-        label.snp.makeConstraints { create in
-            create.left.equalTo(iv.snp.right).offset(30)
+        cardNameLabel.snp.makeConstraints { create in
+            create.left.equalTo(cardImageView.snp.right).offset(30)
             create.right.equalTo(self.contentView.snp.right).offset(-30)
             create.centerY.equalToSuperview()
         }
     }
     
     func bindUI(text: String, image: UIImage) {
-        self.label.text = text
-        self.iv.image = image
+        self.contentView.addDivider(color: .black, height: 1, padding: 10,
+                                    on: .BOTTOM(guide: self.contentView.snp.bottom))
+        self.cardNameLabel.text = text
+        self.cardImageView.image = image
     }
     
 }
