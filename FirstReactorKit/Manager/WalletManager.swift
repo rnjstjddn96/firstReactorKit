@@ -12,6 +12,7 @@ import RxCocoa
 protocol BottomMenuServiceProtocol {
     var eventRelay: PublishRelay<WalletEvent> { get }
     var currentState: BehaviorRelay<WalletState> { get }
+    var selectedMenu: BehaviorRelay<WalletMenu> { get }
     func updateState(event: WalletEvent) -> Observable<WalletState>
 }
 
@@ -22,6 +23,9 @@ class WalletManager: BottomMenuServiceProtocol {
     var eventRelay = PublishRelay<WalletEvent>()
     //Wallet state 시퀀스
     var currentState = BehaviorRelay<WalletState>(value: .CLOSED)
+    
+    //Wallet TabState
+    var selectedMenu = BehaviorRelay<WalletMenu>(value: .PAYMENT)
     
     func updateState(event: WalletEvent) -> Observable<WalletState> {
         eventRelay.accept(event)

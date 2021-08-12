@@ -83,4 +83,12 @@ enum Strings {
         static let CARD_DUPLICATED = "이미 등록된 카드입니다."
         static let CARD_NAME_LENGHT_CHECK = "카드 별칭은 12자리까지 입력 가능합니다."
     }
+    
+    enum Wallet {
+        struct Menu {
+            static let PAYMENT = "결제수단"
+            static let COUPON = "쿠폰"
+            static let HISTORY = "결제내역"
+        }
+    }
 }

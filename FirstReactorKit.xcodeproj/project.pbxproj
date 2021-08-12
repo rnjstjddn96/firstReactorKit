@@ -33,6 +33,8 @@
 		EA3E570A26C0196000740FF6 /* AnimationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3E570926C0196000740FF6 /* AnimationUtils.swift */; };
 		EA5CC37426C3CEA3004EBA75 /* SampleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37326C3CEA3004EBA75 /* SampleDetailViewController.swift */; };
 		EA5CC37626C3D7D9004EBA75 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37526C3D7D9004EBA75 /* BaseNavigationController.swift */; };
+		EA5CC37826C49A1C004EBA75 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37726C49A1C004EBA75 /* TabBarViewController.swift */; };
+		EA5CC37A26C4A830004EBA75 /* WalletMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5CC37926C4A830004EBA75 /* WalletMenu.swift */; };
 		EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F713D26A9191C0004FB02 /* Indicator.swift */; };
 		EA6F714026A9345E0004FB02 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6F713F26A9345D0004FB02 /* loader.json */; };
 		EA6F714426A93AAD0004FB02 /* SplashLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */; };
@@ -94,6 +96,8 @@
 		EA49C46226B11547001F9221 /* ReactorPractice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ReactorPractice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EA5CC37326C3CEA3004EBA75 /* SampleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDetailViewController.swift; sourceTree = "<group>"; };
 		EA5CC37526C3D7D9004EBA75 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		EA5CC37726C49A1C004EBA75 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		EA5CC37926C4A830004EBA75 /* WalletMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMenu.swift; sourceTree = "<group>"; };
 		EA6F713D26A9191C0004FB02 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		EA6F713F26A9345D0004FB02 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		EA6F714326A93AAD0004FB02 /* SplashLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashLogoView.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 				EA03A22526A57997005B37D2 /* User.swift */,
 				EABB572126A807A4004323AE /* Todo.swift */,
 				EA911FE326C0E2FE00825166 /* Menu.swift */,
+				EA5CC37926C4A830004EBA75 /* WalletMenu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 			children = (
 				EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */,
 				EA774DE526BD7C0C0022ABD2 /* WalletReactor.swift */,
+				EA5CC37726C49A1C004EBA75 /* TabBarViewController.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 				EAE6B1B326B988070074C7A7 /* MainViewController.swift in Sources */,
 				EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */,
 				EABB572226A807A4004323AE /* Todo.swift in Sources */,
+				EA5CC37826C49A1C004EBA75 /* TabBarViewController.swift in Sources */,
 				EA03A23A26A646E9005B37D2 /* AlertUtils.swift in Sources */,
 				EA5CC37626C3D7D9004EBA75 /* BaseNavigationController.swift in Sources */,
 				EAE6B1BC26BA92A90074C7A7 /* CustomCell.swift in Sources */,
@@ -522,6 +529,7 @@
 				EA6F714926A94C560004FB02 /* UserManager.swift in Sources */,
 				EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */,
 				EA03A24126A646E9005B37D2 /* NetworkConfig.swift in Sources */,
+				EA5CC37A26C4A830004EBA75 /* WalletMenu.swift in Sources */,
 				EA911FE626C0E55900825166 /* MenuCell.swift in Sources */,
 				EA03A24426A646E9005B37D2 /* ButtonBuilder.swift in Sources */,
 				EA774DEA26BECD110022ABD2 /* HomeNavigationBar.swift in Sources */,

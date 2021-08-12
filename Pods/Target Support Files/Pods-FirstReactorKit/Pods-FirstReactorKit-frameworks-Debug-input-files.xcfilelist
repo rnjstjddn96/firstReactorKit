@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-FirstReactorKit/Pods-FirstReactorKit-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework
+${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework
 ${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework
 ${BUILT_PRODUCTS_DIR}/ReusableKit/ReusableKit.framework
 ${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework

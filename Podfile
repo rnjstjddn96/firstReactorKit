@@ -18,4 +18,5 @@ target 'FirstReactorKit' do
 	pod 'Then'
 	pod 'ReusableKit'
 	pod "RxGesture"
+	pod 'Parchment', '~>3.0.1'
 end

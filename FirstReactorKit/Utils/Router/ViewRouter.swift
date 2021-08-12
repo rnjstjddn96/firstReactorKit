@@ -48,7 +48,7 @@ final class ViewRouter {
 }
 
 extension UIViewController {
-    func dismiss(type: NavigateType, animated: Bool = true, then completion: @escaping (() -> Void)) {
+    func dismiss(type: NavigateType, animated: Bool = true, then completion: (() -> Void)? = nil) {
         switch type {
         case .DISMISS:
             self.dismiss(animated: animated, completion: completion)

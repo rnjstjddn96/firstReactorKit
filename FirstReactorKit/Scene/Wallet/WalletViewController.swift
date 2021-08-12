@@ -11,8 +11,8 @@ import RxCocoa
 
 class WalletViewController: BaseViewController<WalletReactor> {
 
-//    var bottomMenutapGesture = UITapGestureRecognizer()
     let indicator = WalletIndicator()
+    let tabBarControl = TabBarView()
     
     let tableView: UITableView = {
         let tableView = UITableView()
@@ -32,28 +32,28 @@ class WalletViewController: BaseViewController<WalletReactor> {
             create.height.equalTo(WalletIndicator.INDICATOR_HEIGHT)
         }
         
+        tabBarControl.initTabBar(position: .TOP(topGuide: self.indicator.snp.bottom),
+                                 to: self,
+                                 dataSource: WalletMenu.allCases)
+        
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { create in
-            create.top.equalTo(indicator.snp.bottom)
+            create.top.equalTo(tabBarControl.snp.bottom)
             create.left.right.equalToSuperview()
             create.bottom.equalToSuperview()
         }
         
+      
+        
         tableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
-        
-//        setGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewWillAppearSubject.on(.next(.getTodos))
         viewWillAppearSubject.on(.completed)
-    }
-    
-    private func setGesture() {
-//        indicator.addGestureRecognizer(bottomMenutapGesture)
     }
 }
 

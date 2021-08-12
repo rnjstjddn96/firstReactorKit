@@ -14,13 +14,11 @@ final class BaseNavigationController: UINavigationController {
     
     override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
-
          delegate = self
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
         delegate = self
     }
 
@@ -35,6 +33,7 @@ final class BaseNavigationController: UINavigationController {
         
         // This needs to be in here, not in init
         interactivePopGestureRecognizer?.delegate = self
+        self.setNavigationBarHidden(true, animated: false)
     }
     
     deinit {

@@ -29,7 +29,7 @@ class MenuViewController: BaseViewController<MenuViewReactor> {
         navigationBar.btnBack.rx
             .controlEvent(.touchUpInside)
             .bind {
-                self.navigationController?.popViewController(animated: true)
+                self.dismiss(type: .POP(type: .COUNTABLE(count: 1)))
             }
             .disposed(by: disposeBag)
     }

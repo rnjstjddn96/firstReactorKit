@@ -10,7 +10,6 @@ import UIKit
 
 class SampleDetailViewController: UIViewController {
     override func viewDidLoad() {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
         super.viewDidLoad()
         self.view.backgroundColor = .systemIndigo
     }
@@ -18,7 +17,6 @@ class SampleDetailViewController: UIViewController {
 
 class SampleDetailViewController1: UIViewController {
     override func viewDidLoad() {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
         super.viewDidLoad()
         self.view.backgroundColor = .cyan
     }
