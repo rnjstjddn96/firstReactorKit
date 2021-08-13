@@ -36,8 +36,8 @@ class SplashViewController: BaseViewController<SplashReactor> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewWillAppearSubject.on(.next(.showLogo))
-        viewWillAppearSubject.on(.next(.getUser))
+        viewEventSubject.on(.next(.showLogo))
+        viewEventSubject.on(.next(.getUser))
     }
     
     override func setConstraints() {
@@ -76,7 +76,7 @@ class SplashViewController: BaseViewController<SplashReactor> {
 extension SplashViewController: View {
     func bind(reactor: SplashReactor) {
         //MARK: View Interaction 또는 Life Cycle을 Reactor의 Action과 바인딩해준다.
-        viewWillAppearSubject
+        viewEventSubject
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         

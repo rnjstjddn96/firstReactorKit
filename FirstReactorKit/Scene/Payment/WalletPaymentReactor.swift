@@ -25,7 +25,7 @@ class WalletPaymentReactor: Reactor, APIService {
     }
     
     struct State {
-        var payments: [PaymentSection] = []
+        var payments: [PaymentSection] = [.init(header: nil, items: [.loadingCell])]
         var isLoading: Bool = false
         var error: ReactorError?
     }
@@ -50,20 +50,32 @@ class WalletPaymentReactor: Reactor, APIService {
     var getCMAAccounts: Observable<Mutation> {
         return Observable.concat([
             Observable.just(Mutation.setIndicator(isOn: true)),
-            Observable.just(Mutation.setPayments(payments: [
-                .cma, .cma, .cma, .cma
-            ])),
+            Observable.just(Mutation.setPayments(payments: [.cma, .cma])),
             Observable.just(Mutation.setIndicator(isOn: false))
         ])
+    }
+    
+    
+    func transform(action: Observable<Action>) -> Observable<Action> {
+        return Observable.merge(
+            action,
+            WalletManager.shared.eventRelay
+                .filter{ $0.state == .CLOSED }
+                .map { _ in Action.getCards },
+            WalletManager.shared.eventRelay
+                .filter{ $0.state == .CLOSED }
+                .map { _ in Action.getCMAAccount }
+        )
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .getCards:
             return getCards
-//                .delay(.seconds(3), scheduler: MainScheduler.instance)
+                .delay(.seconds(3), scheduler: MainScheduler.instance)
         case .getCMAAccount:
             return getCMAAccounts
+                .delay(.seconds(5), scheduler: MainScheduler.instance)
         }
     }
     
@@ -105,5 +117,6 @@ extension WalletPaymentReactor {
         }
         
         return currentSections
+            .filter { $0.header != nil } //loadingCell 제거
     }
 }

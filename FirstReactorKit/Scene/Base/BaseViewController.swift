@@ -17,11 +17,7 @@ class BaseViewController<T: Reactor>: UIViewController {
     //MARK: RxSwift
     var disposeBag = DisposeBag()
     
-    var viewDidLoadSubject = PublishSubject<T.Action>()
-    var viewWillAppearSubject = PublishSubject<T.Action>()
-    var viewWillDisappearSubject = PublishSubject<T.Action>()
-    var viewDidDisappearSubject = PublishSubject<T.Action>()
-    
+    var viewEventSubject = PublishSubject<T.Action>()
     private(set) var didSetupConstraints = false
     
     override func viewDidLoad() {

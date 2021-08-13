@@ -16,7 +16,7 @@ enum Payment {
 }
 
 struct PaymentSection {
-    var header: String
+    var header: String?
     var items: [PaymentCellSelection]
 }
 

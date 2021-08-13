@@ -17,7 +17,8 @@ class WalletViewController: BaseViewController<WalletReactor> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewDidLoadSubject.onNext(.loadMenu(menus: WalletMenu.allCases))
+        viewEventSubject.onNext(.loadMenu(menus: WalletMenu.allCases))
+        viewEventSubject.on(.completed)
     }
     
     override func setConstraints() {
@@ -33,7 +34,7 @@ class WalletViewController: BaseViewController<WalletReactor> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewWillAppearSubject.on(.completed)
+        viewEventSubject.on(.completed)
     }
     
     private func addTabBar(tabs: [TabBarInterface]) {
@@ -86,11 +87,7 @@ extension WalletViewController: View {
     func bind(reactor: WalletReactor) {
         let manager = WalletManager.shared
         
-        viewDidLoadSubject
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        
-        viewWillAppearSubject
+        viewEventSubject
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -121,11 +118,6 @@ extension WalletViewController: View {
             .bind(onNext: { swipe in
                 _ = manager.updateState(event: .closeMenu)
             })
-            .disposed(by: disposeBag)
-        
-        viewWillAppearSubject
-            .asObservable()
-            .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
         reactor.state

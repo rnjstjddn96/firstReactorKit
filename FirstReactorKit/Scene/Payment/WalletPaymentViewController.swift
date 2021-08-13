@@ -32,17 +32,18 @@ class WalletPaymentViewController: BaseViewController<WalletPaymentReactor> {
             .disposed(by: disposeBag)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewWillAppearSubject.on(.next(.getCards))
-        viewWillAppearSubject.on(.next(.getCMAAccount))
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewEventSubject.on(.next(.getCMAAccount))
+        viewEventSubject.on(.next(.getCards))
+        viewEventSubject.on(.completed)
     }
 }
 
 extension WalletPaymentViewController: View {
     typealias DataSource = RxTableViewSectionedReloadDataSource<PaymentSection>
     func bind(reactor: WalletPaymentReactor) {
-        viewWillAppearSubject
+        viewEventSubject
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
