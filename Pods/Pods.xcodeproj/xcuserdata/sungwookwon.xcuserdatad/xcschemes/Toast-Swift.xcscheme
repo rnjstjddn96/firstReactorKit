@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0B967D7F8561D42493EE289EC8D450D1"
-               BuildableName = "lottie-ios.framework"
-               BlueprintName = "lottie-ios"
+               BlueprintIdentifier = "B990BD87169C76A3ED3FE8A9258D91A3"
+               BuildableName = "Toast-Swift.framework"
+               BlueprintName = "Toast-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

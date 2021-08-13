@@ -31,6 +31,7 @@ PODS:
   - SwiftyBeaver (1.9.5)
   - SwiftyJSON (5.0.1)
   - Then (2.7.0)
+  - Toast-Swift (5.0.1)
   - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - SwiftyBeaver
   - SwiftyJSON
   - Then
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -66,6 +68,7 @@ SPEC REPOS:
     - SwiftyBeaver
     - SwiftyJSON
     - Then
+    - Toast-Swift
     - WeakMapTable
 
 SPEC CHECKSUMS:
@@ -85,8 +88,9 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 0f0f1313fd23ea8ff45146653139c9f5e4725887
+PODFILE CHECKSUM: 586d705847f7d4f78c091cb7fe96f78e062e340c
 
 COCOAPODS: 1.10.0
