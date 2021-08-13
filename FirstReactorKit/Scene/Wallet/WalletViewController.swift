@@ -47,7 +47,7 @@ class WalletViewController: BaseViewController<WalletReactor> {
             pvc.selectedFont = UIFont.systemFont(ofSize: 15, weight: .bold)
             pvc.textColor = .systemGray3
             pvc.selectedTextColor = .label
-            pvc.indicatorColor = .systemIndigo
+            pvc.indicatorColor = .red
             pvc.menuItemSize = .selfSizing(estimatedWidth: 55,
                                            height: SIZE.width * 0.112)
             pvc.menuItemLabelSpacing = 0

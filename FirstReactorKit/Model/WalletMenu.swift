@@ -42,10 +42,11 @@ enum WalletMenu: CaseIterable, TabBarInterface {
     var destination: UIViewController {
         switch self {
         case .PAYMENT:
-            return SampleDetailViewController()
+            let destination = WalletPaymentViewController()
+            destination.reactor = WalletPaymentReactor()
+            return destination
         case .COUPON:
-            let view = SampleDetailTableViewController()
-            view.reactor = SampleTableViewReactor()
+            let view = SampleDetailViewController()
             return view
         case .HISTORY:
             return SampleDetailViewController()

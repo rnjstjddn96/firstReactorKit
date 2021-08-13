@@ -12,6 +12,7 @@ enum Reusables {
     enum Cell {
         static let menuRouteCell = ReusableCell<MenuRouteCell>()
         static let menuSwitchCell = ReusableCell<MenuSwitchCell>()
-        static let customCell = ReusableCell<CustomCell>()
+        static let paymentCell = ReusableCell<CardCell>()
+        static let paymentLoadingCell = ReusableCell<PaymentLoadingCell>()
     }
 }

@@ -16,9 +16,6 @@ enum MenuCellType {
 }
 
 class MenuRouteCell: BaseTableViewCell {
-    
-    var disposeBag = DisposeBag()
-    
     //MARK: UI
     var title = UILabel
         .Builder()
@@ -61,8 +58,6 @@ extension MenuRouteCell: View {
 }
 
 class MenuSwitchCell: BaseTableViewCell {
-    
-    var disposeBag = DisposeBag()
     
     //MARK: UI
     var title = UILabel

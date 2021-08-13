@@ -17,10 +17,14 @@ protocol APIService {
 
 extension APIService {
     func getTodos() -> Observable<APIResult<[Todo]>> {
-        return session.request(API.TEST("todos"))
+        return session.request(APIs.TEST("todos"))
     }
     
     func getProfile() -> Observable<APIResult<User>> {
-        return session.request(API.GET_PROFILE)
+        return session.request(APIs.GET_PROFILE)
+    }
+    
+    func getCards() -> Observable<APIResult<[CardAccountInfo]>> {
+        return session.request(APIs.GET_CARD)
     }
 }

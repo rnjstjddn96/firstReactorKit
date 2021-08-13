@@ -51,23 +51,23 @@ class MenuViewController: BaseViewController<MenuViewReactor> {
 }
 
 extension MenuViewController: View {
+    typealias DataSource = RxTableViewSectionedReloadDataSource<MenuSectionData>
     func bind(reactor: MenuViewReactor) {
         menuListView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
         
-        let dataSource = RxTableViewSectionedReloadDataSource<MenuSectionData> { [weak self] dataSource, tableView, indexPath, sectionItems in
-            guard let self = self else { return UITableViewCell() }
+        let dataSource = DataSource { dataSource, tableView, indexPath, sectionItems in
             switch sectionItems {
             case .routeCell(let reactor):
-                guard let cell = self.menuListView.dequeue(Reusables.Cell.menuRouteCell) else {
+                guard let cell = tableView.dequeue(Reusables.Cell.menuRouteCell) else {
                     return UITableViewCell()
                 }
                 cell.withSelectionStyle(style: .none)
                 cell.reactor = reactor
                 return cell
             case .switchCell(let reactor):
-                guard let cell = self.menuListView.dequeue(Reusables.Cell.menuSwitchCell) else {
+                guard let cell = tableView.dequeue(Reusables.Cell.menuSwitchCell) else {
                     return UITableViewCell()
                 }
                 cell.withSelectionStyle(style: .none)
@@ -75,6 +75,7 @@ extension MenuViewController: View {
                 return cell
             }
         }
+        
         dataSource.titleForHeaderInSection = { dataSource, index in
             return dataSource.sectionModels[index].header
         }

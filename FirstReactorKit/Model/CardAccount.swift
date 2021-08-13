@@ -7,8 +7,9 @@
 
 import Foundation
 import UIKit
+import RxDataSources
 
-struct CardAccountInfo: Codable, Equatable, Identifiable {
+struct CardAccountInfo: Codable, Equatable {
     var id: String = ""
     var created: String = ""
     var cardNumber: Double = 0.0
@@ -37,6 +38,14 @@ struct CardAccountInfo: Codable, Equatable, Identifiable {
         self.cardNickName = cardNickName
         self.cardNumber = cardNumber
     }
+}
+
+extension CardAccountInfo {
+    static let empty = CardAccountInfo.init(id: "",
+                                            cardCompCode: "",
+                                            cardLastNum: "",
+                                            cardNickName: "",
+                                            cardNumber: 0)
 }
 
 enum CardCompany: String {

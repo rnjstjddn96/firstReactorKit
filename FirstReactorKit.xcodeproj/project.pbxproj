@@ -45,6 +45,10 @@
 		EA774DE826BDB3AE0022ABD2 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */; };
 		EA774DEA26BECD110022ABD2 /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DE926BECD110022ABD2 /* HomeNavigationBar.swift */; };
 		EA774DEC26BF8DB20022ABD2 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DEB26BF8DB20022ABD2 /* NavigationBar.swift */; };
+		EA83D9E126C66BA90051B46E /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA83D9E026C66BA90051B46E /* CardManager.swift */; };
+		EA83D9E426C6794A0051B46E /* WalletPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA83D9E326C6794A0051B46E /* WalletPaymentViewController.swift */; };
+		EA83D9E626C67CC20051B46E /* WalletPaymentReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA83D9E526C67CC20051B46E /* WalletPaymentReactor.swift */; };
+		EA83D9E926C67D300051B46E /* PaymentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA83D9E826C67D300051B46E /* PaymentSection.swift */; };
 		EA911FDF26C0D06D00825166 /* ShapeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FDE26C0D06D00825166 /* ShapeUtils.swift */; };
 		EA911FE426C0E2FE00825166 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FE326C0E2FE00825166 /* Menu.swift */; };
 		EA911FE626C0E55900825166 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FE526C0E55900825166 /* MenuCell.swift */; };
@@ -55,13 +59,15 @@
 		EA911FF426C11F7E00825166 /* Reusables.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FF326C11F7E00825166 /* Reusables.swift */; };
 		EA911FF726C1FB3100825166 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA911FF626C1FB3100825166 /* BaseViewController.swift */; };
 		EABB572226A807A4004323AE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB572126A807A4004323AE /* Todo.swift */; };
+		EAD633C326C6B4D10017C9C4 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633C226C6B4D10017C9C4 /* SkeletonLoadable.swift */; };
+		EAD633C526C6B9220017C9C4 /* PaymentLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633C426C6B9220017C9C4 /* PaymentLoadingCell.swift */; };
 		EAE6B1AE26B985070074C7A7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */; };
 		EAE6B1B026B987A10074C7A7 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */; };
 		EAE6B1B326B988070074C7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B226B988070074C7A7 /* MainViewController.swift */; };
 		EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B526B996560074C7A7 /* MainReactor.swift */; };
 		EAE6B1B826BA91B70074C7A7 /* WalletIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B726BA91B70074C7A7 /* WalletIndicatorView.swift */; };
 		EAE6B1BA26BA92460074C7A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B926BA92460074C7A7 /* Extensions.swift */; };
-		EAE6B1BC26BA92A90074C7A7 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */; };
+		EAE6B1BC26BA92A90074C7A7 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1BB26BA92A90074C7A7 /* CardCell.swift */; };
 		EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB0CA126A8F05000BF3576 /* ViewRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +115,10 @@
 		EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
 		EA774DE926BECD110022ABD2 /* HomeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
 		EA774DEB26BF8DB20022ABD2 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		EA83D9E026C66BA90051B46E /* CardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
+		EA83D9E326C6794A0051B46E /* WalletPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPaymentViewController.swift; sourceTree = "<group>"; };
+		EA83D9E526C67CC20051B46E /* WalletPaymentReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPaymentReactor.swift; sourceTree = "<group>"; };
+		EA83D9E826C67D300051B46E /* PaymentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSection.swift; sourceTree = "<group>"; };
 		EA911FDE26C0D06D00825166 /* ShapeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeUtils.swift; sourceTree = "<group>"; };
 		EA911FE326C0E2FE00825166 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		EA911FE526C0E55900825166 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -119,13 +129,15 @@
 		EA911FF326C11F7E00825166 /* Reusables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusables.swift; sourceTree = "<group>"; };
 		EA911FF626C1FB3100825166 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EABB572126A807A4004323AE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		EAD633C226C6B4D10017C9C4 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		EAD633C426C6B9220017C9C4 /* PaymentLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentLoadingCell.swift; sourceTree = "<group>"; };
 		EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		EAE6B1B226B988070074C7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EAE6B1B526B996560074C7A7 /* MainReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReactor.swift; sourceTree = "<group>"; };
 		EAE6B1B726BA91B70074C7A7 /* WalletIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletIndicatorView.swift; sourceTree = "<group>"; };
 		EAE6B1B926BA92460074C7A7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		EAE6B1BB26BA92A90074C7A7 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		EAFB0CA126A8F05000BF3576 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +219,7 @@
 		EA03A22426A57992005B37D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EA83D9E726C67D0C0051B46E /* SectionModels */,
 				EA03A22526A57997005B37D2 /* User.swift */,
 				EABB572126A807A4004323AE /* Todo.swift */,
 				EA911FE326C0E2FE00825166 /* Menu.swift */,
@@ -227,6 +240,7 @@
 				EAE6B1B926BA92460074C7A7 /* Extensions.swift */,
 				EA3E570926C0196000740FF6 /* AnimationUtils.swift */,
 				EA911FDE26C0D06D00825166 /* ShapeUtils.swift */,
+				EAD633C226C6B4D10017C9C4 /* SkeletonLoadable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -318,14 +332,42 @@
 			children = (
 				EA6F714826A94C560004FB02 /* UserManager.swift */,
 				EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */,
+				EA83D9E026C66BA90051B46E /* CardManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		EA83D9DF26C58F550051B46E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EA911FE526C0E55900825166 /* MenuCell.swift */,
+				EA911FE826C0E5DF00825166 /* MenuCellReactor.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EA83D9E226C678F10051B46E /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6B1BB26BA92A90074C7A7 /* CardCell.swift */,
+				EAD633C426C6B9220017C9C4 /* PaymentLoadingCell.swift */,
+				EA83D9E326C6794A0051B46E /* WalletPaymentViewController.swift */,
+				EA83D9E526C67CC20051B46E /* WalletPaymentReactor.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		EA83D9E726C67D0C0051B46E /* SectionModels */ = {
+			isa = PBXGroup;
+			children = (
+				EA83D9E826C67D300051B46E /* PaymentSection.swift */,
+			);
+			path = SectionModels;
 			sourceTree = "<group>";
 		};
 		EA911FE026C0E1EC00825166 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EAE6B1BB26BA92A90074C7A7 /* CustomCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -333,10 +375,9 @@
 		EA911FE726C0E58000825166 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				EA83D9DF26C58F550051B46E /* Cell */,
 				EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */,
 				EA911FEE26C1034E00825166 /* MenuViewReactor.swift */,
-				EA911FE526C0E55900825166 /* MenuCell.swift */,
-				EA911FE826C0E5DF00825166 /* MenuCellReactor.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -368,6 +409,7 @@
 				EAE6B1B426B996490074C7A7 /* Main */,
 				EADF2EE026B1200D00572B99 /* Home */,
 				EAE6B1B126B987A70074C7A7 /* Wallet */,
+				EA83D9E226C678F10051B46E /* Payment */,
 				EA911FE726C0E58000825166 /* Menu */,
 				EA5CC37326C3CEA3004EBA75 /* SampleDetailViewController.swift */,
 			);
@@ -525,13 +567,16 @@
 				EA911FED26C0F3BA00825166 /* BaseTableViewCell.swift in Sources */,
 				EA6F714626A93B360004FB02 /* ImageViewBuilder.swift in Sources */,
 				EA03A24026A646E9005B37D2 /* APIs.swift in Sources */,
+				EA83D9E626C67CC20051B46E /* WalletPaymentReactor.swift in Sources */,
 				EAE6B1B326B988070074C7A7 /* MainViewController.swift in Sources */,
 				EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */,
 				EABB572226A807A4004323AE /* Todo.swift in Sources */,
 				EA03A23A26A646E9005B37D2 /* AlertUtils.swift in Sources */,
+				EA83D9E426C6794A0051B46E /* WalletPaymentViewController.swift in Sources */,
 				EA5CC37F26C50854004EBA75 /* Divider.swift in Sources */,
+				EA83D9E126C66BA90051B46E /* CardManager.swift in Sources */,
 				EA5CC37626C3D7D9004EBA75 /* BaseNavigationController.swift in Sources */,
-				EAE6B1BC26BA92A90074C7A7 /* CustomCell.swift in Sources */,
+				EAE6B1BC26BA92A90074C7A7 /* CardCell.swift in Sources */,
 				EA03A24326A646E9005B37D2 /* TextFieldBuilder.swift in Sources */,
 				EA03A21926A5777D005B37D2 /* HomeReactor.swift in Sources */,
 				EA03A23D26A646E9005B37D2 /* RequestBuilder.swift in Sources */,
@@ -540,7 +585,9 @@
 				EA6F714926A94C560004FB02 /* UserManager.swift in Sources */,
 				EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */,
 				EA03A24126A646E9005B37D2 /* NetworkConfig.swift in Sources */,
+				EAD633C326C6B4D10017C9C4 /* SkeletonLoadable.swift in Sources */,
 				EA5CC37A26C4A830004EBA75 /* WalletMenu.swift in Sources */,
+				EAD633C526C6B9220017C9C4 /* PaymentLoadingCell.swift in Sources */,
 				EA911FE626C0E55900825166 /* MenuCell.swift in Sources */,
 				EA03A24426A646E9005B37D2 /* ButtonBuilder.swift in Sources */,
 				EA5CC37C26C503E7004EBA75 /* CardAccount.swift in Sources */,
@@ -551,6 +598,7 @@
 				EA03A23E26A646E9005B37D2 /* NetworkService.swift in Sources */,
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
 				EA3E570A26C0196000740FF6 /* AnimationUtils.swift in Sources */,
+				EA83D9E926C67D300051B46E /* PaymentSection.swift in Sources */,
 				EA911FE426C0E2FE00825166 /* Menu.swift in Sources */,
 				EA911FE926C0E5DF00825166 /* MenuCellReactor.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
