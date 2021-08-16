@@ -26,7 +26,7 @@ class MenuViewReactor: Reactor {
     }
     
     struct State {
-        var sections: [MenuSectionData]
+        var sections: [MenuSection]
         var destination: UIViewController?
     }
     
@@ -46,8 +46,8 @@ class MenuViewReactor: Reactor {
         return newState
     }
     
-    static func configMenus() -> [MenuSectionData] {
-        var sections: [MenuSectionData] = []
+    static func configMenus() -> [MenuSection] {
+        var sections: [MenuSection] = []
         let destination: UIViewController = SampleDetailViewController()
         
         let displayData1: [[MenuCellType]] = [
@@ -72,7 +72,7 @@ class MenuViewReactor: Reactor {
                     section.append(item)
                 }
             }
-            sections.append(MenuSectionData(header: "section1", items: section))
+            sections.append(MenuSection(header: "section1", items: section))
         }
         
         for cellSection in displayData2 {
@@ -89,7 +89,7 @@ class MenuViewReactor: Reactor {
                     section.append(item)
                 }
             }
-            sections.append(MenuSectionData(header: "section2", items: section))
+            sections.append(MenuSection(header: "section2", items: section))
         }
         
         return sections

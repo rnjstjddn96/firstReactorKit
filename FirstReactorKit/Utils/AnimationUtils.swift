@@ -42,4 +42,27 @@ extension UIView {
                        },
                        completion: completion)
     }
+    
+    func addSubview(subView: UIView,
+                    duration: Double,
+                    type: CATransitionType,
+                    subtype: CATransitionSubtype) {
+        let transition = CATransition()
+        transition.type = type
+        transition.subtype = subtype
+        transition.duration = duration
+        self.layer.add(transition, forKey: nil)
+        self.addSubview(subView)
+    }
+    
+    func removeFromSuperview(duration: Double,
+                             type: CATransitionType,
+                             subtype: CATransitionSubtype) {
+        let t = CATransition()
+        t.type = CATransitionType.push
+        t.subtype = .fromRight
+        t.duration = duration
+        self.layer.add(t, forKey: nil)
+        self.removeFromSuperview()
+    }
 }

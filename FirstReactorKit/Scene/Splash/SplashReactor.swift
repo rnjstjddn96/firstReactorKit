@@ -31,7 +31,8 @@ class SplashReactor: Reactor, APIService {
         case showLogo
         case errorOccered(type: ReactorError)
         case getUser
-        case route(to: UIViewController)
+        case route(to: UIViewController,
+                   style: PresentationStyle? = nil)
     }
     
     enum Mutation {
@@ -40,7 +41,8 @@ class SplashReactor: Reactor, APIService {
         case setUser(user: User)
         case setError(error: ReactorError)
         case setAlert(message: String)
-        case setDestination(to: UIViewController)
+        case setDestination(to: UIViewController,
+                            style: PresentationStyle? = nil)
     }
     
     struct State {
@@ -51,6 +53,8 @@ class SplashReactor: Reactor, APIService {
         var error: Error?
         var message: String?
         var destination: UIViewController?
+        var presentStyle: PresentationStyle = (presentationStyle: .fullScreen,
+                                               transitionStyle: .crossDissolve)
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -72,8 +76,8 @@ class SplashReactor: Reactor, APIService {
                         )
                     }
                 }
-        case .route(let view):
-            return Observable.just(Mutation.setDestination(to: view))
+        case .route(let view, let style):
+            return Observable.just(Mutation.setDestination(to: view, style: style))
         }
     }
     
@@ -97,8 +101,11 @@ class SplashReactor: Reactor, APIService {
             }
         case .setLogo(let logoshown):
             newState.logoShown = logoshown
-        case .setDestination(to: let view):
+        case .setDestination(let view, let style):
             newState.destination = view
+            if let style = style {
+                newState.presentStyle = style
+            }
         }
         
         return newState

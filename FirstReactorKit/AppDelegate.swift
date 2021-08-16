@@ -10,7 +10,7 @@ import SwiftyBeaver
 
 let log = SwiftyBeaver.self
 let SIZE = UIScreen.main.bounds.size
-
+let prefs = UserDefaults.standard
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

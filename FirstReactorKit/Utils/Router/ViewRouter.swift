@@ -30,6 +30,7 @@ final class ViewRouter {
         navigateType: NavigateType.Route,
         presentationStyle: UIModalPresentationStyle = .fullScreen,
         transitionStyle: UIModalTransitionStyle = .coverVertical,
+        animated: Bool = true,
         completion: (() -> Void)? = nil) {
         
         guard let _destination = destination else { return }

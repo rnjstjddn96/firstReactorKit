@@ -68,16 +68,23 @@ extension BaseViewController {
     }
     
     func route<T: UIViewController>(to destination: T?,
-                                            navigateType: NavigateType.Route,
-                                            presentationStyle: UIModalPresentationStyle = .fullScreen,
-                                            transitionStyle: UIModalTransitionStyle = .coverVertical,
-                                            completion: (() -> Void)? = nil) {
+                                    navigateType: NavigateType.Route,
+                                    presentationStyle: UIModalPresentationStyle = .fullScreen,
+                                    transitionStyle: UIModalTransitionStyle = .coverVertical,
+                                    animated: Bool = true,
+                                    completion: (() -> Void)? = nil) {
         
         ViewRouter.route(from: self,
                          to: destination,
                          navigateType: navigateType,
                          presentationStyle: presentationStyle,
                          transitionStyle: transitionStyle,
+                         animated: animated,
                          completion: completion)
     }
+}
+
+extension Reactor {
+    typealias PresentationStyle = (presentationStyle: UIModalPresentationStyle,
+                                   transitionStyle: UIModalTransitionStyle)
 }

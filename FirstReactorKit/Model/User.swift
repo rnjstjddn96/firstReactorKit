@@ -19,3 +19,15 @@ struct User: Codable, Equatable {
         case birthday = "birthday"
     }
 }
+
+struct RegisterUserDto {
+    var agreedTerms: [String] = []
+    
+    mutating func setAgreedTerms(terms: [String]) {
+        self.agreedTerms = terms
+    }
+    
+    mutating func initUserInfo() {
+        agreedTerms.removeAll()
+    }
+}

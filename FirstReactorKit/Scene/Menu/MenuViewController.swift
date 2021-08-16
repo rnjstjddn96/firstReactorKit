@@ -13,8 +13,11 @@ import RxDataSources
 import Then
 
 class MenuViewController: BaseViewController<MenuViewReactor> {
-    lazy var navigationBar = NavigationBar()
-    
+    var navigationBar = NavigationBar(frame: .zero,
+                                      title: "메뉴",
+                                      leftType: .back,
+                                      rightType: nil)
+
     let menuListView = UITableView().then {
         $0.register(Reusables.Cell.menuRouteCell)
         $0.register(Reusables.Cell.menuSwitchCell)
@@ -26,7 +29,7 @@ class MenuViewController: BaseViewController<MenuViewReactor> {
         super.viewWillAppear(animated)
         configureUI()
         
-        navigationBar.btnBack.rx
+        navigationBar.leftButton!.rx
             .controlEvent(.touchUpInside)
             .bind {
                 self.dismiss(type: .POP(type: .COUNTABLE(count: 1)))
@@ -51,7 +54,7 @@ class MenuViewController: BaseViewController<MenuViewReactor> {
 }
 
 extension MenuViewController: View {
-    typealias DataSource = RxTableViewSectionedReloadDataSource<MenuSectionData>
+    typealias DataSource = RxTableViewSectionedReloadDataSource<MenuSection>
     func bind(reactor: MenuViewReactor) {
         menuListView.rx
             .setDelegate(self)

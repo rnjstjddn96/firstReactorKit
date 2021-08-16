@@ -25,8 +25,9 @@ class SplashLogoView: UIView {
         view.addSubview(self)
         self.addSubview(splashLogo)
         self.snp.makeConstraints { create in
-            create.center.equalToSuperview()
-            create.width.height.equalToSuperview()
+            create.top.equalToSuperview().offset(30)
+            create.width.equalToSuperview()
+            create.height.equalTo(self.snp.width)
         }
         splashLogo.snp.makeConstraints { create in
             create.center.equalToSuperview()

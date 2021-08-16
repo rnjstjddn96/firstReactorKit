@@ -104,18 +104,3 @@ extension CardCell: View {
             .disposed(by: disposeBag)
     }
 }
-
-class CardCellReactor: Reactor {
-    var initialState: State
-
-    init(account: CardAccountInfo) {
-        self.initialState = State(account: account)
-    }
-    
-    typealias Action = NoAction
-
-    struct State {
-        var account: CardAccountInfo
-    }
-
-}

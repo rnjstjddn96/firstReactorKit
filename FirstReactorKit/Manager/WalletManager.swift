@@ -9,14 +9,14 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol BottomMenuServiceProtocol {
+protocol WalletServiceProtocol {
     var eventRelay: PublishRelay<WalletEvent> { get }
     var currentState: BehaviorRelay<WalletState> { get }
     var selectedMenu: BehaviorRelay<WalletMenu> { get }
     func updateState(event: WalletEvent) -> Observable<WalletState>
 }
 
-class WalletManager: BottomMenuServiceProtocol {
+class WalletManager: WalletServiceProtocol {
     static let shared = WalletManager()
     
     //Wallet 이벤트 시퀀스

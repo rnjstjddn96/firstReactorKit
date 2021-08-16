@@ -19,5 +19,4 @@ target 'FirstReactorKit' do
 	pod 'ReusableKit'
 	pod "RxGesture"
 	pod 'Parchment', '~>3.0.1'
-	pod 'Toast-Swift', '~> 5.0.1'
 end

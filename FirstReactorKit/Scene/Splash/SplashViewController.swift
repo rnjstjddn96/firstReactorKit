@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import ReactorKit
 import RxCocoa
+import RxGesture
 
 class SplashViewController: BaseViewController<SplashReactor> {
     
@@ -24,6 +25,7 @@ class SplashViewController: BaseViewController<SplashReactor> {
         .withCornerRadius(radius: 10)
         .withFont(.systemFont(ofSize: 14, weight: .bold))
         .build()
+    
     var btnToRegister = UIButton.Builder()
         .withText("Register", for: .normal)
         .withTextColor(.white, for: .normal)
@@ -54,7 +56,7 @@ class SplashViewController: BaseViewController<SplashReactor> {
             create.height.equalTo(50)
             create.width.equalToSuperview().multipliedBy(0.8)
         }
-        
+        splashLogoView.bringSubviewToFront(btnToRegister)
         
         btnToLogin.snp.makeConstraints { create in
             create.centerX.equalToSuperview()
@@ -62,6 +64,7 @@ class SplashViewController: BaseViewController<SplashReactor> {
             create.height.equalTo(50)
             create.width.equalToSuperview().multipliedBy(0.8)
         }
+        splashLogoView.bringSubviewToFront(btnToLogin)
     }
     
     private func showButtons() {
@@ -95,6 +98,19 @@ extension SplashViewController: View {
 //                case .AUTHORIZED(user: let user):
 //                case .UNAUTHORIZED:
 //                }
+            }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        self.btnToRegister.rx
+            .tapGesture()
+            .when(.recognized)
+            .map { _ in
+                let destination = RegisterContainerViewController()
+                destination.reactor = RegisterConatainerReactor(registerService: RegisterService())
+                return Reactor.Action.route(to: destination,
+                                            style: (presentationStyle: .fullScreen,
+                                                    transitionStyle: .coverVertical))
             }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
@@ -133,8 +149,8 @@ extension SplashViewController: View {
                 ViewRouter.route(from: self,
                                  to: destination,
                                  navigateType: .PRESENT,
-                                 presentationStyle: .fullScreen,
-                                 transitionStyle: .crossDissolve)
+                                 presentationStyle: reactor.currentState.presentStyle.presentationStyle,
+                                 transitionStyle: reactor.currentState.presentStyle.transitionStyle)
             })
             .disposed(by: disposeBag)
         

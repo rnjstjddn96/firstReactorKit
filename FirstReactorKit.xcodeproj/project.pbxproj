@@ -45,7 +45,6 @@
 		EA774DE826BDB3AE0022ABD2 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */; };
 		EA774DEA26BECD110022ABD2 /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DE926BECD110022ABD2 /* HomeNavigationBar.swift */; };
 		EA774DEC26BF8DB20022ABD2 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA774DEB26BF8DB20022ABD2 /* NavigationBar.swift */; };
-		EA83D9E126C66BA90051B46E /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA83D9E026C66BA90051B46E /* CardManager.swift */; };
 		EA83D9E426C6794A0051B46E /* WalletPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA83D9E326C6794A0051B46E /* WalletPaymentViewController.swift */; };
 		EA83D9E626C67CC20051B46E /* WalletPaymentReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA83D9E526C67CC20051B46E /* WalletPaymentReactor.swift */; };
 		EA83D9E926C67D300051B46E /* PaymentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA83D9E826C67D300051B46E /* PaymentSection.swift */; };
@@ -61,6 +60,18 @@
 		EABB572226A807A4004323AE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB572126A807A4004323AE /* Todo.swift */; };
 		EAD633C326C6B4D10017C9C4 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633C226C6B4D10017C9C4 /* SkeletonLoadable.swift */; };
 		EAD633C526C6B9220017C9C4 /* PaymentLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633C426C6B9220017C9C4 /* PaymentLoadingCell.swift */; };
+		EAD633C926C773620017C9C4 /* CardCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633C826C773620017C9C4 /* CardCellReactor.swift */; };
+		EAD633CB26C774CC0017C9C4 /* PhaseEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633CA26C774CC0017C9C4 /* PhaseEnum.swift */; };
+		EAD633CD26C774D40017C9C4 /* PrefsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633CC26C774D40017C9C4 /* PrefsEnum.swift */; };
+		EAD633CF26C777280017C9C4 /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633CE26C777280017C9C4 /* MenuSection.swift */; };
+		EAD633D226C778920017C9C4 /* RegisterContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633D126C778920017C9C4 /* RegisterContainerViewController.swift */; };
+		EAD633D426C7BD320017C9C4 /* RegisterTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633D326C7BD320017C9C4 /* RegisterTermsViewController.swift */; };
+		EAD633D626C7BDD00017C9C4 /* RegisterUserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633D526C7BDD00017C9C4 /* RegisterUserAuthViewController.swift */; };
+		EAD633D826C7BDF30017C9C4 /* RegisterPincodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633D726C7BDF30017C9C4 /* RegisterPincodeViewController.swift */; };
+		EAD633DA26C7BE3C0017C9C4 /* RegisterSignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633D926C7BE3C0017C9C4 /* RegisterSignatureViewController.swift */; };
+		EAD633DC26C7BE880017C9C4 /* RegisterBioAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633DB26C7BE880017C9C4 /* RegisterBioAuthViewController.swift */; };
+		EAD633DF26C8C6000017C9C4 /* RegisterContainerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633DE26C8C6000017C9C4 /* RegisterContainerViewReactor.swift */; };
+		EAD633E126CA7AF80017C9C4 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD633E026CA7AF80017C9C4 /* Term.swift */; };
 		EAE6B1AE26B985070074C7A7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */; };
 		EAE6B1B026B987A10074C7A7 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */; };
 		EAE6B1B326B988070074C7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B226B988070074C7A7 /* MainViewController.swift */; };
@@ -115,7 +126,6 @@
 		EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
 		EA774DE926BECD110022ABD2 /* HomeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
 		EA774DEB26BF8DB20022ABD2 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
-		EA83D9E026C66BA90051B46E /* CardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 		EA83D9E326C6794A0051B46E /* WalletPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPaymentViewController.swift; sourceTree = "<group>"; };
 		EA83D9E526C67CC20051B46E /* WalletPaymentReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPaymentReactor.swift; sourceTree = "<group>"; };
 		EA83D9E826C67D300051B46E /* PaymentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSection.swift; sourceTree = "<group>"; };
@@ -131,6 +141,18 @@
 		EABB572126A807A4004323AE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		EAD633C226C6B4D10017C9C4 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		EAD633C426C6B9220017C9C4 /* PaymentLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentLoadingCell.swift; sourceTree = "<group>"; };
+		EAD633C826C773620017C9C4 /* CardCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellReactor.swift; sourceTree = "<group>"; };
+		EAD633CA26C774CC0017C9C4 /* PhaseEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseEnum.swift; sourceTree = "<group>"; };
+		EAD633CC26C774D40017C9C4 /* PrefsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsEnum.swift; sourceTree = "<group>"; };
+		EAD633CE26C777280017C9C4 /* MenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
+		EAD633D126C778920017C9C4 /* RegisterContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContainerViewController.swift; sourceTree = "<group>"; };
+		EAD633D326C7BD320017C9C4 /* RegisterTermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTermsViewController.swift; sourceTree = "<group>"; };
+		EAD633D526C7BDD00017C9C4 /* RegisterUserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserAuthViewController.swift; sourceTree = "<group>"; };
+		EAD633D726C7BDF30017C9C4 /* RegisterPincodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPincodeViewController.swift; sourceTree = "<group>"; };
+		EAD633D926C7BE3C0017C9C4 /* RegisterSignatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSignatureViewController.swift; sourceTree = "<group>"; };
+		EAD633DB26C7BE880017C9C4 /* RegisterBioAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBioAuthViewController.swift; sourceTree = "<group>"; };
+		EAD633DE26C8C6000017C9C4 /* RegisterContainerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterContainerViewReactor.swift; sourceTree = "<group>"; };
+		EAD633E026CA7AF80017C9C4 /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
 		EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EAE6B1AF26B987A10074C7A7 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		EAE6B1B226B988070074C7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +247,7 @@
 				EA911FE326C0E2FE00825166 /* Menu.swift */,
 				EA5CC37926C4A830004EBA75 /* WalletMenu.swift */,
 				EA5CC37B26C503E7004EBA75 /* CardAccount.swift */,
+				EAD633E026CA7AF80017C9C4 /* Term.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +335,8 @@
 		EA6F714126A934640004FB02 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				EAD633CA26C774CC0017C9C4 /* PhaseEnum.swift */,
+				EAD633CC26C774D40017C9C4 /* PrefsEnum.swift */,
 				EA911FF326C11F7E00825166 /* Reusables.swift */,
 				EA911FEA26C0F06600825166 /* Strings.swift */,
 				EA6F714226A934690004FB02 /* Loader */,
@@ -332,25 +357,22 @@
 			children = (
 				EA6F714826A94C560004FB02 /* UserManager.swift */,
 				EA774DE726BDB3AE0022ABD2 /* WalletManager.swift */,
-				EA83D9E026C66BA90051B46E /* CardManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		EA83D9DF26C58F550051B46E /* Cell */ = {
+		EA83D9DF26C58F550051B46E /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				EA911FE526C0E55900825166 /* MenuCell.swift */,
 				EA911FE826C0E5DF00825166 /* MenuCellReactor.swift */,
 			);
-			path = Cell;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		EA83D9E226C678F10051B46E /* Payment */ = {
 			isa = PBXGroup;
 			children = (
-				EAE6B1BB26BA92A90074C7A7 /* CardCell.swift */,
-				EAD633C426C6B9220017C9C4 /* PaymentLoadingCell.swift */,
 				EA83D9E326C6794A0051B46E /* WalletPaymentViewController.swift */,
 				EA83D9E526C67CC20051B46E /* WalletPaymentReactor.swift */,
 			);
@@ -361,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				EA83D9E826C67D300051B46E /* PaymentSection.swift */,
+				EAD633CE26C777280017C9C4 /* MenuSection.swift */,
 			);
 			path = SectionModels;
 			sourceTree = "<group>";
@@ -368,6 +391,7 @@
 		EA911FE026C0E1EC00825166 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EAD633C426C6B9220017C9C4 /* PaymentLoadingCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -375,7 +399,6 @@
 		EA911FE726C0E58000825166 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				EA83D9DF26C58F550051B46E /* Cell */,
 				EAE6B1AD26B985070074C7A7 /* MenuViewController.swift */,
 				EA911FEE26C1034E00825166 /* MenuViewReactor.swift */,
 			);
@@ -392,6 +415,46 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		EAD633C626C773190017C9C4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EA83D9DF26C58F550051B46E /* Menu */,
+				EAD633C726C7731E0017C9C4 /* Payment */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EAD633C726C7731E0017C9C4 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6B1BB26BA92A90074C7A7 /* CardCell.swift */,
+				EAD633C826C773620017C9C4 /* CardCellReactor.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		EAD633D026C777E80017C9C4 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				EAD633DD26C8C5E20017C9C4 /* RegisterContainerView */,
+				EAD633D326C7BD320017C9C4 /* RegisterTermsViewController.swift */,
+				EAD633D526C7BDD00017C9C4 /* RegisterUserAuthViewController.swift */,
+				EAD633D726C7BDF30017C9C4 /* RegisterPincodeViewController.swift */,
+				EAD633DB26C7BE880017C9C4 /* RegisterBioAuthViewController.swift */,
+				EAD633D926C7BE3C0017C9C4 /* RegisterSignatureViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		EAD633DD26C8C5E20017C9C4 /* RegisterContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				EAD633D126C778920017C9C4 /* RegisterContainerViewController.swift */,
+				EAD633DE26C8C6000017C9C4 /* RegisterContainerViewReactor.swift */,
+			);
+			path = RegisterContainerView;
+			sourceTree = "<group>";
+		};
 		EADF2EE026B1200D00572B99 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +469,8 @@
 			children = (
 				EA911FF926C266A600825166 /* Base */,
 				EA03A21B26A578CD005B37D2 /* Splash */,
+				EAD633D026C777E80017C9C4 /* Register */,
+				EAD633C626C773190017C9C4 /* Cell */,
 				EAE6B1B426B996490074C7A7 /* Main */,
 				EADF2EE026B1200D00572B99 /* Home */,
 				EAE6B1B126B987A70074C7A7 /* Wallet */,
@@ -556,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD633CF26C777280017C9C4 /* MenuSection.swift in Sources */,
 				EA03A1F626A55449005B37D2 /* HomeViewController.swift in Sources */,
 				EA03A22226A578EE005B37D2 /* SplashReactor.swift in Sources */,
 				EA03A23C26A646E9005B37D2 /* NetworkChecker.swift in Sources */,
@@ -574,11 +640,12 @@
 				EA03A23A26A646E9005B37D2 /* AlertUtils.swift in Sources */,
 				EA83D9E426C6794A0051B46E /* WalletPaymentViewController.swift in Sources */,
 				EA5CC37F26C50854004EBA75 /* Divider.swift in Sources */,
-				EA83D9E126C66BA90051B46E /* CardManager.swift in Sources */,
 				EA5CC37626C3D7D9004EBA75 /* BaseNavigationController.swift in Sources */,
 				EAE6B1BC26BA92A90074C7A7 /* CardCell.swift in Sources */,
 				EA03A24326A646E9005B37D2 /* TextFieldBuilder.swift in Sources */,
 				EA03A21926A5777D005B37D2 /* HomeReactor.swift in Sources */,
+				EAD633D826C7BDF30017C9C4 /* RegisterPincodeViewController.swift in Sources */,
+				EAD633DF26C8C6000017C9C4 /* RegisterContainerViewReactor.swift in Sources */,
 				EA03A23D26A646E9005B37D2 /* RequestBuilder.swift in Sources */,
 				EA03A21D26A578D5005B37D2 /* SplashViewController.swift in Sources */,
 				EA6F714426A93AAD0004FB02 /* SplashLogoView.swift in Sources */,
@@ -588,20 +655,26 @@
 				EAD633C326C6B4D10017C9C4 /* SkeletonLoadable.swift in Sources */,
 				EA5CC37A26C4A830004EBA75 /* WalletMenu.swift in Sources */,
 				EAD633C526C6B9220017C9C4 /* PaymentLoadingCell.swift in Sources */,
+				EAD633D426C7BD320017C9C4 /* RegisterTermsViewController.swift in Sources */,
 				EA911FE626C0E55900825166 /* MenuCell.swift in Sources */,
 				EA03A24426A646E9005B37D2 /* ButtonBuilder.swift in Sources */,
 				EA5CC37C26C503E7004EBA75 /* CardAccount.swift in Sources */,
 				EA774DEA26BECD110022ABD2 /* HomeNavigationBar.swift in Sources */,
 				EA774DE826BDB3AE0022ABD2 /* WalletManager.swift in Sources */,
+				EAD633D626C7BDD00017C9C4 /* RegisterUserAuthViewController.swift in Sources */,
 				EA03A23B26A646E9005B37D2 /* APIService.swift in Sources */,
 				EA911FF726C1FB3100825166 /* BaseViewController.swift in Sources */,
+				EAD633C926C773620017C9C4 /* CardCellReactor.swift in Sources */,
+				EAD633CB26C774CC0017C9C4 /* PhaseEnum.swift in Sources */,
 				EA03A23E26A646E9005B37D2 /* NetworkService.swift in Sources */,
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
 				EA3E570A26C0196000740FF6 /* AnimationUtils.swift in Sources */,
+				EAD633DA26C7BE3C0017C9C4 /* RegisterSignatureViewController.swift in Sources */,
 				EA83D9E926C67D300051B46E /* PaymentSection.swift in Sources */,
 				EA911FE426C0E2FE00825166 /* Menu.swift in Sources */,
 				EA911FE926C0E5DF00825166 /* MenuCellReactor.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
+				EAD633D226C778920017C9C4 /* RegisterContainerViewController.swift in Sources */,
 				EA911FEB26C0F06600825166 /* Strings.swift in Sources */,
 				EA911FF426C11F7E00825166 /* Reusables.swift in Sources */,
 				EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */,
@@ -610,10 +683,13 @@
 				EA03A24626A646E9005B37D2 /* Validation.swift in Sources */,
 				EAE6B1AE26B985070074C7A7 /* MenuViewController.swift in Sources */,
 				EAE6B1B026B987A10074C7A7 /* WalletViewController.swift in Sources */,
+				EAD633DC26C7BE880017C9C4 /* RegisterBioAuthViewController.swift in Sources */,
 				EA911FDF26C0D06D00825166 /* ShapeUtils.swift in Sources */,
 				EA774DEC26BF8DB20022ABD2 /* NavigationBar.swift in Sources */,
 				EA5CC37426C3CEA3004EBA75 /* SampleDetailViewController.swift in Sources */,
+				EAD633CD26C774D40017C9C4 /* PrefsEnum.swift in Sources */,
 				EA03A24226A646E9005B37D2 /* Builder.swift in Sources */,
+				EAD633E126CA7AF80017C9C4 /* Term.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

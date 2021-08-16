@@ -19,23 +19,3 @@ struct Menu {
         self.destination = destination
     }
 }
-
-enum MenuCellSelection {
-    case routeCell(MenuRouteCellReactor)
-    case switchCell(MenuSwitchCellRector)
-}
-
-struct MenuSectionData {
-    var header: String
-    var items: [MenuCellSelection]
-}
-
-extension MenuSectionData: SectionModelType {
-    typealias Item = MenuCellSelection
-    
-    init(original: MenuSectionData, items: [MenuCellSelection]) {
-        self = original
-        self.items = items
-    }
-}
-
