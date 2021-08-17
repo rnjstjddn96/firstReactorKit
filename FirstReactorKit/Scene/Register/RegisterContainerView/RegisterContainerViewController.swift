@@ -9,6 +9,7 @@ import Foundation
 import ReactorKit
 import UIKit
 import RxCocoa
+import ViewAnimator
 
 protocol RegisterServiceProtocol {
     var eventRelay: PublishRelay<RegisterEvent> { get }
@@ -77,15 +78,15 @@ class RegisterContainerViewController: BaseViewController<RegisterConatainerReac
     
     private func changeCurrentViewController(newViewController: UIViewController,
                                              phaseDirection: RegisterEvent.PhaseDireaction) {
-//        self.view.removeFromSuperview(duration: 0.5,
-//                                      type: .push,
-//                                      subtype: phaseDirection == .previous ? .fromRight : .fromLeft)
         self.presentingViewController?.removeFromParent()
         self.addChild(newViewController)
-        self.view.addSubview(subView: newViewController.view,
-                             duration: 0.5,
-                             type: .push,
-                             subtype: phaseDirection == .previous ? .fromLeft : .fromRight)
+        self.view.addSubview(newViewController.view)
+        
+        let animations = AnimationType.from(direction: phaseDirection == .next ? .right : .left,
+                                            offset: SIZE.width)
+        UIView.animate(views: [newViewController.view],
+                       animations: [animations])
+        
         newViewController.view.snp.makeConstraints { create in
             create.top.equalToSuperview()
             create.left.right.bottom.equalToSuperview()
@@ -97,7 +98,6 @@ class RegisterContainerViewController: BaseViewController<RegisterConatainerReac
 
 extension RegisterContainerViewController: View {
     func bind(reactor: RegisterConatainerReactor) {
-        
         reactor.state
             .map { $0.destination }
             .distinctUntilChanged()

@@ -9,21 +9,25 @@ import Foundation
 import Alamofire
 
 enum APIError: Error {
-    case HTTP(AFError)
-    case DECODING(Error)
-    case UNKNOWN
-    case NOT_CONNECTED
+    case failure(APIFailure)
+    case error(AFError)
+    case decoding(Error)
+    case unknown
     
     var reason: String {
         switch self {
-        case .HTTP(let httpError):
-            return "\(httpError)"
-        case .DECODING(let error):
-            return "디코딩 에러: \(error)"
-        case .NOT_CONNECTED:
-            return "인터넷 연결 후 사용해주세요"
-        default:
-            return "UNKNOWN"
+        case .failure(let httpError):
+            return httpError.message ?? ""
+        case .error(let error):
+            if error.isSessionTaskError {
+                return "네트워크 상태가 원활하지 않습니다."
+            } else {
+                return error.localizedDescription
+            }
+        case .decoding(let error):
+            return "JSON DECODING ERROR OCCURED\n" + error.localizedDescription
+        case .unknown:
+            return "UNKNOWN ERROR OCCURED"
         }
     }
 }
@@ -34,17 +38,6 @@ struct APIFailure: Codable {
     var statusCode: Int?
     var message: String?
     var name: String?
-}
-
-enum NetworkError: Int, Error {
-  case badRequest                       = 400
-  case authenticationFailed             = 401
-  case notFoundException                = 404
-  case contentLengthError               = 413
-  case quotaExceeded                    = 429
-  case systemError                      = 500
-  case endpointError                    = 503
-  case timeout                          = 504
 }
 
 struct APIResult<T> {

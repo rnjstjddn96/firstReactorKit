@@ -28,21 +28,16 @@ final class NetworkService: NetworkServiceInterface {
         PARAMETER:\n\(String(describing: apiBuilder.parameters))
         """)
         
+        let session = SessionManager.shared.getSession()
+        let interceptor = MpayInterceptor()
+        
         return Observable.create { observer in
-//            
-//            switch NSObject().currentReachabilityStatus {
-//            case .notReachable:
-//                observer.onNext(.error(.NOT_CONNECTED, nil))
-//            default:
-//                break
-//            }
-            
-            let request = AF.request(
+            let request = session?.request(
                 apiBuilder.url,
                 method: apiBuilder.method,
                 parameters: apiBuilder.parameters,
                 headers: apiBuilder.headers,
-                interceptor: nil
+                interceptor: interceptor
             )
             .responseData { response in
                 switch response.result {
@@ -53,28 +48,37 @@ final class NetworkService: NetworkServiceInterface {
                     //MARK: Connection Success
                     do {
                         let object = try decoder.decode(T.self, from: data)
-                        observer.onNext(APIResult(value: object, failed: nil, error: nil, response: response.response!))
+                        observer.onNext(APIResult(value: object,
+                                                  failed: nil,
+                                                  error: nil,
+                                                  response: response.response!))
                         observer.onCompleted()
                     } catch let error {
                         //MARK: API failed
                         if let failed = try? decoder.decode(APIFailure.self, from: data) {
-                            observer.onNext(APIResult(value: nil, failed: failed, error: nil, response: response.response!))
+                            observer.onNext(APIResult(value: nil,
+                                                      failed: failed,
+                                                      error: nil,
+                                                      response: response.response!))
                             observer.onCompleted()
                         } else {
                             //MARK: Decoding Failed
-                            observer.onNext(APIResult(value: nil, failed: nil, error: .DECODING(error), response: response.response!))
+                            observer.onNext(APIResult(value: nil,
+                                                      failed: nil,
+                                                      error: .decoding(error),
+                                                      response: response.response!))
                             observer.onCompleted()
                         }
                     }
                 case let .failure(error):
                     //MARK: Connection Failed
                     log.debug("RESPONSE:\n\(apiBuilder.path)\n\(JSON(error))")
-                    observer.onError(APIError.HTTP(error))
+                    observer.onError(APIError.error(error))
                 }
             }
             
             return Disposables.create {
-                request.cancel()
+                request?.cancel()
             }
         }
     }

@@ -79,6 +79,8 @@
 		EAE6B1B826BA91B70074C7A7 /* WalletIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B726BA91B70074C7A7 /* WalletIndicatorView.swift */; };
 		EAE6B1BA26BA92460074C7A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1B926BA92460074C7A7 /* Extensions.swift */; };
 		EAE6B1BC26BA92A90074C7A7 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE6B1BB26BA92A90074C7A7 /* CardCell.swift */; };
+		EAF1240326CBB7BD008F441B /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1240226CBB7BD008F441B /* Interceptor.swift */; };
+		EAF1240526CBB7D5008F441B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1240426CBB7D5008F441B /* SessionManager.swift */; };
 		EAFB0CA226A8F05000BF3576 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB0CA126A8F05000BF3576 /* ViewRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +162,8 @@
 		EAE6B1B726BA91B70074C7A7 /* WalletIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletIndicatorView.swift; sourceTree = "<group>"; };
 		EAE6B1B926BA92460074C7A7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EAE6B1BB26BA92A90074C7A7 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		EAF1240226CBB7BD008F441B /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		EAF1240426CBB7D5008F441B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		EAFB0CA126A8F05000BF3576 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -286,6 +290,8 @@
 				EA03A23126A646E9005B37D2 /* APIError + APIResult.swift */,
 				EA03A23226A646E9005B37D2 /* APIs.swift */,
 				EA03A23326A646E9005B37D2 /* NetworkConfig.swift */,
+				EAF1240226CBB7BD008F441B /* Interceptor.swift */,
+				EAF1240426CBB7D5008F441B /* SessionManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -652,6 +658,7 @@
 				EA6F714926A94C560004FB02 /* UserManager.swift in Sources */,
 				EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */,
 				EA03A24126A646E9005B37D2 /* NetworkConfig.swift in Sources */,
+				EAF1240326CBB7BD008F441B /* Interceptor.swift in Sources */,
 				EAD633C326C6B4D10017C9C4 /* SkeletonLoadable.swift in Sources */,
 				EA5CC37A26C4A830004EBA75 /* WalletMenu.swift in Sources */,
 				EAD633C526C6B9220017C9C4 /* PaymentLoadingCell.swift in Sources */,
@@ -671,6 +678,7 @@
 				EA3E570A26C0196000740FF6 /* AnimationUtils.swift in Sources */,
 				EAD633DA26C7BE3C0017C9C4 /* RegisterSignatureViewController.swift in Sources */,
 				EA83D9E926C67D300051B46E /* PaymentSection.swift in Sources */,
+				EAF1240526CBB7D5008F441B /* SessionManager.swift in Sources */,
 				EA911FE426C0E2FE00825166 /* Menu.swift in Sources */,
 				EA911FE926C0E5DF00825166 /* MenuCellReactor.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
