@@ -9,7 +9,6 @@ import UIKit
 import ReactorKit
 import RxCocoa
 import SnapKit
-import Toast_Swift
 
 class HomeViewController: BaseViewController<HomeReactor>, View {
     lazy var loadingIndicator = LoadingIndicator(view: self.view)
