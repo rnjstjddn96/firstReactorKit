@@ -17,6 +17,8 @@
 		389C893026BBB39500142F12 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C892F26BBB39500142F12 /* Extensions.swift */; };
 		389C894026BBC47800142F12 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C893F26BBC47800142F12 /* EventData.swift */; };
 		389E5FEC26CC87630060AFB2 /* NaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E5FEB26CC87630060AFB2 /* NaviController.swift */; };
+		389E5FEE26CC8DAA0060AFB2 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E5FED26CC8DAA0060AFB2 /* ToastMessage.swift */; };
+		389E5FF326CC9E7C0060AFB2 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E5FF226CC9E7C0060AFB2 /* PopupViewController.swift */; };
 		38A71EB626C25105009954CB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A71EB526C25105009954CB /* CardView.swift */; };
 		38A71EB826C2702C009954CB /* CardTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A71EB726C2702C009954CB /* CardTransitionManager.swift */; };
 		38BC9A2E26BCF86600172E69 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC9A2D26BCF86600172E69 /* TableViewCell.swift */; };
@@ -80,6 +82,8 @@
 		389C893E26BBBC2200142F12 /* notosanscjkkr_bold_alphabetic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notosanscjkkr_bold_alphabetic.otf; sourceTree = "<group>"; };
 		389C893F26BBC47800142F12 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		389E5FEB26CC87630060AFB2 /* NaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviController.swift; sourceTree = "<group>"; };
+		389E5FED26CC8DAA0060AFB2 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
+		389E5FF226CC9E7C0060AFB2 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		38A71EB526C25105009954CB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		38A71EB726C2702C009954CB /* CardTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTransitionManager.swift; sourceTree = "<group>"; };
 		38BC9A2D26BCF86600172E69 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -166,6 +170,14 @@
 				389C893826BBBC2200142F12 /* ufonts_com_gotham_light_0.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		389E5FF126CC9E640060AFB2 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				389E5FF226CC9E7C0060AFB2 /* PopupViewController.swift */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		BF60006248A5DD5842FD4934 /* Frameworks */ = {
@@ -339,6 +351,7 @@
 			children = (
 				EA03A1F526A55449005B37D2 /* HomeViewController.swift */,
 				EA03A21826A5777D005B37D2 /* HomeReactor.swift */,
+				389E5FED26CC8DAA0060AFB2 /* ToastMessage.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -352,6 +365,7 @@
 				EADF2EE026B1200D00572B99 /* Home */,
 				EAE6B1AC26B984E80074C7A7 /* TableView */,
 				389C892C26BBAF0900142F12 /* Event */,
+				389E5FF126CC9E640060AFB2 /* Popup */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -531,6 +545,7 @@
 				3842FF8A26BA763A0009C885 /* AllAnimal.swift in Sources */,
 				EA6F714926A94C560004FB02 /* UserManager.swift in Sources */,
 				EA6F713E26A9191C0004FB02 /* Indicator.swift in Sources */,
+				389E5FF326CC9E7C0060AFB2 /* PopupViewController.swift in Sources */,
 				EA03A24126A646E9005B37D2 /* NetworkConfig.swift in Sources */,
 				38A71EB626C25105009954CB /* CardView.swift in Sources */,
 				389AFECD26C123A800E57730 /* EventDetailViewController.swift in Sources */,
@@ -547,6 +562,7 @@
 				EA03A24626A646E9005B37D2 /* Validation.swift in Sources */,
 				EAE6B1AE26B985070074C7A7 /* TableViewController.swift in Sources */,
 				EAE6B1B026B987A10074C7A7 /* BottomMenuViewController.swift in Sources */,
+				389E5FEE26CC8DAA0060AFB2 /* ToastMessage.swift in Sources */,
 				EA03A24226A646E9005B37D2 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

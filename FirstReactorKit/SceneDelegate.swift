@@ -18,8 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootViewController = SplashViewController()
         rootViewController.reactor = SplashReactor()
         let navigationController = UINavigationController(rootViewController: rootViewController)
-        let navi = NaviController.navigationController
-        
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
@@ -33,20 +31,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {}
 
     func sceneDidEnterBackground(_ scene: UIScene) {}
-}
-
-extension SceneDelegate: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if operation == .push {
-            print("@@ operation == .push")
-            return transitionManger
-        } else if operation == .pop  {
-            print("@@ operation == .pop")
-            return nil
-        } else {
-            print("@@ operation == .none")
-            return nil
-        }
-    }
 }
 

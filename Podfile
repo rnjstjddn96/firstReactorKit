@@ -17,4 +17,5 @@ target 'FirstReactorKit' do
   pod 'Hero', '~> 1.6.1'
   pod "RxGesture"
   pod 'RxDataSources'
+  pod 'PopupDialog', '~> 1.1'
 end
