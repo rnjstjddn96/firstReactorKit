@@ -19,6 +19,8 @@
 		389E5FEC26CC87630060AFB2 /* NaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E5FEB26CC87630060AFB2 /* NaviController.swift */; };
 		389E5FEE26CC8DAA0060AFB2 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E5FED26CC8DAA0060AFB2 /* ToastMessage.swift */; };
 		389E5FF326CC9E7C0060AFB2 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E5FF226CC9E7C0060AFB2 /* PopupViewController.swift */; };
+		389E5FF726CCF5920060AFB2 /* BottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E5FF626CCF5920060AFB2 /* BottomViewController.swift */; };
+		389E5FF926CCF75D0060AFB2 /* BottomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E5FF826CCF75D0060AFB2 /* BottomDetailViewController.swift */; };
 		38A71EB626C25105009954CB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A71EB526C25105009954CB /* CardView.swift */; };
 		38A71EB826C2702C009954CB /* CardTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A71EB726C2702C009954CB /* CardTransitionManager.swift */; };
 		38BC9A2E26BCF86600172E69 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC9A2D26BCF86600172E69 /* TableViewCell.swift */; };
@@ -84,6 +86,8 @@
 		389E5FEB26CC87630060AFB2 /* NaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviController.swift; sourceTree = "<group>"; };
 		389E5FED26CC8DAA0060AFB2 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		389E5FF226CC9E7C0060AFB2 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		389E5FF626CCF5920060AFB2 /* BottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewController.swift; sourceTree = "<group>"; };
+		389E5FF826CCF75D0060AFB2 /* BottomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDetailViewController.swift; sourceTree = "<group>"; };
 		38A71EB526C25105009954CB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		38A71EB726C2702C009954CB /* CardTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTransitionManager.swift; sourceTree = "<group>"; };
 		38BC9A2D26BCF86600172E69 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				389E5FF226CC9E7C0060AFB2 /* PopupViewController.swift */,
+				389E5FF626CCF5920060AFB2 /* BottomViewController.swift */,
+				389E5FF826CCF75D0060AFB2 /* BottomDetailViewController.swift */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -522,6 +528,7 @@
 				EA03A1F626A55449005B37D2 /* HomeViewController.swift in Sources */,
 				EA03A22226A578EE005B37D2 /* SplashReactor.swift in Sources */,
 				3842FF8F26BA77830009C885 /* UserDefaultsManager.swift in Sources */,
+				389E5FF926CCF75D0060AFB2 /* BottomDetailViewController.swift in Sources */,
 				EA03A23C26A646E9005B37D2 /* NetworkChecker.swift in Sources */,
 				EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */,
 				EA03A23F26A646E9005B37D2 /* APIError + APIResult.swift in Sources */,
@@ -548,6 +555,7 @@
 				389E5FF326CC9E7C0060AFB2 /* PopupViewController.swift in Sources */,
 				EA03A24126A646E9005B37D2 /* NetworkConfig.swift in Sources */,
 				38A71EB626C25105009954CB /* CardView.swift in Sources */,
+				389E5FF726CCF5920060AFB2 /* BottomViewController.swift in Sources */,
 				389AFECD26C123A800E57730 /* EventDetailViewController.swift in Sources */,
 				EA03A24426A646E9005B37D2 /* ButtonBuilder.swift in Sources */,
 				EA03A23B26A646E9005B37D2 /* APIService.swift in Sources */,

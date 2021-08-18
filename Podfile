@@ -18,4 +18,5 @@ target 'FirstReactorKit' do
   pod "RxGesture"
   pod 'RxDataSources'
   pod 'PopupDialog', '~> 1.1'
+  pod 'BottomPopup'
 end

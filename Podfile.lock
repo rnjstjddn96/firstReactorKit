@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.3)
+  - BottomPopup (0.7.0)
   - Differentiator (5.0.0)
   - DynamicBlurView (4.1.0)
   - Hero (1.6.1)
@@ -34,6 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BottomPopup
   - Hero (~> 1.6.1)
   - lottie-ios
   - PopupDialog (~> 1.1)
@@ -49,6 +51,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BottomPopup
     - Differentiator
     - DynamicBlurView
     - Hero
@@ -68,6 +71,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  BottomPopup: fe3e284628532f99093ae68c592c6b9d392c972d
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
   Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
@@ -85,6 +89,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: d9fb45e9e21c65862d61e3c5a3308e5a133947b8
+PODFILE CHECKSUM: 45918af0d14f1a3ec3a36d9526c60f026b57945a
 
 COCOAPODS: 1.10.0

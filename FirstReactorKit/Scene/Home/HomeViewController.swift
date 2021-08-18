@@ -88,6 +88,14 @@ class HomeViewController: UIViewController, View {
         .withCornerRadius(radius: 10)
         .build()
     
+    let btnBottom =
+        UIButton.Builder()
+        .withText("bottom", for: .normal)
+        .withTextColor(.white, for: .normal)
+        .withBackground(color: .black)
+        .withCornerRadius(radius: 10)
+        .build()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -141,6 +149,11 @@ class HomeViewController: UIViewController, View {
         
         btnPopup.rx.tap
             .map { Reactor.Action.route(to: PopupViewController()) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        btnBottom.rx.tap
+            .map { Reactor.Action.route(to: BottomViewController()) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -221,6 +234,7 @@ class HomeViewController: UIViewController, View {
         self.view.addSubview(btnEvent)
         self.view.addSubview(btnToast)
         self.view.addSubview(btnPopup)
+        self.view.addSubview(btnBottom)
         
         self.view.backgroundColor = .orange
         
@@ -276,6 +290,13 @@ class HomeViewController: UIViewController, View {
         
         btnPopup.snp.makeConstraints { create in
             create.top.equalTo(label.snp.bottom).offset(30)
+            create.centerX.equalToSuperview()
+            create.width.equalTo(80)
+            create.height.equalTo(50)
+        }
+        
+        btnBottom.snp.makeConstraints { create in
+            create.top.equalTo(btnPopup.snp.bottom).offset(30)
             create.centerX.equalToSuperview()
             create.width.equalTo(80)
             create.height.equalTo(50)
