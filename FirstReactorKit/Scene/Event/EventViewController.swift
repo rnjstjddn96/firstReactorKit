@@ -34,7 +34,6 @@ class EventViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                                 EventData(viewType: CardViewType.event_CardViewType(bgImage: UIImage(named: "img4")!, eventTitle: "eventTitle 6", eventSubTitle: "eventSubTitle 6"))])
     let disposeBag = DisposeBag()
     var currentIdx: CGFloat = 0.0
-    
     let transitionManger = CardTransitionManager()
     var indexPath = IndexPath()
     
@@ -45,6 +44,7 @@ class EventViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         initDataSource()
         configure()
         cellClick()
+        
     }
     
     func cellClick() {
@@ -53,7 +53,7 @@ class EventViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                 let eventDetailVC = DetailView(cardViewModel: event)
                 eventDetailVC.modalPresentationStyle = .overCurrentContext
                 eventDetailVC.transitioningDelegate = self.transitionManger
-                self.present(eventDetailVC, animated: true, completion: nil)
+                self.navigationController?.pushViewController(eventDetailVC, animated: true)
             })
             .disposed(by: disposeBag)
         collectionView.rx.itemSelected
@@ -89,11 +89,8 @@ class EventViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     func selectedCellCardView() -> CardView? {
-        
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell<CardView>
-
         guard let cardView = cell.cellView else { return nil }
-
         return cardView
     }
     

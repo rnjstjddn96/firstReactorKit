@@ -165,7 +165,7 @@ extension DetailView {
     }
     
     @objc func close() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func createSnapshotOfView() {
