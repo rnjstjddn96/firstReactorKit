@@ -13,7 +13,7 @@
 		3842FF8F26BA77830009C885 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842FF8E26BA77830009C885 /* UserDefaultsManager.swift */; };
 		389AFEBE26C0E66B00E57730 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AFEBD26C0E66B00E57730 /* EventViewController.swift */; };
 		389AFECD26C123A800E57730 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389AFECC26C123A800E57730 /* EventDetailViewController.swift */; };
-		389C892E26BBAF2F00142F12 /* 1EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C892D26BBAF2F00142F12 /* 1EventViewController.swift */; };
+		389C892E26BBAF2F00142F12 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C892D26BBAF2F00142F12 /* NewEventViewController.swift */; };
 		389C893026BBB39500142F12 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C892F26BBB39500142F12 /* Extensions.swift */; };
 		389C894026BBC47800142F12 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389C893F26BBC47800142F12 /* EventData.swift */; };
 		389E5FEC26CC87630060AFB2 /* NaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E5FEB26CC87630060AFB2 /* NaviController.swift */; };
@@ -23,6 +23,7 @@
 		389E5FF926CCF75D0060AFB2 /* BottomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E5FF826CCF75D0060AFB2 /* BottomDetailViewController.swift */; };
 		38A71EB626C25105009954CB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A71EB526C25105009954CB /* CardView.swift */; };
 		38A71EB826C2702C009954CB /* CardTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A71EB726C2702C009954CB /* CardTransitionManager.swift */; };
+		38B431D426CDE5650048B28A /* NewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B431D326CDE5650048B28A /* NewEvent.swift */; };
 		38BC9A2E26BCF86600172E69 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC9A2D26BCF86600172E69 /* TableViewCell.swift */; };
 		38BC9A3226BD20A200172E69 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC9A3126BD20A200172E69 /* CollectionViewCell.swift */; };
 		B5D92B349578544B7A5582E9 /* Pods_FirstReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FEC6067F16A9E93D93864E /* Pods_FirstReactorKit.framework */; };
@@ -69,7 +70,7 @@
 		3842FF8E26BA77830009C885 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		389AFEBD26C0E66B00E57730 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		389AFECC26C123A800E57730 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
-		389C892D26BBAF2F00142F12 /* 1EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1EventViewController.swift; sourceTree = "<group>"; };
+		389C892D26BBAF2F00142F12 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		389C892F26BBB39500142F12 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		389C893426BBBC2200142F12 /* gotham_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gotham_medium.ttf; sourceTree = "<group>"; };
 		389C893526BBBC2200142F12 /* gothambook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothambook.ttf; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		389E5FF826CCF75D0060AFB2 /* BottomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDetailViewController.swift; sourceTree = "<group>"; };
 		38A71EB526C25105009954CB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		38A71EB726C2702C009954CB /* CardTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTransitionManager.swift; sourceTree = "<group>"; };
+		38B431D326CDE5650048B28A /* NewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEvent.swift; sourceTree = "<group>"; };
 		38BC9A2D26BCF86600172E69 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		38BC9A3126BD20A200172E69 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3BFE01EE64AF38667F65F56F /* Pods-FirstReactorKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstReactorKit.release.xcconfig"; path = "Target Support Files/Pods-FirstReactorKit/Pods-FirstReactorKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,7 +149,7 @@
 		389C892C26BBAF0900142F12 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				389C892D26BBAF2F00142F12 /* 1EventViewController.swift */,
+				389C892D26BBAF2F00142F12 /* NewEventViewController.swift */,
 				38BC9A3126BD20A200172E69 /* CollectionViewCell.swift */,
 				389AFEBD26C0E66B00E57730 /* EventViewController.swift */,
 				389AFECC26C123A800E57730 /* EventDetailViewController.swift */,
@@ -257,6 +259,7 @@
 				3842FF8826BA763A0009C885 /* AllAnimal.swift */,
 				3842FF8926BA763A0009C885 /* Token.swift */,
 				389C893F26BBC47800142F12 /* EventData.swift */,
+				38B431D326CDE5650048B28A /* NewEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				389E5FF926CCF75D0060AFB2 /* BottomDetailViewController.swift in Sources */,
 				EA03A23C26A646E9005B37D2 /* NetworkChecker.swift in Sources */,
 				EA03A1F226A55449005B37D2 /* AppDelegate.swift in Sources */,
+				38B431D426CDE5650048B28A /* NewEvent.swift in Sources */,
 				EA03A23F26A646E9005B37D2 /* APIError + APIResult.swift in Sources */,
 				EA03A1F426A55449005B37D2 /* SceneDelegate.swift in Sources */,
 				389AFEBE26C0E66B00E57730 /* EventViewController.swift in Sources */,
@@ -566,7 +570,7 @@
 				38BC9A3226BD20A200172E69 /* CollectionViewCell.swift in Sources */,
 				EAE6B1B626B996560074C7A7 /* MainReactor.swift in Sources */,
 				38A71EB826C2702C009954CB /* CardTransitionManager.swift in Sources */,
-				389C892E26BBAF2F00142F12 /* 1EventViewController.swift in Sources */,
+				389C892E26BBAF2F00142F12 /* NewEventViewController.swift in Sources */,
 				EA03A24626A646E9005B37D2 /* Validation.swift in Sources */,
 				EAE6B1AE26B985070074C7A7 /* TableViewController.swift in Sources */,
 				EAE6B1B026B987A10074C7A7 /* BottomMenuViewController.swift in Sources */,
