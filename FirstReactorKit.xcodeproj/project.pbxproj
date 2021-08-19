@@ -24,6 +24,8 @@
 		38A71EB626C25105009954CB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A71EB526C25105009954CB /* CardView.swift */; };
 		38A71EB826C2702C009954CB /* CardTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A71EB726C2702C009954CB /* CardTransitionManager.swift */; };
 		38B431D426CDE5650048B28A /* NewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B431D326CDE5650048B28A /* NewEvent.swift */; };
+		38B431D626CDEBD40048B28A /* NewEventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B431D526CDEBD40048B28A /* NewEventDetailViewController.swift */; };
+		38B431D826CDF50B0048B28A /* NewEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B431D726CDF50B0048B28A /* NewEventCell.swift */; };
 		38BC9A2E26BCF86600172E69 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC9A2D26BCF86600172E69 /* TableViewCell.swift */; };
 		38BC9A3226BD20A200172E69 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC9A3126BD20A200172E69 /* CollectionViewCell.swift */; };
 		B5D92B349578544B7A5582E9 /* Pods_FirstReactorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FEC6067F16A9E93D93864E /* Pods_FirstReactorKit.framework */; };
@@ -92,6 +94,8 @@
 		38A71EB526C25105009954CB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		38A71EB726C2702C009954CB /* CardTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTransitionManager.swift; sourceTree = "<group>"; };
 		38B431D326CDE5650048B28A /* NewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEvent.swift; sourceTree = "<group>"; };
+		38B431D526CDEBD40048B28A /* NewEventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventDetailViewController.swift; sourceTree = "<group>"; };
+		38B431D726CDF50B0048B28A /* NewEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventCell.swift; sourceTree = "<group>"; };
 		38BC9A2D26BCF86600172E69 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		38BC9A3126BD20A200172E69 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3BFE01EE64AF38667F65F56F /* Pods-FirstReactorKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstReactorKit.release.xcconfig"; path = "Target Support Files/Pods-FirstReactorKit/Pods-FirstReactorKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				389C892D26BBAF2F00142F12 /* NewEventViewController.swift */,
+				38B431D726CDF50B0048B28A /* NewEventCell.swift */,
+				38B431D526CDEBD40048B28A /* NewEventDetailViewController.swift */,
 				38BC9A3126BD20A200172E69 /* CollectionViewCell.swift */,
 				389AFEBD26C0E66B00E57730 /* EventViewController.swift */,
 				389AFECC26C123A800E57730 /* EventDetailViewController.swift */,
@@ -528,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38BC9A2E26BCF86600172E69 /* TableViewCell.swift in Sources */,
+				38B431D626CDEBD40048B28A /* NewEventDetailViewController.swift in Sources */,
 				EA03A1F626A55449005B37D2 /* HomeViewController.swift in Sources */,
 				EA03A22226A578EE005B37D2 /* SplashReactor.swift in Sources */,
 				3842FF8F26BA77830009C885 /* UserDefaultsManager.swift in Sources */,
@@ -565,6 +572,7 @@
 				EA03A23B26A646E9005B37D2 /* APIService.swift in Sources */,
 				EA03A23E26A646E9005B37D2 /* NetworkService.swift in Sources */,
 				389E5FEC26CC87630060AFB2 /* NaviController.swift in Sources */,
+				38B431D826CDF50B0048B28A /* NewEventCell.swift in Sources */,
 				EA03A22626A57997005B37D2 /* User.swift in Sources */,
 				EA03A24526A646E9005B37D2 /* LabelBuilder.swift in Sources */,
 				38BC9A3226BD20A200172E69 /* CollectionViewCell.swift in Sources */,
